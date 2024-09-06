@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+header {
+  position: fixed;
+  top: 78px;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+header .logo {
+  width: 144px;
+}
+header .account {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}/*# sourceMappingURL=header.css.map */
