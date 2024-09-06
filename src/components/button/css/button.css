@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_button {
+  border-width: 3px;
+  border-style: solid;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 19px;
+  padding: 20.5px;
+  min-width: 222px;
+  text-align: center;
+  transition: 0.3s;
+}
+.main_button.full {
+  width: 100%;
+}
+.main_button.white {
+  border-color: var(--font-white);
+  color: var(--font-white);
+}
+.main_button.white:hover {
+  background-color: var(--orange-rgb);
+}
+.main_button.orange {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.main_button.orange:hover {
+  background-color: var(--orange-rgb);
+}
+.main_button.small {
+  min-width: 144px;
+  background-color: var(--orange);
+  color: #fff;
+  box-shadow: 0px 0px 5px 0px var(--orange);
+  border: 0;
+  font-weight: 400;
+  font-family: var(--button-font);
+  padding: 8.5px;
+}
+.main_button.small:hover {
+  box-shadow: 0px 0px 20px 0px var(--orange);
+}/*# sourceMappingURL=button.css.map */

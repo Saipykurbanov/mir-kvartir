@@ -1,0 +1,44 @@
+@import './../../../style/common';
+
+.main_button {
+    border-width: 3px;
+    border-style: solid;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 19px;
+    padding: 20.5px;
+    min-width: 222px;
+    text-align: center;
+    transition: 0.3s;
+    &.full {
+        width: 100%;
+    }
+    &.white {
+        border-color: var(--font-white);
+        color: var(--font-white);
+        &:hover {
+            background-color: var(--orange-rgb);
+        }
+    }
+    &.orange {
+        border-color: var(--orange);
+        color: var(--orange);
+        &:hover {
+            background-color: var(--orange-rgb);
+        }
+    }
+    &.small {
+        min-width: 144px;
+        background-color: var(--orange);
+        color: #fff;
+        box-shadow: 0px 0px 5px 0px var(--orange);
+        border: 0;
+        font-weight: 400;
+        font-family: var(--button-font);
+        padding: 8.5px;
+        &:hover {
+            box-shadow: 0px 0px 20px 0px var(--orange);
+        }
+    }
+}
+
