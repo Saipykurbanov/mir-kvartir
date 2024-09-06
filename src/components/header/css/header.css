@@ -18,4 +18,22 @@ header .account {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+header .navigation {
+  width: 100%;
+  max-width: 1254px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+header .navigation .pagination {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  border: 6.5px solid var(--orange);
+}
+header .navigation span {
+  display: none;
 }/*# sourceMappingURL=header.css.map */

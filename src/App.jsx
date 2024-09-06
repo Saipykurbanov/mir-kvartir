@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/main/Main';
+import Header from './components/header/Header';
 
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
     <main>
 
       <Router>
+
+        <Header />
 
         <Routes>
 
