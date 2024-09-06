@@ -31,7 +31,7 @@
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+nav,footer,aside{display: block;}
 [inert], [inert] * {opacity: 0.3;}
 
 html,body{
@@ -71,4 +71,10 @@ input:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--font-white) !important;
     transition: background-color 0s 600000s, color 0s 600000s;
     caret-color: var(--font-white);
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
 }

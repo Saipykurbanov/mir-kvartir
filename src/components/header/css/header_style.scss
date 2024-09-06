@@ -1,0 +1,44 @@
+@import './../../../style/common';
+
+header {
+    position: fixed;
+    top: 78px;
+    left: 0px;
+    width: 100%;
+    @include adaptiveProperty(top, 78, 15);
+    @include adaptiveProperty(padding-left, 30, 15);
+    @include adaptiveProperty(padding-right, 30, 15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    gap: 30px;
+    .logo {
+        @include adaptiveProperty(width, 144, 75);
+    }
+
+    .account {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navigation {
+        width: 100%;
+        max-width: 1254px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        .pagination {
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border-radius: 50%;
+            border: 6.5px solid var(--orange);
+        }
+        & span{
+            display: none;
+        }
+    }
+}
