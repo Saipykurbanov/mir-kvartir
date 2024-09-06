@@ -37,7 +37,7 @@ a:focus, a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav, footer, aside {
   display: block;
 }
 
@@ -113,4 +113,9 @@ input:-webkit-autofill:focus {
   -webkit-transition: background-color 0s 600000s, color 0s 600000s;
   transition: background-color 0s 600000s, color 0s 600000s;
   caret-color: var(--font-white);
+}
+
+main {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

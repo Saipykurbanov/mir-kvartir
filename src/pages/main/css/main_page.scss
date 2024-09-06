@@ -1,0 +1,34 @@
+@import './../../../style/common';
+
+.main_page {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        height: 100%;
+        width: 100dvw;
+        transition: 1s;
+        padding: 232px 30px 30px 30px;
+        background-color: var(--background);
+        &.main {
+            position: static;
+            transform: translateX(0);
+        }
+        &.active {
+            transform: translateX(0);
+        }
+    }
+    @include mediaMaxWidth(992) {
+        overflow: visible;
+        .page {
+            position: static;
+            transform: translate(0);
+            width: 100%;
+            padding: 30px;
+        }
+    }
+}
