@@ -10,10 +10,10 @@
   top: 0;
   left: 0;
   transform: translateX(100%);
-  height: 100%;
+  height: 100dvh;
   width: 100dvw;
   transition: 1s;
-  padding: 232px 30px 30px 30px;
+  padding: 232px 30px 78px 30px;
   background-color: var(--background);
 }
 .main_page .page.main {

@@ -40,5 +40,17 @@
             box-shadow: 0px 0px 20px 0px var(--orange);
         }
     }
+    &.big {
+        min-width: 300px;
+        background-color: var(--orange);
+        color: #fff;
+        box-shadow: 0px 0px 5px 0px var(--orange);
+        border: 0;
+        font-weight: 400;
+        font-family: var(--button-font);
+        &:hover {
+            box-shadow: 0px 0px 20px 0px var(--orange);
+        }
+    }
 }
 

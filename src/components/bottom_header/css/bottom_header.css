@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.bottom_header {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.bottom_header h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+}/*# sourceMappingURL=bottom_header.css.map */
