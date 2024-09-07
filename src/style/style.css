@@ -1,9 +1,11 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap");
 :root {
   --main-font: "Montserrat", sans-serif;
   --button-font: "Archivo", sans-serif;
+  --sanchez: "Sanchez", serif;
   --font-white: #EFE4D7;
   --font-grey: #808080;
   --font-grey-lite: #B4ABA1;

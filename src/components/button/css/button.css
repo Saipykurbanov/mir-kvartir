@@ -40,4 +40,16 @@
 }
 .main_button.small:hover {
   box-shadow: 0px 0px 20px 0px var(--orange);
+}
+.main_button.big {
+  min-width: 300px;
+  background-color: var(--orange);
+  color: #fff;
+  box-shadow: 0px 0px 5px 0px var(--orange);
+  border: 0;
+  font-weight: 400;
+  font-family: var(--button-font);
+}
+.main_button.big:hover {
+  box-shadow: 0px 0px 20px 0px var(--orange);
 }/*# sourceMappingURL=button.css.map */
