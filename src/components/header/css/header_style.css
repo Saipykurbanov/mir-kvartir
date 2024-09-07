@@ -62,15 +62,81 @@ header .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  padding: 0px 30px;
 }
-header .navigation .pagination {
+header .navigation .line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--orange);
+}
+header .navigation .nav_item {
+  position: relative;
+}
+header .navigation .nav_item .pagination {
+  position: relative;
   width: 24px;
   height: 24px;
   background: transparent;
   border-radius: 50%;
   border: 6.5px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-header .navigation span {
-  display: none;
+header .navigation .nav_item .pagination .inner_circle {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+header .navigation .nav_item .pagination .decor {
+  position: absolute;
+  top: -6px;
+  height: 24px;
+}
+header .navigation .nav_item .pagination .decor.right {
+  right: -23px;
+}
+header .navigation .nav_item .pagination .decor.left {
+  left: -23px;
+  transform: scale(-1, 1);
+}
+header .navigation .nav_item span {
+  display: block;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  color: var(--font-white);
+  white-space: nowrap;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+header .navigation .nav_item span.top {
+  top: -30px;
+}
+header .navigation .nav_item span:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 1px;
+  background: var(--font-white);
+  transition: 0.3s;
+}
+header .navigation .nav_item span:hover::before {
+  width: 100%;
+}
+header .navigation .nav_item.active .inner_circle {
+  background: var(--font-white);
+}
+header .navigation .nav_item.active span::before {
+  width: 100%;
 }/*# sourceMappingURL=header_style.css.map */

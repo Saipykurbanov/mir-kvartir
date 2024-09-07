@@ -29,16 +29,90 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
-        .pagination {
-            width: 24px;
-            height: 24px;
-            background: transparent;
-            border-radius: 50%;
-            border: 6.5px solid var(--orange);
+        padding: 0px 30px;
+
+        .line{
+            flex: 1;
+            height: 2px;
+            background-color: var(--orange);
         }
-        & span{
-            display: none;
+
+        .nav_item {
+            position: relative;
+            .pagination {
+                position: relative;
+                width: 24px;
+                height: 24px;
+                background: transparent;
+                border-radius: 50%;
+                border: 6.5px solid var(--orange);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+    
+                & .inner_circle {
+                    width: 6px;
+                    height: 6px;
+                    background: transparent;
+                    border-radius: 50%;
+                    transition: 0.3s;
+                }
+    
+                & .decor {
+                    position: absolute;
+                    top: -6px;
+                    height: 24px;
+                    &.right {
+                        right: -23px;
+                    }
+                    &.left {
+                        left: -23px;
+                        transform: scale(-1, 1);
+                    }
+                }
+            }
+    
+            & span{
+                display: block;
+                height: max-content;
+                position: absolute;
+                bottom: -30px;
+                left: 50%;
+                color: var(--font-white);
+                white-space: nowrap;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: 400;
+                transform: translateX(-50%);
+                cursor: pointer;
+                &.top {
+                    top: -30px;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 0%;
+                    height: 1px;
+                    background: var(--font-white);
+                    transition: 0.3s;
+                }
+                &:hover::before{
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                & .inner_circle {
+                    background: var(--font-white);
+                }
+
+                & span::before {
+                    width: 100%;
+                }
+            }
         }
     }
 }
