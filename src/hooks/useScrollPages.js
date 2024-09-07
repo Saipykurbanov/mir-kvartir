@@ -13,7 +13,7 @@ export default function useScrollPages() {
 
             setPage((prev) => {
                 if (wheel > 0) {
-                return prev >= 4 ? prev : prev + 1;
+                return prev >= 10 ? prev : prev + 1;
                 } else {
                 return prev <= 1 ? prev : prev - 1;
                 }
