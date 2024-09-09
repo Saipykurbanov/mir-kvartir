@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.feedback.page {
+  background-color: var(--background-grey);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.feedback.page .container {
+  height: 50dvh;
+  max-width: 1326px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: auto;
+}
+.feedback.page .container::-webkit-scrollbar {
+  width: 0;
+}
+.feedback.page .bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.feedback.page .feedback_item {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 90px;
+  border-bottom: 1px solid var(--font-grey);
+  padding-bottom: 67px;
+}
+.feedback.page .feedback_item .user_icon {
+  height: 66px;
+  min-width: 66px;
+  background: var(--orange);
+  border-radius: 50%;
+  color: var(--font-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+.feedback.page .feedback_item .feedback_content {
+  padding-right: 80px;
+  width: 100%;
+}
+.feedback.page .feedback_item .feedback_content .head {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color: var(--font-white);
+}
+.feedback.page .feedback_item .feedback_content .head h4 {
+  font-weight: 600;
+  width: 100%;
+  max-width: 450px;
+}
+.feedback.page .feedback_item .feedback_content .head span {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  background: var(--background-dark);
+  padding: 11px 24px;
+  font-weight: 300;
+}
+.feedback.page .feedback_item .feedback_content p {
+  margin-top: 14px;
+  font-size: 18px;
+  color: var(--font-white);
+}/*# sourceMappingURL=feedback.css.map */

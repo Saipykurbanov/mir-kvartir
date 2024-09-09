@@ -1,0 +1,12 @@
+@import './../../../style/common';
+
+.bottom_header {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    & h2 {
+        font-size: 60px;
+        text-transform: uppercase;
+    }
+}
