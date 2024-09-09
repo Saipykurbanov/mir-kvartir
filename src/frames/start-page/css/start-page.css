@@ -19,12 +19,25 @@
 }
 .start_page.page .about_us_block .description_block .description {
   color: var(--font-grey);
-  font-size: 18px;
-  letter-spacing: 1%;
   max-width: 370px;
   width: 100%;
   line-height: 22px;
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .start_page.page .about_us_block .description_block .description {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .start_page.page .about_us_block .description_block .description {
+    font-size: calc(15px + 3 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .start_page.page .about_us_block .description_block .description {
+    max-width: 500px;
+  }
 }
 .start_page.page .about_us_block .description_block .partners {
   color: var(--orange);
@@ -51,6 +64,11 @@
 @media (min-width: 768px) {
   .start_page.page .about_us_block .offer {
     font-size: calc(20px + 38 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .start_page.page .about_us_block .offer {
+    display: none;
   }
 }
 .start_page.page .clicks {

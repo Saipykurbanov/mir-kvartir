@@ -17,12 +17,14 @@
         .description_block {
             .description {
                 color: var(--font-grey);
-                font-size: 18px;
-                letter-spacing: 1%;
                 max-width: 370px;
                 width: 100%;
                 line-height: 22px;
                 margin-bottom: 20px;
+                @include adaptiveFont(18, 15);
+                @include mediaMaxWidth(991) {
+                    max-width: 500px;
+                }
             }
             .partners {
                 color: var(--orange);
@@ -33,6 +35,9 @@
             @include adaptiveFont(58, 20);
             line-height: 1.3em;
             text-transform: uppercase;
+            @include mediaMaxWidth(991) {
+                display: none;
+            }
         }
     }
     

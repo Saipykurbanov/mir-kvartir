@@ -14,11 +14,11 @@ const Main = () => {
     return (
         <div className='main_page'>
             
-            <StartPage />
+            <StartPage mode={page > 1 ? 'prev' : ''}/>
             
-            <About mode={`page ${page >= 2 ? "active" : ""}`}/>
-            <Managers mode={`page ${page >= 5 ? "active" : ""}`}/>
-            <FeedBack mode={`page ${page >= 6 ? "active" : ""}`}/>
+            <About mode={`page ${page >= 2 ? "active" : ""} ${page > 2 ? 'prev' : ''}`}/>
+            <Managers mode={`page ${page >= 5 ? "active" : ""} ${page > 5 ? 'prev' : ''}`}/>
+            <FeedBack mode={`page ${page >= 6 ? "active" : ""} ${page > 6 ? 'prev' : ''}`}/>
 
         </div>
     );
