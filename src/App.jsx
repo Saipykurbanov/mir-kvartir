@@ -3,7 +3,6 @@ import Main from './pages/main/Main';
 import Header from './components/header/Header';
 
 
-
 function App() {
 
   return (
@@ -16,6 +15,7 @@ function App() {
         <Routes>
 
             <Route path='/' element={<Main />}/>
+            
             <Route path='/profile' element={''}/>
 
         </Routes>

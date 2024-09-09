@@ -14,9 +14,15 @@
         transition: 1s;
         padding: 232px 30px 78px 30px;
         background-color: var(--background);
+        @include adaptiveProperty(padding-left, 30, 15);
+        @include adaptiveProperty(padding-right, 30, 15);
+        @include adaptiveProperty(padding-bottom, 78, 15);
+        @include adaptiveProperty(padding-top, 232, 135);
         &.main {
             position: static;
             transform: translateX(0);
+            @include adaptiveProperty(padding-bottom, 63, 15);
+            @include adaptiveProperty(padding-top, 312, 135);
         }
         &.active {
             transform: translateX(0);
@@ -28,7 +34,8 @@
             position: static;
             transform: translate(0);
             width: 100%;
-            padding: 30px;
+            @include adaptiveProperty(padding, 30, 15);
+            height: auto;
         }
     }
 }

@@ -16,9 +16,69 @@
   padding: 232px 30px 78px 30px;
   background-color: var(--background);
 }
+@media (max-width: 768px) {
+  .main_page .page {
+    padding-left: calc(15px + 25.5 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page {
+    padding-left: calc(15px + 15 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page {
+    padding-right: calc(15px + 25.5 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page {
+    padding-right: calc(15px + 15 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page {
+    padding-bottom: calc(15px + 107.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page {
+    padding-bottom: calc(15px + 63 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page {
+    padding-top: calc(135px + 164.9 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page {
+    padding-top: calc(135px + 97 * 0.0520833333vw);
+  }
+}
 .main_page .page.main {
   position: static;
   transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .main_page .page.main {
+    padding-bottom: calc(15px + 81.6 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.main {
+    padding-bottom: calc(15px + 48 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page.main {
+    padding-top: calc(135px + 300.9 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.main {
+    padding-top: calc(135px + 177 * 0.0520833333vw);
+  }
 }
 .main_page .page.active {
   transform: translateX(0);
@@ -31,6 +91,16 @@
     position: static;
     transform: translate(0);
     width: 100%;
-    padding: 30px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 992px) and (max-width: 768px) {
+  .main_page .page {
+    padding: calc(15px + 25.5 * (100vw - 320px) / 1920);
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .main_page .page {
+    padding: calc(15px + 15 * 0.0520833333vw);
   }
 }/*# sourceMappingURL=main_page.css.map */
