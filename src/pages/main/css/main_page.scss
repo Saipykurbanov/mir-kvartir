@@ -22,10 +22,23 @@
             position: static;
             transform: translateX(0);
             @include adaptiveProperty(padding-bottom, 63, 15);
-            @include adaptiveProperty(padding-top, 312, 135);
+            @include adaptiveProperty(padding-top, 302, 135);
+        }
+        &.about {
+            @include adaptiveProperty(padding-bottom, 63, 15);
+            @include adaptiveProperty(padding-top, 302, 135);
+            @include mediaMaxWidth(992) {
+                padding-top: 0px;
+            }
         }
         &.active {
             transform: translateX(0);
+        }
+        &.prev {
+            transform: translateX(-20%) scale(0.8);
+            @include mediaMaxWidth(991) {
+                transform: translateX(0);
+            }
         }
     }
     @include mediaMaxWidth(992) {

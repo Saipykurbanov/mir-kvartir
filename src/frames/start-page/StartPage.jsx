@@ -2,9 +2,9 @@ import React from 'react';
 import './css/start-page.css';
 
 
-const StartPage = () => {
+const StartPage = ({mode}) => {
     return (
-        <div className='start_page page main'>
+        <div className={`start_page page main ${mode}`}>
             <div className="about_us_block">
 
                 <div className="description_block">
