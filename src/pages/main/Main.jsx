@@ -13,6 +13,7 @@ const Main = () => {
         <div className='main_page'>
             
             <StartPage />
+            
             <About mode={`page ${page >= 2 ? "active" : ""}`}/>
 
         </div>
