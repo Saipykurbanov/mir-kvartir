@@ -18,7 +18,7 @@ const Managers = ({mode}) => {
 
                 <div className="manager_item">
 
-                    <div className="flex">
+                    <div className="grid">
 
                         <div className="contacts">
                             <div className="link">
@@ -52,7 +52,7 @@ const Managers = ({mode}) => {
                 </div>
 
                 <div className="manager_item">
-                    <div className="flex">
+                    <div className="grid">
 
                         <div className="contacts">
                             <div className="link">

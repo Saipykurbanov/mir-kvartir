@@ -43,5 +43,5 @@ export default function useScrollPages() {
         };
     }, [wheelFunction]);
 
-    return [page]
+    return {page, isBlocked}
 }
