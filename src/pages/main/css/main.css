@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_page {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.main_page .page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  height: 100%;
+  width: 100dvw;
+  transition: 1s;
+  padding: 232px 30px 30px 30px;
+}
+.main_page .page.main {
+  position: static;
+  transform: translateX(0);
+}
+.main_page .page.active {
+  transform: translateX(0);
+}/*# sourceMappingURL=main.css.map */

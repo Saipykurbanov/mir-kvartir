@@ -1,0 +1,56 @@
+@import './../../../style/common';
+
+.commission {
+    display: flex;
+    gap: 100px;
+
+    .comission_content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex: 1;
+
+        .about_commission {
+            width: 100%;
+            max-width: 330px;
+            display: flex;
+            flex-direction: column;
+            gap: 54px;
+            align-self: flex-start;
+            margin-top: 15%;
+    
+            & .about__item {
+                font-family: var(--button-font);
+    
+                & h3 {
+                    font-size: 24px;
+                    color: var(--orange);
+                    margin-bottom: 10px;
+                }
+    
+                & p {
+                    color: var(--font-white);
+                    font-size: 18px;
+                    line-height: 1.3;
+                    & span {
+                        color: var(--orange);
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    .percent_block {
+        position: relative;
+        height: 100%;
+        flex: 1;
+        overflow-x: hidden;
+        & img.percent {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+    }
+}

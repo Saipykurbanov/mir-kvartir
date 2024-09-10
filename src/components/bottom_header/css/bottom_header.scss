@@ -4,9 +4,10 @@
     margin-top: auto;
     display: flex;
     align-items: center;
+    flex-wrap: wrap-reverse;
     gap: 11px;
     & h2 {
-        font-size: 60px;
+        @include adaptiveFont(60, 26);
         text-transform: uppercase;
     }
 }

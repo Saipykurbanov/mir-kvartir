@@ -9,23 +9,31 @@
         align-items: center;
         width: 100%;
         justify-content: space-evenly;
+        flex-wrap: wrap;
         flex: 1 100%;
+        gap: 105px 40px;
+        
         .manager_item{
             flex: 1;
             max-width: 612px;
+            width: min-content;
 
-            .flex {
-                display: flex;
-                justify-content: space-between;
+            .grid {
+                display: grid;
+                grid-template-columns: minmax(100px, 200px) 1fr;
+                gap: 20px;
+                justify-content: center;
+
                 .contacts {
                     position: relative;
                     flex: 1;
-                    z-index: 2;
+                    z-index: 4;
                     max-width: 200px;
                     display: flex;
                     align-items: start;
                     flex-direction: column;
                     justify-content: space-around;
+
                     .link {
                         display: flex;
                         align-items: start;
@@ -36,28 +44,53 @@
                         }
 
                         .flex {
+                            display: flex;
+                            justify-content: space-between;
                             gap: 5px;
                             & a {
                                 display: block;
                                 white-space: nowrap;
                                 text-decoration: underline;
                                 color: var(--font-grey);
-                                font-size: 16px;
+                                @include adaptiveFont(16, 15);
                             }
                         }
+
                     }
 
                     .name {
-                        font-size: 60px;
-                        letter-spacing: -4px;
+                        @include adaptiveFont(60, 26);
+                        @include adaptiveProperty(letter-spacing, -4px, 1px);
                     }
 
                     .tel {
                         letter-spacing: -5%;
                         color: var(--orange);
                         font-size: 30px;
+                        @include adaptiveFont(30, 22);
                         font-family: var(--sanchez);
                         white-space: nowrap;
+                    }
+
+                    @include mediaMaxWidth(992) {
+                        justify-content: end;
+
+                        & .link {
+                            order: 2;
+                            margin-bottom: 5px;
+                            & .qr {
+                                display: none
+                            }
+                        }
+
+                        & .name {
+                            order: 1;
+                            margin-bottom: 20px;
+                        }
+
+                        & .tel {
+                            order: 3;
+                        }
                     }
                 }
                 
@@ -65,6 +98,8 @@
                     position: relative;
                     height: calc(var(--index) * 10);
                     width: calc(var(--index) * 10);
+                    min-width: 240px;
+                    min-height: 240px;
                     &:before {
                         content: '';
                         position: absolute;
@@ -88,6 +123,17 @@
                         display: flex;
                         align-items: end;
                         justify-content: center;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            @include adaptiveProperty(left, 30, 0);
+                            top: 0;
+                            height: 100%;
+                            width: 102px;
+                            background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                            z-index: 3;
+                        }
+
                         & img {
                             position: relative;
                             height: 97%;
@@ -99,8 +145,8 @@
             }
 
             .description {
-                margin-top: 10px;
-                font-size: 18px;
+                @include adaptiveProperty(margin-top, 10, 30);
+                @include adaptiveFont(18, 15);
                 line-height: 1.3;
                 & h3 {
                     color: var(--font-white);
