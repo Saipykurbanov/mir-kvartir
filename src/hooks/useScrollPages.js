@@ -12,7 +12,7 @@ export default function useScrollPages() {
     Store.useListener('change_page_header', setPage)
 
     const wheelFunction = useCallback((e) => {
-        if (window.innerWidth > 992 && !isBlocked.current) {
+        if (window.innerWidth > 991 && !isBlocked.current) {
             isBlocked.current = true;
             const wheel = e.deltaY;
 
@@ -31,7 +31,7 @@ export default function useScrollPages() {
     }, []);
 
     useEffect(() => {
-        if (window.innerWidth > 992) {
+        if (window.innerWidth > 991) {
             window.addEventListener("wheel", wheelFunction);
         }
 

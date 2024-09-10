@@ -78,6 +78,9 @@ input:-webkit-autofill:focus {
     caret-color: var(--font-white);
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
 
 main {
     width: 100%;

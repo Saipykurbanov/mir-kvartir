@@ -5,6 +5,8 @@ header {
   top: 78px;
   left: 0px;
   width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,26 +21,6 @@ header {
 @media (min-width: 768px) {
   header {
     top: calc(15px + 63 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  header {
-    padding-left: calc(15px + 25.5 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  header {
-    padding-left: calc(15px + 15 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  header {
-    padding-right: calc(15px + 25.5 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  header {
-    padding-right: calc(15px + 15 * 0.0520833333vw);
   }
 }
 @media (max-width: 768px) {

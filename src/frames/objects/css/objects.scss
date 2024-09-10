@@ -2,6 +2,14 @@
 
 .objects {
 
+    button.mob {
+        @include mediaMinWidth(992) {
+            display: none;
+        }
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
     .galery {
         width: 100%;
         flex: 1;
@@ -19,6 +27,32 @@
         height: 100%;
         min-height: 300px;
         max-height: 49dvh;
+        @include mediaMaxWidth(991) {
+            min-height: 400px;
+        }
+        @include mediaMaxWidth(768) {
+            min-height: 488px;
+            @include adaptiveProperty(min-height, 1500, 420);
+            gap: 7px;
+            grid-template-columns: repeat(30, 1fr);
+            grid-template-rows: repeat(14, 1fr);
+            grid-template-areas: 
+                'l l l l l l e e e e e e e e e e e e e e e e e e e e e e e e'
+                'l l l l l l e e e e e e e e e e e e e e e e e e e e e e e e'
+                'a a a a a a e e e e e e e e e e e e e e e e e e e e e e e e'
+                'a a a a a a e e e e e e e e e e e e e e e e e e e e e e e e'
+                'a a a a a a e e e e e e e e e e e e e e e e e e e e e e e e'
+                'f f f f f f f f f f f f f f f b b b b b b b b b b h h h h h'
+                'f f f f f f f f f f f f f f f b b b b b b b b b b h h h h h'
+                'f f f f f f f f f f f f f f f b b b b b b b b b b h h h h h'
+                'd d d d d d d d d d d d d d d g g g g g g g g g g g g g g g'
+                'd d d d d d d d d d d d d d d g g g g g g g g g g g g g g g'
+                'd d d d d d d d d d d d d d d g g g g g g g g g g g g g g g'
+                'd d d d d d d d d d d d d d d c c c c c c c c c c c c c c c'
+                'd d d d d d d d d d d d d d d c c c c c c c c c c c c c c c'
+                'd d d d d d d d d d d d d d d c c c c c c c c c c c c c c c'
+                ;
+        }
         .galery_image {
             position: relative;
             img {
@@ -29,6 +63,12 @@
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
+            }
+            &.l {
+                @include mediaMinWidth(769) {
+                    display: none;
+                }
+                grid-area: l;
             }
             &.a {
                 grid-area: a;
@@ -68,8 +108,8 @@
             width: 100dvw;  
             padding: 30px;
             background-color: var(--background-black);
-            @include adaptiveProperty(margin-left, -30, -15);
-            @include adaptiveProperty(margin-right, -30, -15);
+            margin-right: -30px;
+            margin-left: -30px;
         }
         .count {
             font-family: var(--sanchez);
