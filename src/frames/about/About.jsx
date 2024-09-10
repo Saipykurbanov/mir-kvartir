@@ -6,7 +6,7 @@ import fisrt from './images/first.svg'
 const About = ({ mode }) => {
 
     return (
-        <div className={`about ${mode}`}>
+        <div className={mode}>
 
             <div className="market_block">
                 <div className="images">
