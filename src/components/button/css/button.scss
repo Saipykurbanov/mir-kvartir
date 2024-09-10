@@ -10,22 +10,34 @@
     transition: 0.3s;
     @include adaptiveProperty(padding, 21, 8);
     @include adaptiveFont(18, 12);
+    @include mediaMaxWidth(991) {
+        @include adaptiveFont(18, 15);
+        @include adaptiveProperty(padding, 21, 17);
+    }
     &.full {
         width: 100%;
     }
     &.white {
         border-color: var(--font-white);
         color: var(--font-white);
-        &:hover {
-            background-color: var(--orange-rgb);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: var(--orange-rgb);
+            }
         }
     }
     &.orange {
         border-color: var(--orange);
         color: var(--orange);
-        &:hover {
-            background-color: var(--orange-rgb);
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: var(--orange-rgb);
+            }
         }
+    }
+    &.mob {
+        background-color: var(--orange-rgb);
+        color: var(--font-white);
     }
     &.small {
         min-width: 144px;
@@ -36,8 +48,10 @@
         font-weight: 400;
         font-family: var(--button-font);
         padding: 8.5px;
-        &:hover {
-            box-shadow: 0px 0px 20px 0px var(--orange);
+        @include mediaMinWidth(992) {
+            &:hover {
+                box-shadow: 0px 0px 20px 0px var(--orange);
+            }
         }
     }
     &.big {
@@ -48,8 +62,10 @@
         border: 0;
         font-weight: 400;
         font-family: var(--button-font);
-        &:hover {
-            box-shadow: 0px 0px 20px 0px var(--orange);
+        @include mediaMinWidth(992) {
+            &:hover {
+                box-shadow: 0px 0px 20px 0px var(--orange);
+            }
         }
     }
 }
