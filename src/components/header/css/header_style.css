@@ -56,6 +56,11 @@ header .account {
   flex-direction: column;
   gap: 12px;
 }
+@media screen and (max-width: 991px) {
+  header .account {
+    display: none;
+  }
+}
 header .navigation {
   width: 100%;
   max-width: 1254px;
@@ -63,6 +68,11 @@ header .navigation {
   align-items: center;
   justify-content: space-between;
   padding: 0px 30px;
+}
+@media screen and (max-width: 991px) {
+  header .navigation {
+    display: none;
+  }
 }
 header .navigation .line {
   flex: 1;

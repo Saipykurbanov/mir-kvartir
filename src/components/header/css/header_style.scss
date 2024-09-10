@@ -21,6 +21,9 @@ header {
         display: flex;
         flex-direction: column;
         gap: 12px;
+        @include mediaMaxWidth(991) {
+            display: none;
+        }
     }
 
     .navigation {
@@ -30,7 +33,9 @@ header {
         align-items: center;
         justify-content: space-between;
         padding: 0px 30px;
-
+        @include mediaMaxWidth(991) {
+            display: none;
+        }
         .line{
             flex: 1;
             height: 2px;
