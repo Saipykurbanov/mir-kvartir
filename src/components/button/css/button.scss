@@ -4,12 +4,12 @@
     border-width: 3px;
     border-style: solid;
     font-weight: 600;
-    font-size: 18px;
     line-height: 19px;
-    padding: 20.5px;
     min-width: 222px;
     text-align: center;
     transition: 0.3s;
+    @include adaptiveProperty(padding, 21, 8);
+    @include adaptiveFont(18, 12);
     &.full {
         width: 100%;
     }

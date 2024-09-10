@@ -108,6 +108,36 @@
 .main_page .page.active {
   transform: translateX(0);
 }
+.main_page .page.objects {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media (max-width: 768px) {
+  .main_page .page.objects {
+    padding-top: calc(135px + 283.9 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.objects {
+    padding-top: calc(135px + 167 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 992px) {
+  .main_page .page.objects {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page.objects {
+    gap: calc(20px + 51 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.objects {
+    gap: calc(20px + 30 * 0.0520833333vw);
+  }
+}
 .main_page .page.prev {
   transform: translateX(-20%) scale(0.8);
 }

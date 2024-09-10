@@ -4,12 +4,30 @@
   border-width: 3px;
   border-style: solid;
   font-weight: 600;
-  font-size: 18px;
   line-height: 19px;
-  padding: 20.5px;
   min-width: 222px;
   text-align: center;
   transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .main_button {
+    padding: calc(8px + 22.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_button {
+    padding: calc(8px + 13 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_button {
+    font-size: calc(12px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_button {
+    font-size: calc(12px + 6 * 0.0520833333vw);
+  }
 }
 .main_button.full {
   width: 100%;
