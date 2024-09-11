@@ -10,4 +10,8 @@
         @include adaptiveFont(60, 26);
         text-transform: uppercase;
     }
+
+    @include mediaMaxWidth(768) {
+        display: none;
+    }
 }

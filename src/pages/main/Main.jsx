@@ -22,7 +22,7 @@ const Main = () => {
             <Objects mode={`page objects ${page >= 3 ? "active" : ""} ${page > 3 ? 'prev' : ''}`}/>
             <Managers mode={`page ${page >= 5 ? "active" : ""} ${page > 5 ? 'prev' : ''}`}/>
             <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`}/>
-            <Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>  
+            {/*<Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>   */}
 
         </div>
     );
