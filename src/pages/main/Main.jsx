@@ -24,7 +24,7 @@ const Main = () => {
             <Process mode={`page process ${page >= 4 ? "active" : ""} ${page > 4 ? 'prev' : ''}`}/>
             <Managers mode={`page ${page >= 5 ? "active" : ""} ${page > 5 ? 'prev' : ''}`}/>
             <div className={`page ${page >= 6 ? "active" : ""} ${page > 6 ? 'prev' : ''}`}></div>
-            <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`}/>
+            <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`} blocked={isBlocked}/>
             <div className={`page ${page >= 8 ? "active" : ""} ${page > 8 ? 'prev' : ''}`}></div>
             <Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>  
             <div className={`page ${page >= 10 ? "active" : ""} ${page > 10 ? 'prev' : ''}`}></div>

@@ -13,7 +13,7 @@ import ManagerTitle from './components/ManagerTitle';
 
 const Managers = ({mode}) => {
     return (
-        <div className={`managers ${mode}`}> 
+        <div className={`${mode} managers`}> 
 
             <div className="manager_content">
 

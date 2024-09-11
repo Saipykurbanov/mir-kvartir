@@ -7,7 +7,7 @@ import percent from './images/30.svg'
 
 const Commission = ({mode}) => {
     return (
-        <div className={`commission ${mode}`}>
+        <div className={`${mode} commission`}>
 
             <div className="comission_content">
                 <div className="about_commission">
