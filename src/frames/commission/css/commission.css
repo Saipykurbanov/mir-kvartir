@@ -1,50 +1,116 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
 .commission {
-  display: flex;
-  gap: 100px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .commission {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .commission .comission_content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex: 1;
+  gap: 50px;
+  flex: 2;
 }
 .commission .comission_content .about_commission {
   width: 100%;
   max-width: 330px;
   display: flex;
   flex-direction: column;
-  gap: 54px;
   align-self: flex-start;
   margin-top: 15%;
+}
+@media (max-width: 768px) {
+  .commission .comission_content .about_commission {
+    gap: calc(40px + 23.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .commission .comission_content .about_commission {
+    gap: calc(40px + 14 * 0.0520833333vw);
+  }
 }
 .commission .comission_content .about_commission .about__item {
   font-family: var(--button-font);
 }
 .commission .comission_content .about_commission .about__item h3 {
-  font-size: 24px;
   color: var(--orange);
   margin-bottom: 10px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .commission .comission_content .about_commission .about__item h3 {
+    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .commission .comission_content .about_commission .about__item h3 {
+    font-size: calc(20px + 4 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 768px) {
+  .commission .comission_content .about_commission .about__item h3 {
+    color: var(--font-white);
+  }
 }
 .commission .comission_content .about_commission .about__item p {
   color: var(--font-white);
-  font-size: 18px;
   line-height: 1.3;
+}
+@media (max-width: 768px) {
+  .commission .comission_content .about_commission .about__item p {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .commission .comission_content .about_commission .about__item p {
+    font-size: calc(15px + 3 * 0.0520833333vw);
+  }
 }
 .commission .comission_content .about_commission .about__item p span {
   color: var(--orange);
   white-space: nowrap;
 }
+@media screen and (max-width: 768px) {
+  .commission .comission_content .about_commission .about__item p {
+    color: var(--font-grey);
+  }
+}
 .commission .percent_block {
   position: relative;
   height: 100%;
-  flex: 1;
-  overflow-x: hidden;
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
-.commission .percent_block img.percent {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+.commission .percent_block .percent_desc {
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 600px) {
+  .commission .percent_block {
+    display: none;
+  }
+}
+.commission .percent_mob {
+  padding: 30px;
+  width: 100dvw;
+  margin-left: -30px;
+  background: var(--background-black);
+}
+.commission .percent_mob img {
+  width: 100%;
+}
+@media screen and (min-width: 601px) {
+  .commission .percent_mob {
+    display: none;
+  }
 }/*# sourceMappingURL=commission.css.map */

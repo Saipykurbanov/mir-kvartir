@@ -1,21 +1,30 @@
 @import './../../../style/common';
 
 .commission {
-    display: flex;
-    gap: 100px;
+    display: grid;
+    grid-template-columns: 2fr 3fr; 
+    gap: 20px;
+    justify-content: space-between;
+
+    @include mediaMaxWidth(600) {
+        display: flex;
+        flex-direction: column;
+    }
 
     .comission_content {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        flex: 1;
+        height: 100%;   
+        gap: 50px;
+        // min-width: 315px;
+        flex: 2;
 
         .about_commission {
             width: 100%;
             max-width: 330px;
             display: flex;
             flex-direction: column;
-            gap: 54px;
+            @include adaptiveProperty(gap, 54, 40);
             align-self: flex-start;
             margin-top: 15%;
     
@@ -23,34 +32,61 @@
                 font-family: var(--button-font);
     
                 & h3 {
-                    font-size: 24px;
+                    @include adaptiveFont(24, 20);
                     color: var(--orange);
                     margin-bottom: 10px;
+                    white-space: nowrap;
+                    @include mediaMaxWidth(768) {
+                        color: var(--font-white);
+                    }
                 }
     
                 & p {
                     color: var(--font-white);
-                    font-size: 18px;
+                    @include adaptiveFont(18, 15);
                     line-height: 1.3;
                     & span {
                         color: var(--orange);
                         white-space: nowrap;
                     }
+
+                    @include mediaMaxWidth(768) {
+                        color: var(--font-grey);
+                    }
                 }
             }
         }
     }
-
+    
     .percent_block {
         position: relative;
         height: 100%;
-        flex: 1;
-        overflow-x: hidden;
-        & img.percent {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
+        flex: 3;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .percent_desc {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        @include mediaMaxWidth(600) {
+            display: none;   
+        }
+    }
+
+    .percent_mob {
+        padding: 30px;
+        width: 100dvw;
+        margin-left: -30px;
+        background: var(--background-black);
+        & img {
+            width: 100%;
+        }
+
+        @include mediaMinWidth(601) {
+            display: none;
         }
     }
 }

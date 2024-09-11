@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap-reverse;
-    gap: 11px;
+    gap: 20px 11px;
     & h2 {
         @include adaptiveFont(60, 26);
         text-transform: uppercase;

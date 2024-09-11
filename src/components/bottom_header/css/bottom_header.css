@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap-reverse;
-  gap: 11px;
+  gap: 20px 11px;
 }
 .bottom_header h2 {
   text-transform: uppercase;
