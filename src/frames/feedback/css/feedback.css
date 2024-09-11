@@ -5,19 +5,33 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  row-gap: 40px;
 }
 .feedback.page .container {
-  height: 50dvh;
   max-width: 1326px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  margin-top: auto;
-  margin-bottom: auto;
-  overflow: auto;
+}
+@media (max-width: 768px) {
+  .feedback.page .container {
+    gap: calc(40px + 68 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .container {
+    gap: calc(40px + 40 * 0.0520833333vw);
+  }
 }
 .feedback.page .container::-webkit-scrollbar {
   width: 0;
+}
+@media screen and (min-width: 992px) {
+  .feedback.page .container {
+    height: 50dvh;
+    overflow: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
 .feedback.page .bottom {
   width: 100%;
@@ -29,13 +43,29 @@
   width: 100%;
   display: flex;
   align-items: start;
-  gap: 90px;
   border-bottom: 1px solid var(--font-grey);
-  padding-bottom: 67px;
+}
+@media (max-width: 768px) {
+  .feedback.page .feedback_item {
+    gap: calc(20px + 119 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item {
+    gap: calc(20px + 70 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .feedback.page .feedback_item {
+    padding-bottom: calc(30px + 62.9 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item {
+    padding-bottom: calc(30px + 37 * 0.0520833333vw);
+  }
 }
 .feedback.page .feedback_item .user_icon {
-  height: 66px;
-  min-width: 66px;
   background: var(--orange);
   border-radius: 50%;
   color: var(--font-white);
@@ -44,24 +74,63 @@
   justify-content: center;
   font-size: 36px;
 }
+@media (max-width: 768px) {
+  .feedback.page .feedback_item .user_icon {
+    min-height: calc(60px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item .user_icon {
+    min-height: calc(60px + 6 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .feedback.page .feedback_item .user_icon {
+    min-width: calc(60px + 10.2 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item .user_icon {
+    min-width: calc(60px + 6 * 0.0520833333vw);
+  }
+}
 .feedback.page .feedback_item .feedback_content {
   padding-right: 80px;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .feedback.page .feedback_item .feedback_content {
+    padding-right: calc(30px + 85 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item .feedback_content {
+    padding-right: calc(30px + 50 * 0.0520833333vw);
+  }
+}
 .feedback.page .feedback_item .feedback_content .head {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px 40px;
   flex-wrap: wrap;
-  font-size: 18px;
   color: var(--font-white);
+}
+@media (max-width: 768px) {
+  .feedback.page .feedback_item .feedback_content .head {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item .feedback_content .head {
+    font-size: calc(15px + 3 * 0.0520833333vw);
+  }
 }
 .feedback.page .feedback_item .feedback_content .head h4 {
   font-weight: 600;
   width: 100%;
   max-width: 450px;
 }
-.feedback.page .feedback_item .feedback_content .head span {
+.feedback.page .feedback_item .feedback_content .head p.comission {
   display: block;
   width: 100%;
   max-width: 300px;
@@ -69,8 +138,32 @@
   padding: 11px 24px;
   font-weight: 300;
 }
-.feedback.page .feedback_item .feedback_content p {
+.feedback.page .feedback_item .feedback_content p.desc {
   margin-top: 14px;
-  font-size: 18px;
   color: var(--font-white);
+}
+@media (max-width: 768px) {
+  .feedback.page .feedback_item .feedback_content p.desc {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .feedback.page .feedback_item .feedback_content p.desc {
+    font-size: calc(15px + 3 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 768px) {
+  .feedback.page {
+    background: var(--background);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .feedback.page .container {
+    gap: 0;
+  }
+  .feedback.page .feedback_item {
+    padding: 46px 30px 30px 30px;
+    border-top: 1px solid var(--font-grey);
+    border-bottom: 0;
+  }
 }/*# sourceMappingURL=feedback.css.map */

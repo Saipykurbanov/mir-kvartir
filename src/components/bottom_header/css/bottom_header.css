@@ -19,4 +19,9 @@
   .bottom_header h2 {
     font-size: calc(26px + 34 * 0.0520833333vw);
   }
+}
+@media screen and (max-width: 768px) {
+  .bottom_header {
+    display: none;
+  }
 }/*# sourceMappingURL=bottom_header.css.map */

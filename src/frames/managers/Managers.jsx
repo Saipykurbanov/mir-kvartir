@@ -9,12 +9,15 @@ import ruslan from './images/ruslan.svg'
 import ruslan_qr from './images/ruslan_qr.svg'
 
 import chat from './../../icons/chat_icon.svg'
+import ManagerTitle from './components/ManagerTitle';
 
 const Managers = ({mode}) => {
     return (
         <div className={`managers ${mode}`}> 
 
             <div className="manager_content">
+
+                <ManagerTitle>Управляющий по первичному рынку</ManagerTitle>
 
                 <div className="manager_item">
 
@@ -50,6 +53,8 @@ const Managers = ({mode}) => {
                     </div>
 
                 </div>
+
+                <ManagerTitle>Управляющий по вторичному рынку</ManagerTitle>
 
                 <div className="manager_item">
                     <div className="grid">

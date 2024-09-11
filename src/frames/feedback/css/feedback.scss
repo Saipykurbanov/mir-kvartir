@@ -5,17 +5,21 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    row-gap: 40px;
     .container {
-        height: 50dvh;
         max-width: 1326px;
         display: flex;
         flex-direction: column;
-        gap: 80px;
-        margin-top: auto;
-        margin-bottom: auto;
-        overflow: auto;
+        @include adaptiveProperty(gap, 80, 40);
         &::-webkit-scrollbar{
             width: 0;
+        }
+
+        @include mediaMinWidth(992) {
+            height: 50dvh;
+            overflow: auto;
+            margin-top: auto;
+            margin-bottom: auto;        
         }
     }
 
@@ -30,13 +34,13 @@
         width: 100%;
         display: flex;
         align-items: start;
-        gap: 90px;
+        @include adaptiveProperty(gap, 90, 20);
         border-bottom: 1px solid var(--font-grey);
-        padding-bottom: 67px;
+        @include adaptiveProperty(padding-bottom, 67, 30);
 
         .user_icon{
-            height: 66px;
-            min-width: 66px;
+            @include adaptiveProperty(min-height, 66, 60);
+            @include adaptiveProperty(min-width, 66, 60);
             background: var(--orange);
             border-radius: 50%;
             color: var(--font-white);
@@ -49,13 +53,14 @@
         .feedback_content {
             padding-right: 80px;
             width: 100%;
+            @include adaptiveProperty(padding-right, 80, 30);
 
             .head {
                 display: flex;
                 align-items: center;
-                gap: 40px;
+                gap: 20px 40px;
                 flex-wrap: wrap;
-                font-size: 18px;
+                @include adaptiveFont(18, 15);
                 color: var(--font-white);
 
                 & h4 {
@@ -64,7 +69,7 @@
                     max-width: 450px;
                 }
 
-                & span {
+                & p.comission {
                     display: block;
                     width: 100%;
                     max-width: 300px;
@@ -74,11 +79,27 @@
                 }
             }
 
-            & p {
+            & p.desc {
                 margin-top: 14px;
-                font-size: 18px;
+                @include adaptiveFont(18, 15);
                 color: var(--font-white);
             }
+        }
+    }
+
+    @include mediaMaxWidth(768) {
+        background: var(--background);
+        padding-left: 0;
+        padding-right: 0;
+
+        .container {
+            gap: 0;
+        }
+
+        .feedback_item {
+            padding: 46px 30px 30px 30px;
+            border-top: 1px solid var(--font-grey);
+            border-bottom: 0;
         }
     }
 }

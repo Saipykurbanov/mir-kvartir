@@ -3,7 +3,8 @@
 .managers {
     display: flex;
     flex-direction: column;
-    --index: calc(1vw + 2.1vh);
+    --index: calc(1.3vw + 2.1vh);
+    
     .manager_content {
         display: flex;
         align-items: center;
@@ -11,24 +12,54 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
         flex: 1 100%;
-        gap: 105px 40px;
+        gap: 0 40px;
+        margin-bottom: 40px;
+
+        @include mediaMaxWidth(768) {
+            flex-direction: column;
+        }
+
+        .manager_title {
+            width: 100dvw;
+            padding: 40px 30px;
+            font-weight: 600;
+            background: var(--background-black);
+            @include adaptiveFont(60, 26);
+            margin: 0;
+            @include adaptiveProperty(margin-left, -30, -15);
+            @include adaptiveProperty(margin-right, -30, -15);
+            @include adaptiveProperty(margin-bottom, 60, 30);
+
+            @include mediaMinWidth(768) {
+                display: none;
+            }
+        }
         
         .manager_item{
-            flex: 1;
-            max-width: 612px;
+
             width: min-content;
+            // @include mediaMinWidth(992) {
+            //     flex: 1;
+            //     max-width: 612px;
+            // }
+
+            @include mediaMaxWidth(992) {
+                margin-bottom: 100px;
+            }
 
             .grid {
-                display: grid;
-                grid-template-columns: minmax(100px, 200px) 1fr;
-                gap: 20px;
+                // display: grid;
+                display: flex;
                 justify-content: center;
+                width: max-content;
+                @include adaptiveProperty(gap, 20, 0);
 
                 .contacts {
                     position: relative;
                     flex: 1;
                     z-index: 4;
                     max-width: 200px;
+                    @include adaptiveProperty(max-width, 200, 80);
                     display: flex;
                     align-items: start;
                     flex-direction: column;
@@ -60,7 +91,7 @@
 
                     .name {
                         @include adaptiveFont(60, 26);
-                        @include adaptiveProperty(letter-spacing, -4px, 1px);
+                        letter-spacing: -4px;
                     }
 
                     .tel {
@@ -86,10 +117,12 @@
                         & .name {
                             order: 1;
                             margin-bottom: 20px;
+                            letter-spacing: 2px;
                         }
 
                         & .tel {
                             order: 3;
+                            letter-spacing: -1px;
                         }
                     }
                 }
@@ -100,6 +133,8 @@
                     width: calc(var(--index) * 10);
                     min-width: 240px;
                     min-height: 240px;
+                    max-width: 378px;
+                    max-height: 378px;
                     &:before {
                         content: '';
                         position: absolute;
@@ -114,9 +149,9 @@
                         pointer-events: none;
                     }
                     .manager_image {
+                        position: relative;
                         height: 100%;
                         width: 100%;
-                        position: relative;
                         overflow: hidden;
                         border: 1px solid var(--font-grey);
                         border-radius: 50%;
@@ -132,6 +167,14 @@
                             width: 102px;
                             background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
                             z-index: 3;
+
+                            @include mediaMaxWidth(992) {
+                                width: 100%;
+                                top: calc(100% - 100px);
+                                height: 100px;
+                                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                                // transform: rotate(295deg);
+                            }
                         }
 
                         & img {

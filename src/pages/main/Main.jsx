@@ -24,7 +24,7 @@ const Main = () => {
             <Process mode={`page process ${page >= 4 ? "active" : ""} ${page > 4 ? 'prev' : ''}`}/>
             <Managers mode={`page ${page >= 5 ? "active" : ""} ${page > 5 ? 'prev' : ''}`}/>
             <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`}/>
-            <Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>  
+            {/*<Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>   */}
 
         </div>
     );
