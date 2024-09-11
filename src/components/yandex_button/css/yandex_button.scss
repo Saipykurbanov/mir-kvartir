@@ -2,16 +2,24 @@
 
 .yandex_button {
     font-family: var(--button-font);
-    padding: 13px;
+    @include adaptiveProperty(padding, 13, 6.6);
+    @include adaptiveProperty(border-radius, 15, 5);
+    @include adaptiveProperty(gap, 13.5, 6.7);
     background: #fff;
-    border-radius: 15px;
-    font-size: 28px;
+    @include adaptiveFont(28, 12);
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 13.5px;
+    transition: 0.3s;
+    
     & img {
-        width: 33px;
-        height: 33px;
+        @include adaptiveProperty(height, 33, 18);
+        @include adaptiveProperty(width, 33, 18);
+    }
+
+    @include mediaMinWidth(992) {
+        &:hover {
+            box-shadow: 0px 0px 10px 0px #FFFFFF;
+        }
     }
 }

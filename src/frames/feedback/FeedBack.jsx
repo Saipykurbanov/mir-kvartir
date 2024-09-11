@@ -4,6 +4,7 @@ import './css/feedback.css';
 import BottomHeader from '../../components/bottom_header/BottomHeader';
 import YandexButton from '../../components/yandex_button/YandexButton';
 import FeedbackItem from './components/FeedbackItem';
+import Button from '../../components/button/Button';
 
 const FeedBack = ({mode, blocked}) => {
 
@@ -18,7 +19,7 @@ const FeedBack = ({mode, blocked}) => {
     }
 
     return (
-        <div className={`feedback ${mode}`}>
+        <div className={`${mode} feedback`}>
             <div 
                 className="container" 
                 ref={feedbackContainer} 
@@ -28,11 +29,16 @@ const FeedBack = ({mode, blocked}) => {
 
                 <FeedbackItem />
                 <FeedbackItem />
+                <FeedbackItem />
+                <FeedbackItem last={true}/>
 
             </div>
 
             <div className="bottom">
-                <BottomHeader title={'Кейсы'}/>
+                {/* <BottomHeader title={'Кейсы'}/> */}
+                <Button  mode={'big'} content={'Передать Клиента'}/>
+                <h2>Кейсы</h2>
+                
                 <YandexButton />
             </div>
 

@@ -1,11 +1,16 @@
 @import './../../../style/common';
 
-.managers {
+.page.managers {
     display: flex;
     flex-direction: column;
     --index: calc(1.3vw + 2.1vh);
-    
+    // @include mediaMaxWidth(768) {
+    //     padding-left: 0;
+    //     padding-right: 0;
+    // }
+
     .manager_content {
+        position: relative;
         display: flex;
         align-items: center;
         width: 100%;
@@ -17,6 +22,8 @@
 
         @include mediaMaxWidth(768) {
             flex-direction: column;
+            // padding-left: 30px;
+            // padding-right: 30px;
         }
 
         .manager_title {
@@ -25,9 +32,11 @@
             font-weight: 600;
             background: var(--background-black);
             @include adaptiveFont(60, 26);
-            margin: 0;
-            @include adaptiveProperty(margin-left, -30, -15);
-            @include adaptiveProperty(margin-right, -30, -15);
+            // margin: 0;
+            // @include adaptiveProperty(margin-left, -30, -15);
+            // @include adaptiveProperty(margin-right, -30, -15);
+            //margin-right: -30px;
+            margin-left: -30px;
             @include adaptiveProperty(margin-bottom, 60, 30);
 
             @include mediaMinWidth(768) {
@@ -38,17 +47,12 @@
         .manager_item{
 
             width: min-content;
-            // @include mediaMinWidth(992) {
-            //     flex: 1;
-            //     max-width: 612px;
-            // }
 
             @include mediaMaxWidth(992) {
                 margin-bottom: 100px;
             }
 
             .grid {
-                // display: grid;
                 display: flex;
                 justify-content: center;
                 width: max-content;
