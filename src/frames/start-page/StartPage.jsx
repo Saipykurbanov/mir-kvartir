@@ -4,7 +4,7 @@ import './css/start-page.css';
 
 const StartPage = ({mode}) => {
     return (
-        <div className={`start_page page main ${mode}`}>
+        <div className={`start_page page main`}>
             <div className="about_us_block">
 
                 <div className="description_block">
