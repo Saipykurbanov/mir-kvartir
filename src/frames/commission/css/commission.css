@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  margin-top: 15%;
+  margin-top: auto;
 }
 @media (max-width: 768px) {
   .commission .comission_content .about_commission {
@@ -93,7 +93,7 @@
 }
 .commission .percent_block .percent_desc {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 }
 @media screen and (max-width: 600px) {
   .commission .percent_block {

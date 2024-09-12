@@ -9,6 +9,7 @@ import FeedBack from '../../frames/feedback/FeedBack';
 import Commission from '../../frames/commission/Commission';
 import Objects from '../../frames/objects/Objects';
 import Process from '../../frames/process/Process';
+import Contacts from '../../frames/contacts/Contacts';
 
 const Main = () => {
 
@@ -27,7 +28,7 @@ const Main = () => {
             <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`} blocked={isBlocked}/>
             <div className={`page ${page >= 8 ? "active" : ""} ${page > 8 ? 'prev' : ''}`}></div>
             <Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>  
-            <div className={`page ${page >= 10 ? "active" : ""} ${page > 10 ? 'prev' : ''}`}></div>
+            <Contacts mode={`page ${page >= 10 ? "active" : ""} ${page > 10 ? 'prev' : ''}`}/>
 
         </div>
     );
