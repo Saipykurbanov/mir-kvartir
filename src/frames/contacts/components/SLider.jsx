@@ -54,7 +54,7 @@ const SLider = () => {
     return (
         <div className='slider_container' onMouseMove={(e) => hoverOnSlider(e)} onMouseLeave={(e) => leaveSlider(e)}>
             <Swiper
-                allowTouchMove={true}
+            allowTouchMove={true}
                 ref={swiperContainer}
                 loop={true}
                 rewind={true}
@@ -68,7 +68,7 @@ const SLider = () => {
                 modules={[Navigation, Pagination]}
                 breakpoints={{
                     992: {
-                        allowTouchMove: 'false'
+                        allowTouchMove: false
                     }
                 }}
             >
