@@ -4,31 +4,43 @@ import Store from "../utils/Store";
 export default function useScrollPages() {
 
     const [page, setPage] = useState(1);
-    const isBlocked = useRef(false);
-    const timer = useRef(null);
-
-    Store.setListener("change_page", page)
-
-    Store.useListener('change_page_header', setPage)
+    const [scroll, setScroll] = useState(0)
+    const isBlocked = useRef(false)
+    const timer = useRef(null)
+    const count = 10
+  
+    Store.useListener('change_page_header', setScroll)
 
     const wheelFunction = useCallback((e) => {
-        if (window.innerWidth > 991 && !isBlocked.current) {
+      if (window.innerWidth > 992 && !isBlocked.current) {
+        const wheel = e.deltaY;
+        
+        if(wheel > 0) {
+          if(((100 * page) - 40) < scroll) {
+            setScroll(100 * page);
+            setPage(prev => prev + 1);
             isBlocked.current = true;
-            const wheel = e.deltaY;
-
-            setPage((prev) => {
-                if (wheel > 0) {
-                    return prev >= 10 ? prev : prev + 1;
-                } else {
-                    return prev <= 1 ? prev : prev - 1;
-                }
-            });
-
-            timer.current = setTimeout(() => {
-                isBlocked.current = false;
-            }, 1000);
+            setTimeout(() => { 
+              isBlocked.current = false;
+            }, 700);
+          } else {
+            setScroll(prev => prev >= (100 * (count - 1)) ? prev : prev + 5);
+          }
+        } else {
+          if(((100 * (page - 1)) - 60) > scroll) {
+            setScroll(100 * (page - 2));
+            setPage(prev => prev - 1);
+            isBlocked.current = true;
+            setTimeout(() => { 
+              isBlocked.current = false;
+            }, 700)
+          } else {
+            setScroll(prev => prev <= 1 ? prev : prev - 5)
+          }
         }
-    }, []);
+      }
+    }, [page, scroll]); 
+
 
     useEffect(() => {
         if (window.innerWidth > 991) {
@@ -43,5 +55,5 @@ export default function useScrollPages() {
         };
     }, [wheelFunction]);
 
-    return {page, isBlocked}
+    return {isBlocked, scroll}
 }

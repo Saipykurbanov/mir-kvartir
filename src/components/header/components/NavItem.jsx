@@ -5,7 +5,8 @@ import Store from '../../../utils/Store';
 const NavItem = ({title, decor, mode, num, page}) => {
 
     const changePage = () => {
-        Store.setListener('change_page_header', num)
+        Store.setListener('change_page_header', ((num - 1) * 100))
+        Store.setListener('change_page', num)
     }
 
     return (

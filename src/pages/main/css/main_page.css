@@ -1,17 +1,28 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
 .main_page {
-  height: 100%;
+  position: relative;
+  min-height: 100dvh;
   width: 100%;
   overflow: hidden;
 }
-.main_page .page {
-  position: fixed;
+.main_page .main_wrapper {
+  position: absolute;
   top: 0;
   left: 0;
-  transform: translateX(100%);
-  height: 100dvh;
-  width: 100dvw;
+  display: grid;
+  grid-template-columns: repeat(10, 100dvw);
+  grid-auto-rows: 100dvh;
+  transition: 0.6s;
+  will-change: transform;
+}
+@media screen and (max-width: 991px) {
+  .main_page .main_wrapper {
+    position: static;
+    display: block;
+  }
+}
+.main_page .page {
   transition: 1s;
   padding: 232px 30px 78px 30px;
   background-color: var(--background);
@@ -36,30 +47,6 @@
 @media (min-width: 768px) {
   .main_page .page {
     padding-top: calc(135px + 97 * 0.0520833333vw);
-  }
-}
-.main_page .page.main {
-  position: static;
-  transform: translateX(0);
-}
-@media (max-width: 768px) {
-  .main_page .page.main {
-    padding-bottom: calc(15px + 81.6 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .main_page .page.main {
-    padding-bottom: calc(15px + 48 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .main_page .page.main {
-    padding-top: calc(135px + 283.9 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .main_page .page.main {
-    padding-top: calc(135px + 167 * 0.0520833333vw);
   }
 }
 @media (max-width: 768px) {
@@ -87,8 +74,29 @@
     padding-top: 0px;
   }
 }
-.main_page .page.active {
+.main_page .page.main {
+  position: static;
   transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .main_page .page.main {
+    padding-bottom: calc(15px + 81.6 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.main {
+    padding-bottom: calc(15px + 48 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .main_page .page.main {
+    padding-top: calc(135px + 283.9 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .main_page .page.main {
+    padding-top: calc(135px + 167 * 0.0520833333vw);
+  }
 }
 .main_page .page.objects {
   display: flex;
@@ -145,21 +153,11 @@
     padding-top: 100px;
   }
 }
-.main_page .page.prev {
-  transform: translateX(-20%) scale(0.8);
-}
-@media screen and (max-width: 991px) {
-  .main_page .page.prev {
-    transform: translateX(0);
-  }
-}
 @media screen and (max-width: 991px) {
   .main_page {
     overflow: visible;
   }
   .main_page .page {
-    position: static;
-    transform: translate(0);
     width: 100%;
     height: auto;
   }

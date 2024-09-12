@@ -13,22 +13,26 @@ import Contacts from '../../frames/contacts/Contacts';
 
 const Main = () => {
 
-    const {page, isBlocked} = useScrollPages()
+    const {isBlocked, scroll} = useScrollPages()
 
     return (
         <div className='main_page'>
+
+            <div className={`main_wrapper`} style={{transform: `translateX(-${scroll}dvw)`}}>
+
+                <StartPage mode={`page`}/>
+                <About mode={`page about`}/>
+                <Objects mode={`page objects`}/>
+                <Process mode={`page process`}/>
+                <Managers mode={`page`}/>
+                <div className={`page`}></div>
+                <FeedBack mode={`page`} blocked={isBlocked}/>
+                <div className={`page`}></div>
+                <Commission mode={`page`}/>  
+                <Contacts mode={`page`}/>
+
+            </div>
             
-            <StartPage mode={page > 1 ? 'prev' : ''}/>
-            
-            <About mode={`page about ${page >= 2 ? "active" : ""} ${page > 2 ? 'prev' : ''}`}/>
-            <Objects mode={`page objects ${page >= 3 ? "active" : ""} ${page > 3 ? 'prev' : ''}`}/>
-            <Process mode={`page process ${page >= 4 ? "active" : ""} ${page > 4 ? 'prev' : ''}`}/>
-            <Managers mode={`page ${page >= 5 ? "active" : ""} ${page > 5 ? 'prev' : ''}`}/>
-            <div className={`page ${page >= 6 ? "active" : ""} ${page > 6 ? 'prev' : ''}`}></div>
-            <FeedBack mode={`page ${page >= 7 ? "active" : ""} ${page > 7 ? 'prev' : ''}`} blocked={isBlocked}/>
-            <div className={`page ${page >= 8 ? "active" : ""} ${page > 8 ? 'prev' : ''}`}></div>
-            <Commission mode={`page ${page >= 9 ? "active" : ""} ${page > 9 ? 'prev' : ''}`}/>  
-            <Contacts mode={`page ${page >= 10 ? "active" : ""} ${page > 10 ? 'prev' : ''}`}/>
 
         </div>
     );
