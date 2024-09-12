@@ -3,11 +3,7 @@
 .page.managers {
     display: flex;
     flex-direction: column;
-    --index: calc(1.3vw + 2.1vh);
-    // @include mediaMaxWidth(768) {
-    //     padding-left: 0;
-    //     padding-right: 0;
-    // }
+    --index: calc(1vw + 1.9vh);
 
     .manager_content {
         position: relative;
@@ -15,15 +11,15 @@
         align-items: center;
         width: 100%;
         justify-content: space-evenly;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         flex: 1 100%;
         gap: 0 40px;
         margin-bottom: 40px;
-
+        @include mediaMaxWidth(992) {
+            flex-wrap: wrap;
+        }
         @include mediaMaxWidth(768) {
             flex-direction: column;
-            // padding-left: 30px;
-            // padding-right: 30px;
         }
 
         .manager_title {
@@ -32,10 +28,6 @@
             font-weight: 600;
             background: var(--background-black);
             @include adaptiveFont(60, 26);
-            // margin: 0;
-            // @include adaptiveProperty(margin-left, -30, -15);
-            // @include adaptiveProperty(margin-right, -30, -15);
-            //margin-right: -30px;
             margin-left: -30px;
             @include adaptiveProperty(margin-bottom, 60, 30);
 
@@ -63,7 +55,7 @@
                     flex: 1;
                     z-index: 4;
                     max-width: 200px;
-                    @include adaptiveProperty(max-width, 200, 80);
+                    @include adaptiveProperty(max-width, 200, 73);
                     display: flex;
                     align-items: start;
                     flex-direction: column;
@@ -133,8 +125,10 @@
                 
                 .manager_image_wrapper {
                     position: relative;
-                    height: calc(var(--index) * 10);
-                    width: calc(var(--index) * 10);
+                    // height: calc(var(--index) * 10);
+                    // width: calc(var(--index) * 10);
+                    @include adaptiveProperty(width, 378, 220);
+                    @include adaptiveProperty(height, 378, 220);
                     min-width: 240px;
                     min-height: 240px;
                     max-width: 378px;

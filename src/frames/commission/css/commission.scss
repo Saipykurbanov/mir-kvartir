@@ -26,7 +26,7 @@
             flex-direction: column;
             @include adaptiveProperty(gap, 54, 40);
             align-self: flex-start;
-            margin-top: 15%;
+            margin-top: auto;
     
             & .about__item {
                 font-family: var(--button-font);
@@ -68,7 +68,7 @@
 
         .percent_desc {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         @include mediaMaxWidth(600) {
