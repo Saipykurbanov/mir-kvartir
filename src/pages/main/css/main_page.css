@@ -2,7 +2,8 @@
 /*-------------Миксины----------------*/
 .main_page {
   position: relative;
-  min-height: 100dvh;
+  /*----------Новые было min-height 100dvh вместо height-----------*/
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -13,11 +14,12 @@
   display: grid;
   grid-template-columns: repeat(10, 100dvw);
   grid-auto-rows: 100dvh;
-  transition: 0.6s;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   will-change: transform;
 }
 @media screen and (max-width: 991px) {
   .main_page .main_wrapper {
+    transform: translateX(0);
     position: static;
     display: block;
   }

@@ -2,7 +2,8 @@
 
 .main_page {
     position: relative;
-    min-height: 100dvh;
+    /*----------Новые было min-height 100dvh вместо height-----------*/
+    height: 100%;
     width: 100%;
     overflow: hidden;
     .main_wrapper {
@@ -12,9 +13,11 @@
         display: grid;
         grid-template-columns: repeat(10, 100dvw);
         grid-auto-rows: 100dvh;
-        transition: 0.6s;
+        transition: transform .6s cubic-bezier(.215,.61,.355,1);
         will-change: transform;
+        
         @include mediaMaxWidth(991) {
+            transform: translateX(0);
             position: static;
             display: block;
         }
