@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/main/Main';
 import Header from './components/header/Header';
+import SignIn from './components/modal/SignIn';
 
 
 function App() {
@@ -10,8 +11,6 @@ function App() {
 
       <Router>
 
-        <Header />
-
         <Routes>
 
             <Route path='/' element={<Main />}/>
@@ -19,6 +18,8 @@ function App() {
             <Route path='/profile' element={''}/>
 
         </Routes>
+
+        <SignIn />
 
       </Router>
      
