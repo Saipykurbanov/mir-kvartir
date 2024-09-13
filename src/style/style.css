@@ -63,6 +63,13 @@ html, body {
   scroll-behavior: smooth;
   color: var(--font-white);
   background: var(--background);
+  /*----------Новые -----------*/
+  height: 100%;
+}
+
+/*----------Новые -----------*/
+#root {
+  height: 100%;
 }
 
 input, button, textarea {
