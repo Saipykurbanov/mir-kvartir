@@ -1,2 +1,191 @@
 @import './../../../style/common';
 
+.profile {
+    width: 100%;
+    min-height: 100%;   
+    background-color: var(--background-lite);
+    @include adaptiveProperty(padding-top, 98, 20);
+    @include adaptiveProperty(padding-bottom, 78, 40);
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    .profile_container {
+        @include adaptiveProperty(margin-left, 234, 105);
+        @include adaptiveProperty(margin-right, 78, 0);
+        .user {
+            margin-bottom: 5dvh;
+            .name {
+                @include adaptiveFont(40, 30);
+                color: var(--font-black);
+                line-height: 1em;
+                letter-spacing: -0.05em;
+                margin-bottom: 10px;
+                margin-left: 10px;
+            }
+            .status {
+                @include adaptiveFont(26, 20);
+                color: var(--orange);
+                width: max-content;
+                border: 1px solid var(--font-grey-lite);
+                padding: 5px 10px;
+                letter-spacing: -0.05em;
+            }
+        }
+        .clients {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 612fr 846fr;
+            @include adaptiveProperty(gap, 90, 40);
+            .title_profile {
+                text-transform: lowercase;
+                font-weight: 700;
+                color: var(--background);
+                @include adaptiveFont(24, 20);
+                @include mediaMaxWidth(991) {
+                    font-weight: 600;
+                    font-size: 26px;
+                }
+            }
+            .new_clients {
+                form {
+                    @include adaptiveProperty(margin-top, 30, 20);
+                    .check_block {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        gap:10px;
+                        width: 100%;
+                        max-width: 540px;
+                        @include adaptiveProperty(margin-bottom, 39, 20);
+                        .checkbox_input {
+                            display: flex;
+                            align-items: center;
+                            @include adaptiveProperty(gap, 14, 5);
+                            cursor: pointer;
+                            .checkbox {
+                                position: relative;
+                                @include adaptiveProperty(width, 24, 20);
+                                @include adaptiveProperty(height, 24, 20);
+                                border: 1px solid var(--font-grey-lite);
+                                .fill {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background-color: transparent;
+                                    border-radius: 50%;
+                                    @include adaptiveProperty(width, 14, 10);
+                                    @include adaptiveProperty(height, 14, 10);
+                                    &.active {
+                                        background-color: var(--orange);
+                                        box-shadow: 0px 0px 15px var(--orange);
+                                    }
+                                }
+                            }
+                            .label {
+                                text-transform: lowercase;
+                                @include adaptiveFont(16, 14);
+                                color: var(--orange);
+                                white-space: nowrap;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .input_block {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3dvh;
+                        .main_input {
+                            width: 100%;
+                            input {
+                                width: 100%;
+                                border-bottom: 1px solid var(--font-grey-lite);
+                                font-size: 16px;
+                                line-height: 19px;
+                                font-style: italic;
+                                background-color: transparent;
+                                margin-bottom: 5px;
+                                color: var(--font-black);
+                            }
+                            .label {
+                                font-weight: 700;
+                                color: var(--label);
+                                text-transform: lowercase;
+                            }
+                        }
+                    }
+
+                    .comment {
+                        display: flex;
+                        flex-wrap: wrap;
+                        @include adaptiveProperty(column-gap, 50, 25);
+                        row-gap: 10px;
+                        margin-top: 8dvh;
+                        min-height: 13.35dvh;
+                        .textarea {
+                            min-width: 300px;
+                            flex: 10;
+                            position: relative;
+                            background-color: transparent;
+                            border: 1px solid var(--font-grey-lite);
+                            padding: 4px 6px;
+                            min-height: 70px;
+                            textarea {
+                                width: 100%;
+                                background-color: transparent;
+                                vertical-align: bottom;
+                                height: 100%;
+                                resize: none;
+                            }
+                        }
+                        .transfer {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            gap: 10px;
+                            flex: 1;
+                            p,
+                            a {
+                                font-size: 9px;
+                                font-weight: 700;
+                                color: var(--font-grey-lite);
+                                text-transform: lowercase;
+                                line-height: 1em;
+                            }
+                            a {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .offer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include adaptiveProperty(gap, 28, 10);
+        h2 {
+            color: var(--font-black);
+            @include adaptiveFont(58, 30);
+            line-height: 1em;   
+            text-transform: uppercase;
+        }
+        p {
+            padding: 15px 30px;
+            @include adaptiveFont(28, 20);
+            width: max-content;
+            background-color: var(--background-beige);
+            color: var(--font-green);
+            font-weight: 500;
+        }
+    }
+}
