@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.modal_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 300;
+  transform: translateY(-100%);
+  transition: 0.6s;
+}
+.modal_wrapper.show {
+  transform: translate(0);
+}
+.modal_wrapper .sign_in {
+  width: 100%;
+  max-width: 924px;
+  background-color: var(--background);
+  border: 1px solid var(--font-grey);
+  min-height: 43dvh;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .sign_in {
+    padding: calc(40px + 64.6 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .sign_in {
+    padding: calc(40px + 38 * 0.0520833333vw);
+  }
+}
+.modal_wrapper .sign_in form {
+  width: 100%;
+  max-width: 611px;
+  margin: 0 auto;
+}
+.modal_wrapper .sign_in form .input_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .sign_in form .input_block {
+    gap: calc(20px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .sign_in form .input_block {
+    gap: calc(20px + 10 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .modal_wrapper .sign_in form .input_block {
+    margin-bottom: calc(30px + 51 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .sign_in form .input_block {
+    margin-bottom: calc(30px + 30 * 0.0520833333vw);
+  }
+}
+.modal_wrapper .sign_in form .input_block .main_input {
+  width: 100%;
+}
+.modal_wrapper .sign_in form .input_block .main_input input {
+  width: 100%;
+  border-bottom: 1px solid var(--font-grey-lite);
+  font-size: 16px;
+  line-height: 19px;
+  font-style: italic;
+  background-color: transparent;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.modal_wrapper .sign_in form .input_block .main_input .label {
+  font-weight: 700;
+  color: var(--label);
+  text-transform: lowercase;
+}
+.modal_wrapper .sign_in form a {
+  margin-top: 20px;
+  display: block;
+  font-size: 14px;
+  color: var(--orange);
+  text-decoration: underline;
+  font-family: var(--button-font);
+}/*# sourceMappingURL=modal.css.map */

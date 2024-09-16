@@ -8,6 +8,11 @@ import Store from '../../utils/Store';
 
 const Header = () => {
 
+    const openModal = () => {
+        document.body.style.overflow = 'hidden';
+        Store.setListener('signIn', 'show');
+    }
+
     const [theme, setTheme] = useState('')
     const [page, setPage] = useState(1)
 
@@ -24,6 +29,7 @@ const Header = () => {
 
     Store.useListener('change_page_from_scroll', (data) => changePage(data))
     
+  
     return (
         <header className={theme}>
             <img src={logo} alt="" className="logo" />
@@ -31,7 +37,7 @@ const Header = () => {
             <Navigation page={page}/>
 
             <div className="account">
-                <Button mode={theme === 'white' ? 'black' : 'white' } content={'Вход'}/> 
+                <Button mode={theme === 'white' ? 'black' : 'white' } content={'Вход'} callback={openModal}/> 
                 {page === 6 ? 
                     <Button mode={'grey'} content={'На главную'} callback={() => {
                         changePage(1)

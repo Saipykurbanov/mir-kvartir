@@ -10,6 +10,7 @@ import Commission from '../../frames/commission/Commission';
 import Objects from '../../frames/objects/Objects';
 import Process from '../../frames/process/Process';
 import Contacts from '../../frames/contacts/Contacts';
+import Header from '../../components/header/Header';
 import Registration from '../../frames/registration/Registration';
 
 const Main = () => {
@@ -18,6 +19,8 @@ const Main = () => {
 
     return (
         <div className='main_page'>
+
+            <Header />
 
             <div className={`main_wrapper`} style={{transform: `translateX(-${scroll}dvw)`}}>
 

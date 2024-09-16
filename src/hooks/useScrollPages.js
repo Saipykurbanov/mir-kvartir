@@ -7,6 +7,7 @@ export default function useScrollPages() {
     const [scroll, setScroll] = useState(0)
     const isBlocked = useRef(false)
     const [block, setBlock] = useState(false)
+
     const timer = useRef(null)
     const count = 10
   
