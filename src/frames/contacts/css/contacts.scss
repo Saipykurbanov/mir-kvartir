@@ -82,6 +82,11 @@
                     object-position: center;
                 }
             }
+            .swiper-pagination-bullet {
+                background: var(--background);
+                opacity: 1;
+                margin: 0 5px;
+            }
             .swiper-pagination-bullet.swiper-pagination-bullet-active {
                 background: var(--orange);
             }

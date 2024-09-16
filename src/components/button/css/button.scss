@@ -7,7 +7,8 @@
     line-height: 19px;
     min-width: 222px;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.5s ease-in-out;
+    animation: appear 0.8s ease;
     @include adaptiveProperty(padding, 21, 8);
     @include adaptiveFont(18, 12);
     @include mediaMaxWidth(991) {
@@ -20,6 +21,32 @@
     &.white {
         border-color: var(--font-white);
         color: var(--font-white);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
+        }
+    }
+    &.black {
+        border-color: var(--font-black);
+        color: var(--font-black);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
+        }
+    }
+    &.grey {
+        border-color: var(--button-grey);
+        color: var(--button-grey);
         background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
         background-repeat: no-repeat;
         background-position: 100% 100%;
@@ -75,6 +102,15 @@
                 box-shadow: 0px 0px 20px 0px var(--orange);
             }
         }
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

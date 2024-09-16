@@ -76,10 +76,10 @@ const SLider = () => {
                 <SwiperSlide><img src={two} alt="" /></SwiperSlide>
                 <SwiperSlide><img src={three} alt="" /></SwiperSlide>
 
+                <img src={arrow_next} ref={nextArrow} alt="" className="nav_buttons next" />
+                <img src={arrow_prev} ref={prevArrow} alt="" className="nav_buttons prev" />
             </Swiper>
 
-            <img src={arrow_next} ref={nextArrow} alt="" className="nav_buttons next" />
-            <img src={arrow_prev} ref={prevArrow} alt="" className="nav_buttons prev" />
         </div>
     );
 };
