@@ -108,6 +108,7 @@ header .navigation .nav_item span {
   text-transform: uppercase;
   font-weight: 400;
   transform: translateX(-50%);
+  transition: 0.3s;
   cursor: pointer;
 }
 header .navigation .nav_item span.top {
@@ -131,4 +132,17 @@ header .navigation .nav_item.active .inner_circle {
 }
 header .navigation .nav_item.active span::before {
   width: 100%;
+}
+
+header.white .navigation .nav_item span {
+  color: var(--font-black);
+}
+header.white .navigation .nav_item span.top {
+  top: -30px;
+}
+header.white .navigation .nav_item span:before {
+  background: var(--font-black);
+}
+header.white .navigation .nav_item.active .inner_circle {
+  background: var(--background);
 }/*# sourceMappingURL=header_style.css.map */

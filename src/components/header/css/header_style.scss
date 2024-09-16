@@ -90,6 +90,7 @@ header {
                 text-transform: uppercase;
                 font-weight: 400;
                 transform: translateX(-50%);
+                transition: 0.3s;
                 cursor: pointer;
                 &.top {
                     top: -30px;
@@ -116,6 +117,39 @@ header {
 
                 & span::before {
                     width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+header.white {
+
+    .account {
+        
+    }
+
+    .navigation {
+        .line{
+            
+        }
+
+        .nav_item {
+    
+            & span{
+                color: var(--font-black);
+                &.top {
+                    top: -30px;
+                }
+                &:before {
+                    background: var(--font-black);
+                }
+            }
+
+            &.active {
+                & .inner_circle {
+                    background: var(--background);
                 }
             }
         }

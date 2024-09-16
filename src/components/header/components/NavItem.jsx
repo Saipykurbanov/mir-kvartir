@@ -2,10 +2,10 @@ import React from 'react';
 import decoration from './../images/decor2.svg'
 import Store from '../../../utils/Store';
 
-const NavItem = ({title, decor, mode, num, page}) => {
+const NavItem = ({page, setPage, title, decor, mode, num}) => {
 
     const changePage = () => {
-        Store.setListener('change_page_header', ((num - 1) * 100))
+        Store.setListener('change_page_header', [((num - 1) * 100), num])
         Store.setListener('change_page', num)
     }
 
