@@ -1,6 +1,6 @@
 @import './../../../style/common';
 
-.yandex_button {
+a.yandex_button {
     font-family: var(--button-font);
     @include adaptiveProperty(padding, 13, 6.6);
     @include adaptiveProperty(border-radius, 15, 5);
@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     transition: 0.3s;
+    color: var(--font-black) !important;
     
     & img {
         @include adaptiveProperty(height, 33, 18);

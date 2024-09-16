@@ -1,29 +1,51 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import './css/feedback.css';
 import BottomHeader from '../../components/bottom_header/BottomHeader';
 import YandexButton from '../../components/yandex_button/YandexButton';
 import FeedbackItem from './components/FeedbackItem';
 import Button from '../../components/button/Button';
+import Store from '../../utils/Store';
 
-const FeedBack = ({mode, blocked}) => {
+const FeedBack = ({mode, blocked, page}) => {
 
     const feedbackContainer = useRef()
+    const [block, setBlock] = useState(false)
 
-    const onElement = () => {
-        blocked.current = true
+    const onElement = (e) => {
+        if(page === 7) {
+            Store.setListener('block_scroll', true)
+        } 
     }
 
     const elementOut = () => {
-        blocked.current = false
+        Store.setListener('block_scroll', false)
     }
+
+    // const onScrollEnd = (e) => {
+    //     const target = e.currentTarget
+    //     if (target.scrollTop <= 0) {
+    //         Store.setListener('block_scroll', false)
+    //         return
+    //     }
+    //     if (Math.floor(target.scrollHeight - target.scrollTop) === Math.floor(target.offsetHeight)) {
+    //         Store.setListener('block_scroll', false)
+    //         return
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     feedbackContainer?.current?.addEventListener('scroll', (e) => onScrollEnd(e))
+
+    //     return () => feedbackContainer?.current?.removeEventListener('scroll', (e) => onScrollEnd(e))
+    // }, [])
 
     return (
         <div className={`${mode} feedback`}>
             <div 
                 className="container" 
                 ref={feedbackContainer} 
-                onMouseOver={() => onElement()}
+                onMouseOver={(e) => onElement(e)}
                 onMouseOut={() => elementOut()}
             >
 

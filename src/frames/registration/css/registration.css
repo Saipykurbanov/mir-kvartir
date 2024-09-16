@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.page.registration {
+  background: var(--background-lite);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.page.registration form {
+  max-width: 1254px;
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: 30px;
+}
+.page.registration form .check_box_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.page.registration form .check_box_wrapper .check_box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.page.registration form .check_box_wrapper .check_box .check {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid var(--font-grey-lite);
+  cursor: pointer;
+}
+.page.registration form .check_box_wrapper .check_box .check:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--orange);
+  height: 0;
+  width: 0;
+  box-shadow: none;
+  transition: 80ms ease-out;
+  border-radius: 50%;
+}
+.page.registration form .check_box_wrapper .check_box .check.active:before {
+  height: 14px;
+  width: 14px;
+  box-shadow: 0px 0px 15px 0px #FF5500;
+}
+.page.registration form .check_box_wrapper .check_box label.check__label {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--font-black);
+}
+.page.registration form .input_wrapper {
+  width: 100%;
+  max-width: 768px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.page.registration form .input_wrapper .input__item {
+  width: 100%;
+}
+.page.registration form .input_wrapper .input__item input {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--font-grey-lite);
+  color: var(--font-black);
+  font-style: italic;
+  font-size: 16px;
+  background: transparent;
+}
+.page.registration form .input_wrapper .input__item input::-moz-placeholder {
+  color: var(--font-black);
+}
+.page.registration form .input_wrapper .input__item input::placeholder {
+  color: var(--font-black);
+}
+.page.registration form .input_wrapper .input__item label {
+  padding-top: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--font-grey-lite);
+}
+.page.registration form .input_wrapper .input__item label span {
+  font-weight: 500;
+  font-style: italic;
+}
+.page.registration form .main_button.small {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 222px;
+}
+.page.registration .bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px 50px;
+}
+.page.registration .bottom h2 {
+  color: var(--font-black);
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .page.registration .bottom h2 {
+    font-size: calc(26px + 57.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration .bottom h2 {
+    font-size: calc(26px + 34 * 0.0520833333vw);
+  }
+}
+.page.registration .bottom .description {
+  max-width: 1158px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.page.registration .bottom .description .description__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+}
+.page.registration .bottom .description .description__item h3 {
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--font-swamp);
+}
+@media (max-width: 768px) {
+  .page.registration .bottom .description .description__item h3 {
+    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration .bottom .description .description__item h3 {
+    font-size: calc(20px + 4 * 0.0520833333vw);
+  }
+}
+.page.registration .bottom .description .description__item p {
+  max-width: 222px;
+  color: var(--font-swamp);
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .page.registration .bottom .description .description__item p {
+    font-size: calc(15px + 1.7 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration .bottom .description .description__item p {
+    font-size: calc(15px + 1 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 1700px) {
+  .page.registration .bottom {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1254px;
+  }
+}/*# sourceMappingURL=registration.css.map */

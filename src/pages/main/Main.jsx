@@ -11,10 +11,11 @@ import Objects from '../../frames/objects/Objects';
 import Process from '../../frames/process/Process';
 import Contacts from '../../frames/contacts/Contacts';
 import Header from '../../components/header/Header';
+import Registration from '../../frames/registration/Registration';
 
 const Main = () => {
 
-    const {isBlocked, scroll} = useScrollPages()
+    const {isBlocked, scroll, page} = useScrollPages()
 
     return (
         <div className='main_page'>
@@ -28,8 +29,8 @@ const Main = () => {
                 <Objects mode={`page objects`}/>
                 <Process mode={`page process`}/>
                 <Managers mode={`page`}/>
-                <div className={`page`}></div>
-                <FeedBack mode={`page`} blocked={isBlocked}/>
+                <Registration mode={'page'}/>
+                <FeedBack mode={`page`} blocked={isBlocked} page={page}/>
                 <div className={`page`}></div>
                 <Commission mode={`page`}/>  
                 <Contacts mode={`page`}/>

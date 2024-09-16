@@ -98,6 +98,11 @@
   -o-object-position: center;
      object-position: center;
 }
+.page.contacts .contacts_content .swiper .swiper-pagination-bullet {
+  background: var(--background);
+  opacity: 1;
+  margin: 0 5px;
+}
 .page.contacts .contacts_content .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: var(--orange);
 }

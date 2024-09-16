@@ -3,16 +3,13 @@ import decor from './../images/decor.svg'
 import NavItem from './NavItem';
 import Store from '../../../utils/Store';
 
-const Navigation = () => {
-    const [page, setPage] = useState(1)
-
-    Store.useListener('change_page', setPage)
+const Navigation = ({page}) => {
 
     return (
         <div className='navigation'>
 
             <NavItem 
-                page={page}
+                page={page} 
                 num={1}
                 title={'Главная'}
                 mode={'top'}
