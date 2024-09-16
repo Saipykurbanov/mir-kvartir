@@ -9,7 +9,7 @@ const ProfileHeader = () => {
         <div className='profile_header'>
             <img src={logo} alt="" className="logo" />
             <User />
-            <NavLink to={'/'}><Button content={'На главную'}/></NavLink>
+            <NavLink to={'/'}><Button mode={'grey'} content={'На главную'}/></NavLink>
         </div>
     );
 };

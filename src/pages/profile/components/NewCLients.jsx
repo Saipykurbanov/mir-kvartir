@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../../components/button/Button';
+import useNewClients from '../hooks/useNewClients';
 
 const NewCLients = () => {
 
+    const newCLients = useNewClients()
+
     return (
         <div className="new_clients">
-            <div className="title_profile">передать нового клиента:</div>
+            <div className="title_profile">передать клиента:</div>
             <form action="">
                 <div className="check_block">
 
-                    <div className="checkbox_input">
+                    <div className="checkbox_input" onClick={() => newCLients.changeBox('first')}>
                         <div type="checkbox" className='checkbox' id='checkbox1' >
-                            <div className="fill"></div>
+                            <div className={`fill ${newCLients.newUser.first ? 'active' : ''}`} ></div>
                         </div>
                         <div className='label'>Первичный рынок</div>
                     </div>
 
-                    <div className="checkbox_input">
-                        <div type="checkbox" className='checkbox' id='checkbox2' >
-                            <div className="fill"></div>
+                    <div className="checkbox_input" onClick={() => newCLients.changeBox('second')}>
+                        <div type="checkbox" className='checkbox' id='checkbox2'>
+                            <div className={`fill ${newCLients.newUser.second ? 'active' : ''}`}></div>
                         </div>
                         <div className='label'>вторичный рынок</div>
                     </div>

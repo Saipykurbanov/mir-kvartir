@@ -12,6 +12,28 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+    @include mediaMaxWidth(991) {
+        background-color: var(--background-white);
+        padding: 0px;
+        gap: 0px;
+        justify-content: flex-start;
+    }
+
+    .mobile_header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 26px;
+        font-weight: 700;
+        height: 105px;
+        padding-left: 30px;
+        background-color: var(--button-grey);
+        color: var(--font-clean-white);
+        @include mediaMinWidth(992) {
+            display: none;
+        }
+    }
 
     .profile_header {
         position: absolute;
@@ -24,6 +46,9 @@
         align-items: center;
         z-index: 100;
         gap: 30px;
+        @include mediaMaxWidth(991) {
+            display: none;
+        }
         .logo {
             @include adaptiveProperty(width, 144, 75);
         }
@@ -57,20 +82,30 @@
         @include mediaMaxWidth(1400) {
             padding-left: 0;
         }
+
         .clients {
             width: 100%;
             display: grid;
             grid-template-columns: 612fr 846fr;
             grid-auto-rows: auto;
             @include adaptiveProperty(gap, 90, 10);
+            @include mediaMaxWidth(991) {
+                display: flex;
+                flex-direction: column-reverse;
+            }
             .title_profile {
                 text-transform: lowercase;
                 font-weight: 700;
-                color: var(--background);
+                color: var(--font-black);
                 @include adaptiveFont(24, 20);
                 @include mediaMaxWidth(991) {
                     font-weight: 600;
                     font-size: 26px;
+                    height: 105px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+                    background-color: var(--background-lite-grey);
                 }
             }
             .new_clients {
@@ -103,6 +138,7 @@
                                     border-radius: 50%;
                                     @include adaptiveProperty(width, 14, 10);
                                     @include adaptiveProperty(height, 14, 10);
+                                    transition: 0.3s;
                                     &.active {
                                         background-color: var(--orange);
                                         box-shadow: 0px 0px 15px var(--orange);
@@ -193,11 +229,39 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2dvh;
+                @include mediaMaxWidth(991) {
+                    display: block;
+                }
+
+                .search {
+                    width: 100%;
+                    padding: 45px 30px;
+                    @include mediaMinWidth(992) {
+                        display: none;
+                    }
+
+                    .search_wraper {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        border: 1px solid var(--border-grey);
+                        padding: 6px;
+                        input {
+                            font-style: italic;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
                 .grid_wrapper {
                     position: relative;
                     flex: 1;
                     width: 100%;
                     overflow: hidden;
+                    @include mediaMaxWidth(991) {
+                        min-height: 200px;
+                        height: 50dvh;
+                    }
                 }
                 .clients_grid {
                     position: absolute;
@@ -214,17 +278,31 @@
                         align-items: center;
                         @include adaptiveProperty(padding, 12, 10);
                         background-color: var(--background-beige);
+                        @include mediaMaxWidth(991) {
+                            background-color: var(--background-super-grey);
+                            display: grid;
+                            grid-template-columns: 45px 1fr auto;
+                            height: 75px;
+                        }
+
+                        .avatar {
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 18px;
+                            margin-right: 30px;
+                            @include mediaMinWidth(992) {
+                                display: none;
+                            }
+                        }
                         &.second {
                             background-color: transparent;
                         }
                         .columns {
                             @include adaptiveProperty(padding-left, 12, 10);
-                            p {
-                                color: var(--font-black);
-                                font-style: italic;
-                                @include adaptiveFont(16, 12);
-                                line-height: 1em;
-                            }
                             display: -webkit-box;
                             -webkit-line-clamp: 5;
                             line-clamp: 5;
@@ -233,6 +311,30 @@
                             -webkit-hyphens: auto;
                             hyphens: auto;
                             word-break: break-word;
+                            p {
+                                color: var(--font-black);
+                                font-style: italic;
+                                @include adaptiveFont(16, 12);
+                                line-height: 1em;
+                            }
+                            &.comment {
+                                @include mediaMaxWidth(991) {
+                                    display: none;
+                                }
+                            }
+
+                            &.status {
+                                @include mediaMaxWidth(991) {
+                                    white-space: nowrap;
+                                    font-size: 10px;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            @include mediaMaxWidth(991) {
+                                white-space: nowrap;
+                                padding: 0;
+                            }
                         }
                         &.head {
                             border-bottom: 1px solid var(--font-grey-lite);
@@ -253,6 +355,9 @@
                                     font-weight: 700;
                                     padding: 10px 0px;
                                 }
+                            }
+                            @include mediaMaxWidth(991) {
+                                display: none;
                             }
                         }
                     }

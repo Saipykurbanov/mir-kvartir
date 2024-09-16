@@ -13,6 +13,7 @@
   --font-black: #000;
   --font-green: #398340;
   --font-swamp: #6A655E;
+  --font-clean-white: #fff;
   --button-grey: #6A6A6A;
   --background: #000;
   --background-lite: #EFE4D7;
@@ -20,6 +21,10 @@
   --background-grey: #3A3632;
   --background-dark: #322E2A;
   --background-black: #131313;
+  --background-white: #fff;
+  --background-lite-grey: #E7E7E7;
+  --background-super-grey: #F5F5F5;
+  --border-grey: #A2998F;
   --orange: #FF5500;
   --orange-rgb: rgba(255, 85, 0, 0.2);
   --green: #00A807;
