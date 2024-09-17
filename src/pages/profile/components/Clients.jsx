@@ -6,11 +6,15 @@ import AllCLients from './all_clients/AllCLients';
 const Clients = () => {
 
     return (
-        <div className="clients">
+        <div className="profile_container">
 
-            <NewCLients />
-            
-            <AllCLients />
+            <div className="clients">
+
+                <NewCLients />
+                
+                <AllCLients />
+
+            </div>
 
         </div>
     );

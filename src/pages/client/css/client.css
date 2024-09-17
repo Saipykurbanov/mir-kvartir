@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.client_detail {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-white);
+}
+@media screen and (min-width: 992px) {
+  .client_detail {
+    display: none;
+  }
+}
+.client_detail .client_head {
+  width: 100%;
+  height: 105px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--background-lite-grey);
+  cursor: pointer;
+}
+.client_detail .client_head .name {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--font-black);
+  line-height: 1em;
+}
+.client_detail .client_head .status {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-clean-grey);
+  padding-left: 20px;
+}
+.client_detail .client_head .status::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: transparent;
+}
+.client_detail .client_head .status.at_work::before {
+  background-color: #00A807;
+}
+.client_detail .client_head .status.waiting::before {
+  background-color: #FFA800;
+}
+.client_detail .client_head .status.no_answer::before {
+  background-color: #FF0000;
+}
+.client_detail .client_head .status.success::before {
+  background-color: #B4ABA1;
+}
+.client_detail .client_head .status.disruption::before {
+  background-color: transparent;
+  border: 2px solid var(--background);
+}
+.client_detail .filed {
+  width: 100%;
+  min-height: 90px;
+  padding: 25px 30px;
+}
+.client_detail .filed.second {
+  background-color: var(--background-super-grey);
+}
+.client_detail .filed .label {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: lowercase;
+  color: var(--font-clean-grey);
+  margin-bottom: 5px;
+}
+.client_detail .filed .value {
+  font-size: 15px;
+  font-style: italic;
+  line-height: 19px;
+  color: var(--font-black);
+}
+.client_detail .filed .value.number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.client_detail .filed .value svg {
+  cursor: pointer;
+}/*# sourceMappingURL=client.css.map */

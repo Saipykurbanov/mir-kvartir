@@ -41,7 +41,7 @@ const FeedBack = ({mode, blocked, page}) => {
     // }, [])
 
     return (
-        <div className={`${mode} feedback`}>
+        <div className={`${mode} feedback`} id='feedback'>
             <div 
                 className="container" 
                 ref={feedbackContainer} 

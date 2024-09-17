@@ -12,6 +12,7 @@ import Process from '../../frames/process/Process';
 import Contacts from '../../frames/contacts/Contacts';
 import Header from '../../components/header/Header';
 import Registration from '../../frames/registration/Registration';
+import Service from '../../frames/service/Service';
 
 const Main = () => {
 
@@ -29,6 +30,9 @@ const Main = () => {
                 <Objects mode={`page objects`}/>
                 <Process mode={`page process`}/>
                 <Managers mode={`page`}/>
+
+                <Service mode={`page service`}/>
+
                 <Registration mode={'page'}/>
                 <FeedBack mode={`page`} blocked={isBlocked} page={page}/>
                 <div className={`page`}></div>

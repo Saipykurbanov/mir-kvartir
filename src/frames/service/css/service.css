@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.page.service {
+  padding: 108px 0px 0px 0px;
+}
+@media screen and (min-width: 992px) {
+  .page.service {
+    display: none;
+  }
+}
+.page.service .premium {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  gap: 10px;
+  flex: 1;
+  padding: 0 30px;
+  background-color: var(--background-black);
+}
+.page.service .premium .year {
+  display: flex;
+  gap: 0px;
+  align-items: flex-end;
+}
+.page.service .premium .year .a {
+  font-size: 198px;
+  font-family: var(--sanchez);
+  line-height: 0.8em;
+  letter-spacing: -0.01em;
+}
+.page.service .premium .year .b {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 700;
+  align-self: flex-end;
+}
+.page.service .premium .c {
+  width: 100%;
+  color: var(--orange);
+  font-size: 15px;
+  line-height: 18px;
+}
+.page.service .service_description {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 0px 30px;
+  gap: 27.5px;
+}
+.page.service .service_description .service_description_item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 15px;
+}
+.page.service .service_description .service_description_item .service_description_info h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--font-white);
+  margin-bottom: 10px;
+}
+.page.service .service_description .service_description_item .service_description_info p {
+  font-size: 15px;
+  line-height: 18.5px;
+  color: var(--button-grey);
+}/*# sourceMappingURL=service.css.map */

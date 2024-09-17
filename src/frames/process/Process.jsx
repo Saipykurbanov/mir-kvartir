@@ -5,7 +5,7 @@ import decoration from './../../components/header/images/decor2.svg'
 
 const Process = ({mode}) => {
     return (
-        <div className={mode}>
+        <div className={mode} id='process'>
 
             <div className="process_header">Как это работает?</div>
 
@@ -122,7 +122,7 @@ const Process = ({mode}) => {
                     <Button mode={'big'} content={'Стать Партнером'} />
                     <div className="quation">Как это работает?</div>
                 </div>
-
+                
                 <div className="premium">
 
                     <div className="year">

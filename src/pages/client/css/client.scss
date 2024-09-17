@@ -1,0 +1,90 @@
+@import './../../../style/common';
+
+.client_detail {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-white);
+    @include mediaMinWidth(992) {
+        display: none;
+    }
+    .client_head {
+        width: 100%;
+        height: 105px;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        background-color: var(--background-lite-grey);
+        cursor: pointer;
+        .name {
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--font-black);
+            line-height: 1em;
+        }
+        .status {
+            position: relative;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--font-clean-grey);
+            padding-left: 20px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                background-color: transparent;
+            }
+            &.at_work::before {
+                background-color: #00A807;
+            }
+            &.waiting::before {
+                background-color: #FFA800;
+            }
+            &.no_answer::before {
+                background-color: #FF0000;
+            }
+            &.success::before {
+                background-color: #B4ABA1;
+            }
+            &.disruption::before {
+                background-color: transparent;
+                border: 2px solid var(--background);
+            }
+        }
+    }
+
+    .filed {
+        width: 100%;
+        min-height: 90px;
+        padding: 25px 30px;
+        &.second {
+            background-color: var(--background-super-grey);
+        }
+        .label {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: lowercase;
+            color: var(--font-clean-grey);
+            margin-bottom: 5px;
+        }
+        .value {
+            font-size: 15px;
+            font-style: italic;
+            line-height: 19px;
+            color: var(--font-black);
+            &.number {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            svg {
+                cursor: pointer;
+            }
+        }
+    }
+}

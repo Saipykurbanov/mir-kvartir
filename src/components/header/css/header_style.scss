@@ -16,6 +16,9 @@ header {
     .logo {
         @include adaptiveProperty(width, 144, 75);
     }
+    @include mediaMaxWidth(991) {
+        align-items: flex-start;
+    }
 
     .account {
         display: flex;
@@ -121,6 +124,108 @@ header {
             }
         }
     }
+
+    .burger {
+        position: relative;
+        cursor: pointer;
+        width: 45px;
+        height: 21px;
+        z-index: 2;
+        @include mediaMinWidth(992) {
+            display: none;
+        }
+        &.cross {
+            .top {
+                animation: TopCross 0.5s forwards;
+                width: 75%;
+            }
+            .center {
+                animation: CenterCross 0.25s forwards;
+                width: 75%;
+            }
+            .bottom {
+                animation: BottomCross 0.5s forwards;
+                width: 75%;
+            }
+        }
+        &.burg {
+            .top {
+                animation: TopBurg 0.5s forwards;   
+            }
+            .center {
+                animation: CenterBurg 0.25s forwards;   
+            }
+            .bottom {
+                animation: BottomBurg 0.5s forwards;    
+            }
+        }
+        span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--orange);
+            transition: 0.4s;
+            &.top {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.center {
+                position: absolute;
+                top: 9px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.bottom {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 195px;
+        background-color: var(--background);
+        padding: 76px 15px 38px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border-left: 1px solid #2C2C2C;
+        border-bottom: 1px solid #2C2C2C;
+        transform: translateX(100%);
+        transition: 0.5s;
+        &.active {
+            transform: translateX(0);
+        }
+        @include mediaMinWidth(992) {
+            display: none;
+        }
+        .sign{
+            color: var(--orange);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        a,
+        .sign {
+            padding-top: 3px;
+            border-top: 1px solid var(--font-clean-white);
+            font-size: 17px;
+            font-weight: 500;
+            &:nth-child(2) {
+                color: var(--orange);
+            }
+        }
+    }
 }
 
 
@@ -153,5 +258,90 @@ header.white {
                 }
             }
         }
+    }
+}
+
+@keyframes TopCross {
+    0% {
+        top: 0;
+        transform: translateX(-50%) rotate(0deg) ;
+    }
+    50% {
+        top: 9px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        top: 9px;
+        transform: translateX(-50%) rotate(45deg);
+    }
+}
+
+@keyframes CenterCross {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes BottomCross {
+    0% {
+        bottom: 0;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        bottom: 9px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        bottom: 9px;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+}
+
+
+@keyframes TopBurg {
+    0% {
+        top: 9px;
+        transform: translateX(-50%) rotate(45deg) ;
+    }
+    50% {
+        top: 9px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        top: 0;
+        transform: translateX(-50%) rotate(0deg);
+    }
+}
+
+@keyframes CenterBurg {
+    0% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes BottomBurg {
+    0% {
+        bottom: 9px;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+    50% {
+        bottom: 9px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        bottom: 0px;
+        transform: translateX(-50%) rotate(0deg);
     }
 }
