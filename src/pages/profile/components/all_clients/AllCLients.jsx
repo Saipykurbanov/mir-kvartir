@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Client from './Client';
 import GridHead from './GridHead';
+import ClientModal from './ClientModal';
 
 const AllCLients = () => {
+
     return (
         <div className="all_clients">
             <div className="title_profile">клиенты в работе:</div>
@@ -26,16 +28,18 @@ const AllCLients = () => {
                     <GridHead />
 
                     <Client />
-                    <Client second={true}/>
+                    <Client second={true} />
                     <Client />
                     <Client second={true}/>
                     <Client />
                     <Client second={true}/>
                     <Client />
-                    <Client second={true}/>
+                    <Client second={true} />
                     
                 </div>
             </div>
+
+
         </div>
     );
 };

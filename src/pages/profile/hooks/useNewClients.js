@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Store from "../../../utils/Store"
 
 
 export default function useNewClients() {
@@ -16,5 +17,13 @@ export default function useNewClients() {
         setNewUser(prev => ({...prev, [field]: !prev[field]}))
     }
 
-    return { newUser, setNewUser, changeBox }
+    const sendData = (e) => {
+        e.preventDefault()
+        /*ваш код отправки post запроса и ниже действия при положительном ответе*/
+        document.body.style.overflow = 'hidden'
+        Store.setListener('openSuccess', 'show')
+        Store.setListener('successWindowMode', 'lite')
+    }
+
+    return { newUser, setNewUser, changeBox, sendData }
 }

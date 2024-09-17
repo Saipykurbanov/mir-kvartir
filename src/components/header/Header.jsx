@@ -6,18 +6,20 @@ import logo from './images/logo.svg';
 import './css/header_style.css';
 import Store from '../../utils/Store';
 import Burger from './components/Burger';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
 
-    const openModal = () => {
-        document.body.style.overflow = 'hidden';
-        Store.setListener('signIn', 'show');
-    }
-
     const [theme, setTheme] = useState('')
     const [page, setPage] = useState(1)
     const [isOpen, setIsOpen] = useState(false)
+
+    const openModal = () => {
+        document.body.style.overflow = 'hidden';
+        Store.setListener('signIn', 'show');
+        setIsOpen(false)
+    }
 
     const changePage = (data) => {
         setPage(data)
@@ -36,13 +38,16 @@ const Header = () => {
     const toggleMenu = (e) => {
         e.stopPropagation()
         if(isOpen) {
+            document.body.style.overflow = 'visible';
             setIsOpen(false)
         } else {
+            document.body.style.overflow = 'hidden';
             setIsOpen(true)
         }
     }
     
     const closeMenu = () => {
+        document.body.style.overflow = 'visible';
         setIsOpen(false)
     }
     
@@ -87,11 +92,11 @@ const Header = () => {
                         
                     </svg>
                 </div>
-                <a href="">Регистрация</a>
-                <a href="">Как это работает?</a>
-                <a href="">Кейсы</a>
-                <a href="">Наш офис</a>
-                <a href="">Контакты</a>
+                <a href="" onClick={closeMenu}>Регистрация</a>
+                <a href="/#process" onClick={closeMenu}>Как это работает?</a>
+                <a href="/#feedback" onClick={closeMenu}>Кейсы</a>
+                <a href="/#contacts" onClick={closeMenu}>Наш офис</a>
+                <a href="/#footer" onClick={closeMenu}>Контакты</a>
             </div>
 
         </header>

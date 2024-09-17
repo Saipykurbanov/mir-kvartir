@@ -419,6 +419,11 @@
     display: none;
   }
 }
+@media screen and (min-width: 992px) {
+  .profile .profile_container .clients .new_clients form .input_block .mobile {
+    display: none;
+  }
+}
 .profile .profile_container .clients .new_clients form .comment {
   display: flex;
   flex-wrap: wrap;
@@ -670,6 +675,19 @@
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.at_work::before {
   background-color: #00A807;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.waiting::before {
+  background-color: #FFA800;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.no_answer::before {
+  background-color: #FF0000;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.success::before {
+  background-color: #B4ABA1;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.disruption::before {
+  background-color: transparent;
+  border: 2px solid var(--background);
 }
 @media screen and (max-width: 991px) {
   .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status {

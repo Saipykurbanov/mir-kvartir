@@ -9,7 +9,8 @@ const NewCLients = () => {
     return (
         <div className="new_clients">
             <div className="title_profile">передать клиента:</div>
-            <form action="">
+
+            <form action="" onSubmit={(e) => newCLients.sendData(e)}>
                 <div className="check_block">
 
                     <div className="checkbox_input" onClick={() => newCLients.changeBox('first')}>
@@ -47,7 +48,7 @@ const NewCLients = () => {
                     </div>
 
                     <div className="mobile_offer">*начнем работать с клиентом только после того, как свяжемся с Вами.</div>
-                    <Button content={'Отправить данные'} mode={'small  min-content'}/>
+                    <Button content={'Отправить данные'} mode={'small  min-content mobile'} type={'submit'}/>
                 </div>
 
                 <div className="comment">
@@ -57,7 +58,7 @@ const NewCLients = () => {
                     
                     <div className="transfer">
                         <p>Нажимая кнопку «передать», вы подтверждаете, что ознакомились с <a href="">политикой в отношении обработки персональных данных</a> и даете <a href="">согласие</a> на обра-ботку персональных данных</p>
-                        <Button content={'Передать'} mode={'small'}/>
+                        <Button content={'Передать'} mode={'small'} type={'submit'}/>
                     </div>
                 </div>
 

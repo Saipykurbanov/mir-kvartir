@@ -64,6 +64,9 @@ html,body{
     background: var(--background);
     /*----------Новые -----------*/
     height: 100%;
+    @include mediaMaxWidth(991) {
+        overflow-x: hidden;
+    }
 }
 
 /*----------Новые -----------*/

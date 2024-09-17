@@ -14,7 +14,7 @@ import whats_ap_white from './images/whats_ap_white.svg'
 
 const Contacts = ({mode}) => {
     return (
-        <div className={`${mode} contacts`}>
+        <div className={`${mode} contacts`} id='contacts'>
 
             <div className="contacts_content">
 
@@ -29,7 +29,7 @@ const Contacts = ({mode}) => {
             </div>
 
 
-            <footer>
+            <footer id='footer'>
 
                 <h2>Контакты</h2>
 

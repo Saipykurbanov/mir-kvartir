@@ -23,6 +23,137 @@
     padding: 30px 10px;
   }
 }
+.modal_wrapper .success_window {
+  width: 100%;
+  max-width: 924px;
+  min-height: 43dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-lite);
+  border: 1px solid var(--font-grey);
+  padding-bottom: 41px;
+}
+@media screen and (max-width: 991px) {
+  .modal_wrapper .success_window {
+    padding-bottom: 55px;
+  }
+}
+.modal_wrapper .success_window .success_window_header {
+  height: 110px;
+  padding-right: 30px;
+  padding-top: 42px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #DFC7AC;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .success_window_header {
+    padding-left: calc(29.6px + 15.98 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .success_window_header {
+    padding-left: calc(29.6px + 9.4 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .modal_wrapper .success_window .success_window_header {
+    font-size: 26px;
+  }
+}
+.modal_wrapper .success_window .success_window_header p {
+  position: relative;
+  color: var(--font-swamp);
+  font-size: 24px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p {
+    padding-left: calc(27px + 47.6 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p {
+    padding-left: calc(27px + 28 * 0.0520833333vw);
+  }
+}
+.modal_wrapper .success_window .success_window_header p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: #00A807;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p::before {
+    width: calc(14.24px + 26.792 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p::before {
+    width: calc(14.24px + 15.76 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p::before {
+    height: calc(14.24px + 26.792 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .success_window_header p::before {
+    height: calc(14.24px + 15.76 * 0.0520833333vw);
+  }
+}
+.modal_wrapper .success_window svg {
+  margin-top: -3px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .modal_wrapper .success_window svg {
+    margin-top: -2px;
+  }
+}
+.modal_wrapper .success_window svg path {
+  fill: #DFC7AC;
+}
+.modal_wrapper .success_window .message {
+  padding-right: 30px;
+  padding-top: 40px;
+  color: var(--font-black);
+  font-style: italic;
+  line-height: 1.2em;
+  margin-top: auto;
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .message {
+    padding-left: calc(29.6px + 15.98 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .message {
+    padding-left: calc(29.6px + 9.4 * 0.0520833333vw);
+  }
+}
+@media (max-width: 768px) {
+  .modal_wrapper .success_window .message {
+    font-size: calc(17px + 25.5 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .modal_wrapper .success_window .message {
+    font-size: calc(17px + 15 * 0.0520833333vw);
+  }
+}
+.modal_wrapper .success_window.lite {
+  background-color: var(--background-white);
+}
+.modal_wrapper .success_window.lite .success_window_header {
+  background-color: var(--background-lite-grey);
+}
+.modal_wrapper .success_window.lite svg path {
+  fill: var(--background-lite-grey);
+}
 .modal_wrapper .sign_in {
   width: 100%;
   max-width: 924px;
@@ -67,35 +198,6 @@
   font-weight: 600;
   line-height: 1em;
   color: var(--font-black);
-}
-.modal_wrapper .sign_in .sign_in_head .cross {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  z-index: 2;
-  cursor: pointer;
-}
-.modal_wrapper .sign_in .sign_in_head .cross::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 27px;
-  height: 3.2px;
-  background-color: #6A655E;
-  z-index: 2;
-  transform: rotate(45deg);
-}
-.modal_wrapper .sign_in .sign_in_head .cross::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 27px;
-  height: 3.2px;
-  background-color: #6A655E;
-  z-index: 2;
-  transform: rotate(-45deg);
 }
 .modal_wrapper .sign_in form {
   width: 100%;
@@ -202,4 +304,38 @@
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
+}
+.modal_wrapper .cross {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  .modal_wrapper .cross {
+    display: none;
+  }
+}
+.modal_wrapper .cross::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27px;
+  height: 3.2px;
+  background-color: #6A655E;
+  z-index: 2;
+  transform: rotate(45deg);
+}
+.modal_wrapper .cross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27px;
+  height: 3.2px;
+  background-color: #6A655E;
+  z-index: 2;
+  transform: rotate(-45deg);
 }/*# sourceMappingURL=modal.css.map */

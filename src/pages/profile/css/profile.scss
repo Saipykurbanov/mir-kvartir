@@ -229,6 +229,11 @@
                             font-size: 15px;
                             font-weight: 500;
                         }
+                        .mobile {
+                            @include mediaMinWidth(992) {
+                                display: none;
+                            }
+                        }
                     }
 
                     .comment {
@@ -432,6 +437,19 @@
                                 &.at_work::before {
                                     background-color: #00A807;
                                 }
+                                &.waiting::before {
+                                    background-color: #FFA800;
+                                }
+                                &.no_answer::before {
+                                    background-color: #FF0000;
+                                }
+                                &.success::before {
+                                    background-color: #B4ABA1;
+                                }
+                                &.disruption::before {
+                                    background-color: transparent;
+                                    border: 2px solid var(--background);
+                                }
                                 @include mediaMaxWidth(991) {
                                     white-space: nowrap;
                                     padding: 12px;
@@ -478,6 +496,7 @@
                         }
                     }
                 }
+
             }
         }
     }

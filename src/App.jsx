@@ -3,9 +3,13 @@ import Main from './pages/main/Main';
 import Header from './components/header/Header';
 import SignIn from './components/modal/SignIn';
 import Profile from './pages/profile/Profile';
+import ClientDetail from './pages/client/ClientDetail';
+import SuccessWindow from './components/modal/SuccessWindow';
 
 
 function App() {
+
+  const screenWidth = window.innerWidth;
 
   return (
     <main>
@@ -18,9 +22,14 @@ function App() {
             
             <Route path='/profile' element={<Profile />}/>
 
+            {screenWidth < 992 ? <Route path='/client/:id' element={<ClientDetail />}/> : <></>}
+
+            <Route path='*' />
+
         </Routes>
 
         <SignIn />
+        <SuccessWindow />
 
       </Router>
      

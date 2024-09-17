@@ -166,7 +166,7 @@
 .about .market_block .description .market_list .image_mob {
   flex: 1;
   margin-left: auto;
-  min-width: 325px;
+  min-width: 300px;
   width: 100%;
   max-width: 400px;
   padding-left: 100px;
