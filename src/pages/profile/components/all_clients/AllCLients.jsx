@@ -28,6 +28,11 @@ const AllCLients = () => {
                     <Client />
                     <Client second={true}/>
                     <Client />
+                    <Client second={true}/>
+                    <Client />
+                    <Client second={true}/>
+                    <Client />
+                    <Client second={true}/>
                     
                 </div>
             </div>

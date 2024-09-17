@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './css/modal.css';
 import Store from '../../utils/Store';
 import Button from '../button/Button';
+import ckeck from './images/hidden.svg'
 
 
 const SignIn = () => {
 
     const [isOpen, setIsOpen] = useState('')
+    const [type, setType] = useState('password')
     Store.useListener('signIn', setIsOpen)
 
     const closeModal = () => {
@@ -14,10 +16,26 @@ const SignIn = () => {
         setIsOpen('close')
     }
 
+    const switchType = () => {
+        console.log('hi')
+        if(type === 'password') {
+            return setType('text')
+        }
+        if(type === 'text') {
+            return setType('password')
+        }
+        return setType('password')
+    }
+
     return (
         <div className={`modal_wrapper ${isOpen}`} onMouseDown={closeModal}>
 
             <div className="sign_in" onMouseDown={(e) => e.stopPropagation()}>
+
+                <div className="sign_in_head">
+                    <p>Вход</p>
+                    <div className="cross" onMouseDown={closeModal}></div>
+                </div>
 
                 <form action="" onSubmit={''}>
 
@@ -28,14 +46,17 @@ const SignIn = () => {
                         </div>
 
                         <div className='main_input'>
-                            <input type="password"  />
+                            <input type={type} />
+                            <div className="password_check" onMouseDown={switchType}>
+                                <img src={ckeck} alt="" />
+                            </div>
                             <div className="label">Пароль</div>
                         </div>
                     </div>
                     
                     <Button mode={'small'} content={'Войти'}/>
 
-                    <a href="">Зарегистрироваться</a>
+                    <a className='register_link' href="">Зарегистрироваться</a>
                 </form>
 
             </div>

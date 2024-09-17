@@ -180,6 +180,7 @@
   .profile .profile_container .clients {
     display: flex;
     flex-direction: column-reverse;
+    gap: 0;
   }
 }
 .profile .profile_container .clients .title_profile {
@@ -218,6 +219,11 @@
     margin-top: calc(20px + 10 * 0.0520833333vw);
   }
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form {
+    margin-top: 0;
+  }
+}
 .profile .profile_container .clients .new_clients form .check_block {
   display: flex;
   justify-content: space-between;
@@ -236,6 +242,14 @@
     margin-bottom: calc(20px + 19 * 0.0520833333vw);
   }
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .check_block {
+    flex-direction: column;
+    gap: 25px;
+    padding: 65px 30px;
+    margin-bottom: 0;
+  }
+}
 .profile .profile_container .clients .new_clients form .check_block .checkbox_input {
   display: flex;
   align-items: center;
@@ -249,6 +263,11 @@
 @media (min-width: 768px) {
   .profile .profile_container .clients .new_clients form .check_block .checkbox_input {
     gap: calc(5px + 9 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .check_block .checkbox_input {
+    gap: 20px;
   }
 }
 .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
@@ -273,6 +292,13 @@
 @media (min-width: 768px) {
   .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
     height: calc(20px + 4 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
+    border: 4px solid #AFAFAF;
+    width: 30px;
+    height: 30px;
   }
 }
 .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
@@ -308,6 +334,12 @@
   background-color: var(--orange);
   box-shadow: 0px 0px 15px var(--orange);
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
+    width: 60%;
+    height: 60%;
+  }
+}
 .profile .profile_container .clients .new_clients form .check_block .checkbox_input .label {
   text-transform: lowercase;
   color: var(--orange);
@@ -324,11 +356,25 @@
     font-size: calc(14px + 2 * 0.0520833333vw);
   }
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .label {
+    text-transform: none;
+    color: var(--font-black);
+    font-size: 17px;
+  }
+}
 .profile .profile_container .clients .new_clients form .input_block {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3dvh;
+}
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .input_block {
+    background-color: var(--background-lite-grey);
+    padding: 50px 30px 60px 30px;
+    gap: 25px;
+  }
 }
 .profile .profile_container .clients .new_clients form .input_block .main_input {
   width: 100%;
@@ -343,10 +389,35 @@
   margin-bottom: 5px;
   color: var(--font-black);
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .input_block .main_input input {
+    border-bottom: 1px solid var(--font-black);
+    font-size: 18px;
+  }
+}
 .profile .profile_container .clients .new_clients form .input_block .main_input .label {
   font-weight: 700;
   color: var(--font-grey-lite);
   text-transform: lowercase;
+}
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .input_block .main_input .label {
+    font-size: 15px;
+    color: #B3B3B3;
+  }
+}
+.profile .profile_container .clients .new_clients form .input_block .mobile_offer {
+  width: 100%;
+  color: var(--orange);
+  text-transform: lowercase;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+@media screen and (min-width: 992px) {
+  .profile .profile_container .clients .new_clients form .input_block .mobile_offer {
+    display: none;
+  }
 }
 .profile .profile_container .clients .new_clients form .comment {
   display: flex;
@@ -365,6 +436,11 @@
   .profile .profile_container .clients .new_clients form .comment {
     -moz-column-gap: calc(25px + 25 * 0.0520833333vw);
          column-gap: calc(25px + 25 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .new_clients form .comment {
+    display: none;
   }
 }
 .profile .profile_container .clients .new_clients form .comment .textarea {
@@ -452,6 +528,11 @@
   border: 1px solid var(--font-grey-lite);
   overflow: auto;
 }
+@media screen and (max-width: 991px) {
+  .profile .profile_container .clients .all_clients .clients_grid {
+    border: 0;
+  }
+}
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item {
   display: grid;
   grid-template-columns: 221fr 234fr 156fr 235fr;
@@ -472,9 +553,10 @@
 @media screen and (max-width: 991px) {
   .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item {
     background-color: var(--background-super-grey);
-    display: grid;
-    grid-template-columns: 45px 1fr auto;
+    grid-template-columns: 45px 1fr 95px;
     height: 75px;
+    padding: 0 30px;
+    cursor: pointer;
   }
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .avatar {
@@ -494,6 +576,32 @@
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item.second {
   background-color: transparent;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .mob_columns {
+  padding-left: 30px;
+}
+@media screen and (min-width: 992px) {
+  .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .mob_columns {
+    display: none;
+  }
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .mob_columns .name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--font-black);
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 35dvw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  letter-spacing: -0.05em;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .mob_columns .phone {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--font-clean-grey);
+  white-space: nowrap;
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns {
   display: -webkit-box;
@@ -535,11 +643,47 @@
     display: none;
   }
 }
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status {
+  position: relative;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-5px);
+  border-radius: 50%;
+  background-color: transparent;
+  display: none;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 8px;
+  height: 18px;
+  transform: translateY(-50%);
+  background: url("./../images/arrow_right.svg") center/80% no-repeat;
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.at_work::before {
+  background-color: #00A807;
+}
 @media screen and (max-width: 991px) {
   .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status {
     white-space: nowrap;
-    font-size: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+  .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status p {
     font-weight: 600;
+    font-size: 10px;
+    color: var(--font-clean-grey);
+  }
+  .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status::before {
+    display: block;
   }
 }
 @media screen and (max-width: 991px) {
@@ -596,6 +740,11 @@
 @media (min-width: 768px) {
   .profile .offer {
     gap: calc(10px + 18 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 991px) {
+  .profile .offer {
+    display: none;
   }
 }
 .profile .offer h2 {

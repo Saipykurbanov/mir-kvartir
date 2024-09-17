@@ -23,28 +23,31 @@ const NewCLients = () => {
                         <div type="checkbox" className='checkbox' id='checkbox2'>
                             <div className={`fill ${newCLients.newUser.second ? 'active' : ''}`}></div>
                         </div>
-                        <div className='label'>вторичный рынок</div>
+                        <div className='label'>Вторичный рынок</div>
                     </div>
                     
                 </div>
 
                 <div className="input_block">
                     <div className='main_input'>
-                        <input type="password"  />
+                        <input type="text"  />
                         <div className="label">Имя клиента</div>
                     </div>
                     <div className='main_input'>
-                        <input type="password"  />
+                        <input type="text"  />
                         <div className="label">Номер телефона клиента</div>
                     </div>
                     <div className='main_input'>
-                        <input type="password"  />
+                        <input type="text"  />
                         <div className="label">Город</div>
                     </div>
                     <div className='main_input'>
-                        <input type="password"  />
+                        <input type="text"  />
                         <div className="label">планируемый бюджет</div>
                     </div>
+
+                    <div className="mobile_offer">*начнем работать с клиентом только после того, как свяжемся с Вами.</div>
+                    <Button content={'Отправить данные'} mode={'small  min-content'}/>
                 </div>
 
                 <div className="comment">
@@ -57,6 +60,7 @@ const NewCLients = () => {
                         <Button content={'Передать'} mode={'small'}/>
                     </div>
                 </div>
+
             </form>
         </div>
     );

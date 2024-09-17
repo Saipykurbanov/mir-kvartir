@@ -103,6 +103,10 @@
             }
         }
     }
+    &.min-content {
+        width: min-content;
+        line-height: 1;
+    }
 }
 
 @keyframes appear {

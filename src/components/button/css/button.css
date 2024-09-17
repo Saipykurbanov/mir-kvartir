@@ -138,6 +138,11 @@
     box-shadow: 0px 0px 20px 0px var(--orange);
   }
 }
+.main_button.min-content {
+  width: -moz-min-content;
+  width: min-content;
+  line-height: 1;
+}
 
 @keyframes appear {
   from {
