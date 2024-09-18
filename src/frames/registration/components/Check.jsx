@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Check = ({labe, group, setNewUser}) => {
+const Check = ({labe, group}) => {
 
-    const changeGroup = () => {
-        setNewUser(prev => ({...prev, group: group === labe ? '' : labe}))
-    }
-
-    return <div className={`check ${group === labe ? 'active' : ''}`} onClick={() => changeGroup()}></div>
+    return <div className={`check ${group === labe ? 'active' : ''}`}></div>
 };
 
 export default Check;

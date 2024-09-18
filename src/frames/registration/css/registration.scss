@@ -56,6 +56,7 @@
                 display: flex;
                 align-items: center;
                 gap: 6px;
+                cursor: pointer;
 
                 & .check {
                     position: relative;
@@ -98,7 +99,7 @@
                     font-weight: 700;
                     font-size: 16px;
                     color: var(--font-black);
-
+                    cursor: pointer;
                 }
             }
         }

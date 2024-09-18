@@ -156,6 +156,11 @@
   }
 }
 @media screen and (max-width: 991px) {
+  .main_page .page.feedback {
+    padding-top: 100px;
+  }
+}
+@media screen and (max-width: 991px) {
   .main_page {
     overflow: visible;
   }
