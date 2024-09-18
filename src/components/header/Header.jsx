@@ -92,7 +92,7 @@ const Header = () => {
                         
                     </svg>
                 </div>
-                <a href="" onClick={closeMenu}>Регистрация</a>
+                <a href="/become_partner" onClick={closeMenu}>Регистрация</a>
                 <a href="/#process" onClick={closeMenu}>Как это работает?</a>
                 <a href="/#feedback" onClick={closeMenu}>Кейсы</a>
                 <a href="/#contacts" onClick={closeMenu}>Наш офис</a>

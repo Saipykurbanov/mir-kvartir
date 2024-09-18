@@ -7,6 +7,51 @@
   align-items: center;
   justify-content: flex-end;
 }
+@media screen and (max-width: 991px) {
+  .page.registration {
+    justify-content: flex-start;
+    height: 100dvh;
+    overflow: scroll;
+  }
+}
+.page.registration .back_button {
+  display: block;
+  width: 100%;
+  padding: 40px 30px;
+  background-color: #DFC7AC;
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+@media (max-width: 768px) {
+  .page.registration .back_button img {
+    height: calc(26px + 23.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration .back_button img {
+    height: calc(26px + 14 * 0.0520833333vw);
+  }
+}
+.page.registration .back_button h2 {
+  font-weight: 600;
+  color: var(--font-black);
+}
+@media (max-width: 768px) {
+  .page.registration .back_button h2 {
+    font-size: calc(26px + 57.8 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration .back_button h2 {
+    font-size: calc(26px + 34 * 0.0520833333vw);
+  }
+}
+@media screen and (min-width: 992px) {
+  .page.registration .back_button {
+    display: none;
+  }
+}
 .page.registration form {
   max-width: 1254px;
   width: 100%;
@@ -17,6 +62,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 50px;
 }
@@ -51,6 +97,13 @@
   width: 14px;
   box-shadow: 0px 0px 15px 0px #FF5500;
 }
+@media screen and (max-width: 991px) {
+  .page.registration form .check_box_wrapper .check_box .check {
+    width: 30px;
+    height: 30px;
+    border: 4px solid var(--font-grey-lite);
+  }
+}
 .page.registration form .check_box_wrapper .check_box label.check__label {
   font-weight: 700;
   font-size: 16px;
@@ -81,11 +134,25 @@
 .page.registration form .input_wrapper .input__item input::placeholder {
   color: var(--font-black);
 }
+@media screen and (max-width: 991px) {
+  .page.registration form .input_wrapper .input__item input {
+    font-size: 18px;
+  }
+}
 .page.registration form .input_wrapper .input__item label {
   padding-top: 3px;
   font-weight: 700;
-  font-size: 16px;
   color: var(--font-grey-lite);
+}
+@media (max-width: 768px) {
+  .page.registration form .input_wrapper .input__item label {
+    font-size: calc(15px + 1.7 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .page.registration form .input_wrapper .input__item label {
+    font-size: calc(15px + 1 * 0.0520833333vw);
+  }
 }
 .page.registration form .input_wrapper .input__item label span {
   font-weight: 500;
@@ -95,6 +162,48 @@
   margin-top: 60px;
   width: 100%;
   max-width: 222px;
+}
+@media screen and (max-width: 991px) {
+  .page.registration form {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+  }
+  .page.registration form .check_box_wrapper {
+    padding: 60px 30px;
+    margin-bottom: 0;
+  }
+  .page.registration form .check_box_wrapper .check_box {
+    gap: 20px;
+  }
+  .page.registration form .check_box_wrapper .check_box label.check__label {
+    font-size: 17px;
+  }
+  .page.registration form .input_wrapper {
+    padding: 50px 30px;
+    background: #E6D9CB;
+    width: 100%;
+    max-width: 100%;
+  }
+  .page.registration form .main_button.small {
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .page.registration form {
+    margin: 0;
+  }
+  .page.registration form .check_box_wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page.registration form .main_button.small {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+    min-width: 265px;
+  }
 }
 .page.registration .bottom {
   display: flex;
@@ -171,5 +280,18 @@
     flex-direction: column;
     align-items: flex-start;
     max-width: 1254px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .page.registration .bottom {
+    display: none;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .page.desc.registration {
+    display: none;
   }
 }/*# sourceMappingURL=registration.css.map */
