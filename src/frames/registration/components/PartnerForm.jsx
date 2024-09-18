@@ -63,7 +63,7 @@ const PartnerForm = () => {
                 </div>
             </div>
 
-            <Button mode={'orange small'} content={'Присоединиться'}/>
+            <Button mode={'orange small'} content={'Отправить данные'}/>
 
         </form>
     );

@@ -16,9 +16,9 @@
   gap: 0 40px;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .page.managers .manager_content {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 768px) {
@@ -63,7 +63,7 @@
   width: min-content;
 }
 @media screen and (max-width: 992px) {
-  .page.managers .manager_content .manager_item {
+  .page.managers .manager_content .manager_item.first {
     margin-bottom: 100px;
   }
 }
