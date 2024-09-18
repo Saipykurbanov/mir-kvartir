@@ -254,6 +254,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: -moz-max-content;
+  width: max-content;
 }
 @media (max-width: 768px) {
   .profile .profile_container .clients .new_clients form .check_block .checkbox_input {
@@ -272,27 +274,9 @@
 }
 .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
   position: relative;
+  width: 24px;
+  height: 24px;
   border: 1px solid var(--font-grey-lite);
-}
-@media (max-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
-    width: calc(20px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
-    width: calc(20px + 4 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
-    height: calc(20px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
-    height: calc(20px + 4 * 0.0520833333vw);
-  }
 }
 @media screen and (max-width: 991px) {
   .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox {
@@ -308,34 +292,18 @@
   transform: translate(-50%, -50%);
   background-color: transparent;
   border-radius: 50%;
-  transition: 0.3s;
-}
-@media (max-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
-    width: calc(10px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
-    width: calc(10px + 4 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
-    height: calc(10px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
-    height: calc(10px + 4 * 0.0520833333vw);
-  }
-}
-.profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill.active {
   background-color: var(--orange);
   box-shadow: 0px 0px 15px var(--orange);
+  transition: 80ms ease-out;
+  width: 0;
+  height: 0;
+}
+.profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill.active {
+  height: 14px;
+  width: 14px;
 }
 @media screen and (max-width: 991px) {
-  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill {
+  .profile .profile_container .clients .new_clients form .check_block .checkbox_input .checkbox .fill.active {
     width: 60%;
     height: 60%;
   }
@@ -539,6 +507,7 @@
   }
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item {
+  position: relative;
   display: grid;
   grid-template-columns: 221fr 234fr 156fr 235fr;
   grid-auto-rows: auto;
@@ -562,6 +531,19 @@
     height: 75px;
     padding: 0 30px;
     cursor: pointer;
+  }
+}
+.profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .client_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+@media screen and (min-width: 992px) {
+  .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .client_link {
+    display: none;
   }
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .avatar {
@@ -672,6 +654,7 @@
   height: 18px;
   transform: translateY(-50%);
   background: url("./../images/arrow_right.svg") center/80% no-repeat;
+  display: none;
 }
 .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status.at_work::before {
   background-color: #00A807;
@@ -701,6 +684,9 @@
     color: var(--font-clean-grey);
   }
   .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status::before {
+    display: block;
+  }
+  .profile .profile_container .clients .all_clients .clients_grid .clients_grid_item .columns.status::after {
     display: block;
   }
 }

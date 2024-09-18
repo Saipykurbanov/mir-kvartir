@@ -65,7 +65,7 @@ html,body{
     /*----------Новые -----------*/
     height: 100%;
     @include mediaMaxWidth(991) {
-        overflow-x: hidden;
+        //overflow-x: hidden;
     }
 }
 

@@ -299,11 +299,13 @@
     display: none;
   }
 }
-.modal_wrapper .sign_in form button {
-  display: block;
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
+@media screen and (max-width: 991px) {
+  .modal_wrapper .sign_in form button {
+    display: block;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto;
+  }
 }
 .modal_wrapper .cross {
   position: relative;

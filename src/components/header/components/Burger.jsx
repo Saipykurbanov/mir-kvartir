@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Burger = ({isOpen, callback}) => {
+const Burger = ({mode, callback}) => {
     return (
-        <div className={`burger ${isOpen ? 'cross' : 'burg'}`} onClick={(e) => callback(e)}>
+        <div className={`burger ${mode}`} onClick={(e) => callback(e)}>
             <span className="top"></span>
             <span className="center"></span>
             <span className="bottom"></span>

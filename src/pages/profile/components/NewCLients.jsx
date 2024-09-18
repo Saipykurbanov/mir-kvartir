@@ -14,14 +14,14 @@ const NewCLients = () => {
                 <div className="check_block">
 
                     <div className="checkbox_input" onClick={() => newCLients.changeBox('first')}>
-                        <div type="checkbox" className='checkbox' id='checkbox1' >
+                        <div className='checkbox' id='checkbox1' >
                             <div className={`fill ${newCLients.newUser.first ? 'active' : ''}`} ></div>
                         </div>
                         <div className='label'>Первичный рынок</div>
                     </div>
 
                     <div className="checkbox_input" onClick={() => newCLients.changeBox('second')}>
-                        <div type="checkbox" className='checkbox' id='checkbox2'>
+                        <div className='checkbox' id='checkbox2'>
                             <div className={`fill ${newCLients.newUser.second ? 'active' : ''}`}></div>
                         </div>
                         <div className='label'>Вторичный рынок</div>

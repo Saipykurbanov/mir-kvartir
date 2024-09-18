@@ -75,12 +75,6 @@ html, body {
   /*----------Новые -----------*/
   height: 100%;
 }
-@media screen and (max-width: 991px) {
-  html, body {
-    overflow-x: hidden;
-  }
-}
-
 /*----------Новые -----------*/
 #root {
   height: 100%;

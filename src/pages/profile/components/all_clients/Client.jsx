@@ -7,7 +7,10 @@ const Client = ({second, openMenu}) => {
     const [color] = useColor('А')
 
     return (
-        <NavLink to={'/client/1'} className={`clients_grid_item ${second ? 'second' : ''}`} onClick={openMenu}>
+        <div className={`clients_grid_item ${second ? 'second' : ''}`} onClick={openMenu}>
+
+            <NavLink to={'/client/1'} className={'client_link'}></NavLink>
+
             <div className="avatar" style={{background: color}}>А</div>
             <div className="columns comment"><p>Кукуев Олег Кукуевич</p></div>
             <div className="columns comment"><p>+7 999 000 99 88</p></div>
@@ -17,7 +20,7 @@ const Client = ({second, openMenu}) => {
             </div>
             <div className="columns status at_work"><p>в работе</p></div>
             <div className="columns comment"><p>некий комментарий, разворачивающийся при наведении</p></div>
-        </NavLink>
+        </div>
     );
 };
 
