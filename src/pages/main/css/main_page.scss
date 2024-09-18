@@ -60,6 +60,11 @@
                 padding-top: 100px;
             }   
         }
+        &.feedback {
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }   
+        }
     }
     @include mediaMaxWidth(991) {
         overflow: visible;

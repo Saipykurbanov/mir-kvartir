@@ -6,6 +6,7 @@ import Profile from './pages/profile/Profile';
 import ClientDetail from './pages/client/ClientDetail';
 import SuccessWindow from './components/modal/SuccessWindow';
 import Registration from './frames/registration/Registration';
+import TransferPage from './pages/transfer/TransferPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             
             <Route path='/profile' element={<Profile />}/>
 
+            {screenWidth > 992 ? <Route path='/transfer' element={<TransferPage />}/> : <></>}
             {screenWidth < 992 ? <Route path='/client/:id' element={<ClientDetail />}/> : <></>}
             {screenWidth < 992 ? <Route path='/become_partner' element={<Registration mode={'page'} />}/> : <></>}
 

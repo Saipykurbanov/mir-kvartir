@@ -5,6 +5,11 @@
     flex-direction: column;
     --index: calc(1vw + 1.9vh);
 
+    @include mediaMaxWidth(768) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .manager_content {
         position: relative;
         display: flex;
@@ -28,7 +33,7 @@
             font-weight: 600;
             background: var(--background-black);
             @include adaptiveFont(60, 26);
-            margin-left: -30px;
+            // margin-left: -4px;
             @include adaptiveProperty(margin-bottom, 60, 30);
 
             @include mediaMinWidth(768) {
@@ -125,12 +130,10 @@
                 
                 .manager_image_wrapper {
                     position: relative;
-                    // height: calc(var(--index) * 10);
-                    // width: calc(var(--index) * 10);
                     @include adaptiveProperty(width, 378, 220);
                     @include adaptiveProperty(height, 378, 220);
-                    min-width: 240px;
-                    min-height: 240px;
+                    min-width: 230px;
+                    min-height: 230px;
                     max-width: 378px;
                     max-height: 378px;
                     &:before {

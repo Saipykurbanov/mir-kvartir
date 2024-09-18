@@ -1,11 +1,15 @@
 @import './../../../style/common';
 
-.feedback.page {
+.page.feedback {
     background-color: var(--background-grey);
     display: flex;
     align-items: center;
     flex-direction: column;
     row-gap: 40px;
+
+    @include mediaMaxWidth(768) {
+        row-gap: 60px;      
+    }
     .container {
         max-width: 1326px;
         display: flex;
