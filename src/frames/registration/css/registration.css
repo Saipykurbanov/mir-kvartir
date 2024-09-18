@@ -203,6 +203,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 60px;
     height: 45px;
     min-width: 265px;
   }
