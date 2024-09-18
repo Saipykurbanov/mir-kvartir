@@ -14,11 +14,13 @@ const Header = () => {
     const [theme, setTheme] = useState('')
     const [page, setPage] = useState(1)
     const [isOpen, setIsOpen] = useState(false)
+    const [btn, setBtn] = useState('')
 
     const openModal = () => {
         document.body.style.overflow = 'hidden';
         Store.setListener('signIn', 'show');
         setIsOpen(false)
+        setBtn('burg')
     }
 
     const changePage = (data) => {
@@ -40,14 +42,17 @@ const Header = () => {
         if(isOpen) {
             document.body.style.overflow = 'visible';
             setIsOpen(false)
+            setBtn('burg')
         } else {
             document.body.style.overflow = 'hidden';
             setIsOpen(true)
+            setBtn('cross')
         }
     }
     
     const closeMenu = () => {
         document.body.style.overflow = 'visible';
+        setBtn('burg')
         setIsOpen(false)
     }
     
@@ -80,7 +85,7 @@ const Header = () => {
                 }
             </div>
 
-            <Burger isOpen={isOpen} callback={toggleMenu}/>
+            <Burger mode={btn} callback={toggleMenu}/>
 
             <div className={`menu ${isOpen ? 'active' : ''}`} onClick={(e) => e.stopPropagation()}>
                 <div className='sign' onClick={openModal}>

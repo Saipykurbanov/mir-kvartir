@@ -198,9 +198,11 @@
                 }
             }
             button {
-                display: block;
-                width: max-content;
-                margin: 0 auto;
+                @include mediaMaxWidth(991) {
+                    display: block;
+                    width: max-content;
+                    margin: 0 auto;
+                }
             }
         }
     }
