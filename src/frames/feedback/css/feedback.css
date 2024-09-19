@@ -12,6 +12,11 @@
     row-gap: 60px;
   }
 }
+@media screen and (max-width: 991px) {
+  .page.feedback {
+    margin-top: 50px;
+  }
+}
 .page.feedback .container {
   max-width: 1326px;
   display: flex;
@@ -221,6 +226,7 @@
     padding-left: 0;
     padding-right: 0;
     flex-direction: column-reverse;
+    margin-top: 0;
   }
   .page.feedback .container {
     gap: 0;

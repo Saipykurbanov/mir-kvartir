@@ -74,17 +74,7 @@ const Navigation = ({page}) => {
             <NavItem 
                 page={page}
                 num={7}
-                title={'Отзывы'}
                 mode={'top'}
-                decor={{
-                    right: true,
-                    left: true
-                }}
-            />
-                <div className="line"></div>
-            <NavItem 
-                page={page}
-                num={8}
                 title={'Кейсы'}
                 decor={{
                     right: true,
@@ -94,9 +84,8 @@ const Navigation = ({page}) => {
                 <div className="line"></div>
             <NavItem 
                 page={page}
-                num={9}
+                num={8}
                 title={'Комиссия'}
-                mode={'top'}
                 decor={{
                     right: true,
                     left: true
@@ -105,8 +94,9 @@ const Navigation = ({page}) => {
                 <div className="line"></div>
             <NavItem 
                 page={page}
-                num={10}
+                num={9}
                 title={'Контакты'}
+                mode={'top'}
                 decor={{
                     right: false,
                     left: true

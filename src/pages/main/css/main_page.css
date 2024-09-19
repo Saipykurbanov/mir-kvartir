@@ -19,7 +19,7 @@
 }
 @media screen and (max-width: 991px) {
   .main_page .main_wrapper {
-    transform: translateX(0);
+    transform: translateX(0) !important;
     position: static;
     display: block;
   }

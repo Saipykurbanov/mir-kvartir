@@ -35,7 +35,6 @@ const Main = () => {
 
                 <Registration mode={'page desc'}/>
                 <FeedBack mode={`page`} blocked={isBlocked} page={page}/>
-                <div className={`page`}></div>
                 <Commission mode={`page`}/>  
                 <Contacts mode={`page`}/>
 

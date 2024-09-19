@@ -10,6 +10,10 @@
     @include mediaMaxWidth(768) {
         row-gap: 60px;      
     }
+
+    @include mediaMaxWidth(991) {
+        margin-top: 50px;
+    }
     .container {
         max-width: 1326px;
         display: flex;
@@ -150,6 +154,7 @@
         padding-left: 0;
         padding-right: 0;
         flex-direction: column-reverse;
+        margin-top: 0;
 
         .container {
             gap: 0;

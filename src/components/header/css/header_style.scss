@@ -36,6 +36,8 @@ header {
         align-items: center;
         justify-content: space-between;
         padding: 0px 30px;
+        @include adaptiveProperty(padding-left, 30, 15);
+        @include adaptiveProperty(padding-right, 30, 15);
         @include mediaMaxWidth(991) {
             display: none;
         }
@@ -49,19 +51,20 @@ header {
             position: relative;
             .pagination {
                 position: relative;
-                width: 24px;
-                height: 24px;
+                @include adaptiveProperty(width, 24, 14);
+                @include adaptiveProperty(height, 24, 14);
                 background: transparent;
                 border-radius: 50%;
                 border: 6.5px solid var(--orange);
+                @include adaptiveProperty(border-width, 6.5, 2);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
     
                 & .inner_circle {
-                    width: 6px;
-                    height: 6px;
+                    @include adaptiveProperty(width, 6, 4);
+                    @include adaptiveProperty(height, 6, 4);
                     background: transparent;
                     border-radius: 50%;
                     transition: 0.3s;
@@ -69,14 +72,17 @@ header {
     
                 & .decor {
                     position: absolute;
-                    top: -6px;
+                    // top: -6px;
+                    top: 50%;
+                    transform: translateY(-50%);
                     height: 24px;
+                    @include adaptiveProperty(height, 23, 13);
                     &.right {
-                        right: -23px;
+                        @include adaptiveProperty(right, -23, -13);
                     }
                     &.left {
-                        left: -23px;
-                        transform: scale(-1, 1);
+                        transform: translateY(-50%) scale(-1, 1);
+                        @include adaptiveProperty(left, -23, -13);
                     }
                 }
             }
@@ -85,11 +91,11 @@ header {
                 display: block;
                 height: max-content;
                 position: absolute;
-                bottom: -30px;
+                top: calc(100% + 15px);
                 left: 50%;
                 color: var(--font-white);
                 white-space: nowrap;
-                font-size: 16px;
+                @include adaptiveFont(16, 12);
                 text-transform: uppercase;
                 font-weight: 400;
                 transform: translateX(-50%);
@@ -110,6 +116,12 @@ header {
                 }
                 &:hover::before{
                     width: 100%;
+                }
+
+                @include mediaMaxWidth(1300) {
+                    text-align: center;
+                    width: min-content;
+                    white-space: wrap;
                 }
             }
 
