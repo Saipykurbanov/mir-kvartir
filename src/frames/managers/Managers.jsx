@@ -19,7 +19,7 @@ const Managers = ({mode}) => {
 
                 <ManagerTitle>Управляющий по первичному рынку</ManagerTitle>
 
-                <div className="manager_item first">
+                <div className="manager_item">
 
                     <div className="grid">
 

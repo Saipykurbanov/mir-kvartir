@@ -13,6 +13,7 @@ import Contacts from '../../frames/contacts/Contacts';
 import Header from '../../components/header/Header';
 import Registration from '../../frames/registration/Registration';
 import Service from '../../frames/service/Service';
+import PartnersBtn from '../../components/partnersBtn/PartnersBtn';
 
 const Main = () => {
 
@@ -22,7 +23,8 @@ const Main = () => {
         <div className='main_page'>
 
             <Header />
-
+            <PartnersBtn auth={true}/>
+            
             <div className={`main_wrapper`} style={{transform: `translateX(-${scroll}dvw)`}}>
 
                 <StartPage mode={`page`}/>
@@ -34,9 +36,9 @@ const Main = () => {
                 <Service mode={`page service`}/>
 
                 <Registration mode={'page desc'}/>
-                <FeedBack mode={`page`} blocked={isBlocked} page={page}/>
-                <Commission mode={`page`}/>  
-                <Contacts mode={`page`}/>
+                <FeedBack mode={`page feedback`} blocked={isBlocked} page={page}/>
+                <Commission mode={`page commission`}/>  
+                <Contacts mode={`page contacts`}/>
 
             </div>
             

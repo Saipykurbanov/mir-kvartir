@@ -10,26 +10,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .transfer_page {
-    padding-bottom: calc(15px + 107.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .transfer_page {
-    padding-bottom: calc(15px + 63 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .transfer_page {
-    padding-top: calc(135px + 164.9 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .transfer_page {
-    padding-top: calc(135px + 97 * 0.0520833333vw);
-  }
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
 }
 @media screen and (max-width: 991px) {
   .transfer_page {
@@ -58,21 +40,14 @@
     top: calc(15px + 63 * 0.0520833333vw);
   }
 }
-@media (max-width: 768px) {
-  .transfer_page .profile_header .logo {
-    width: calc(75px + 117.3 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .transfer_page .profile_header .logo {
-    width: calc(75px + 69 * 0.0520833333vw);
-  }
+.transfer_page .profile_header .logo {
+  width: clamp(60px, var(--size) * 4.8, 144px);
 }
 .transfer_page form {
   max-width: 1254px;
   width: 100%;
-  margin-bottom: 12px;
-  margin-top: 30px;
+  margin-bottom: 1.11dvh;
+  margin-top: 2.77dvh;
 }
 .transfer_page form .check_box_wrapper {
   width: 100%;
@@ -80,7 +55,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 59px;
+  margin-bottom: 4.62dvh;
 }
 .transfer_page form .check_box_wrapper .check_box {
   display: flex;
@@ -125,7 +100,7 @@
   width: 100%;
   max-width: 768px;
   display: flex;
-  gap: 30px;
+  gap: 2.77dvh;
   flex-direction: column;
 }
 .transfer_page form .input_wrapper .input__item {
@@ -166,24 +141,15 @@
   font-style: italic;
 }
 .transfer_page form .main_button.small {
-  margin-top: 60px;
+  margin-top: 5.55dvh;
   width: 100%;
   max-width: 222px;
 }
 .transfer_page h2 {
   width: 100%;
+  font-size: clamp(20px, var(--size) * 2, 60px);
   color: var(--font-clean-white);
-  letter-spacing: -3px;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   white-space: nowrap;
-}
-@media (max-width: 768px) {
-  .transfer_page h2 {
-    font-size: calc(26px + 57.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .transfer_page h2 {
-    font-size: calc(26px + 34 * 0.0520833333vw);
-  }
 }/*# sourceMappingURL=transfer.css.map */

@@ -21,33 +21,53 @@ export default function useScrollPages() {
     const wheelFunction = (e) => {
       if (window.innerWidth > 992 && !isBlocked.current && !block) {
         const wheel = e.deltaY;
-        
+
         if(wheel > 0) {
-          if(((100 * page) - 40) < scroll) {
-            setScroll(100 * page);
-            setPage(prev => prev + 1);
-            Store.setListener('change_page_from_scroll', (page + 1))
-            isBlocked.current = true;
-            setTimeout(() => { 
-              isBlocked.current = false;
-            }, 700);
-          } else {
-            setScroll(prev => prev >= (100 * (count - 1)) ? prev : prev + 5);
-          }
+          setScroll(prev => {
+            let result = prev >= (100 * (count - 1)) ? prev : prev + 5
+            if(result >= (100 * page)) {
+              setPage(prev => prev + 1);
+              Store.setListener('change_page_from_scroll', (page + 1))
+            }
+            return result
+          });
         } else {
-          if(((100 * (page - 1)) - 60) > scroll) {
-            setScroll(100 * (page - 2));
-            setPage(prev => prev - 1);
-            Store.setListener('change_page_from_scroll', (page - 1))
-            isBlocked.current = true;
-            console.log(isBlocked)
-            setTimeout(() => { 
-              isBlocked.current = false;
-            }, 700)
-          } else {
-            setScroll(prev => prev <= 1 ? prev : prev - 5)
-          }
+          setScroll(prev => {
+            let result = prev <= 1 ? prev : prev - 5
+            if(((100 * (page - 1)) - 80) > result) {
+              setPage(prev => prev - 1);
+              Store.setListener('change_page_from_scroll', (page - 1))
+            }
+            return result
+          })
         }
+        
+        // if(wheel > 0) {
+        //   if(((100 * page) - 40) < scroll) {
+        //     setScroll(100 * page);
+        //     setPage(prev => prev + 1);
+        //     Store.setListener('change_page_from_scroll', (page + 1))
+        //     isBlocked.current = true;
+        //     setTimeout(() => { 
+        //       isBlocked.current = false;
+        //     }, 700);
+        //   } else {
+        //     setScroll(prev => prev >= (100 * (count - 1)) ? prev : prev + 5);
+        //   }
+        // } else {
+        //   if(((100 * (page - 1)) - 60) > scroll) {
+        //     setScroll(100 * (page - 2));
+        //     setPage(prev => prev - 1);
+        //     Store.setListener('change_page_from_scroll', (page - 1))
+        //     isBlocked.current = true;
+        //     console.log(isBlocked)
+        //     setTimeout(() => { 
+        //       isBlocked.current = false;
+        //     }, 700)
+        //   } else {
+        //     setScroll(prev => prev <= 1 ? prev : prev - 5)
+        //   }
+        // }
       }
     }; 
 
@@ -55,10 +75,13 @@ export default function useScrollPages() {
     useEffect(() => {
         if (window.innerWidth > 991) {
             window.addEventListener("wheel", wheelFunction);
+            window.addEventListener("scroll", (e) => e.preventDefault());
         }
+
 
         return () => {
             window.removeEventListener("wheel", wheelFunction);
+            window.removeEventListener("scroll", (e) => e.preventDefault());
             if (timer.current) {
                 clearTimeout(timer.current);
             }

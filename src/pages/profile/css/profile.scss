@@ -4,14 +4,14 @@
     width: 100%;
     min-height: 100%;   
     background-color: var(--background-lite);
-    @include adaptiveProperty(padding-top, 252, 135);
-    @include adaptiveProperty(padding-bottom, 70, 40);
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+    padding-top: clamp(200px, 23.3dvh, 400px);
+    padding-bottom: 5.85dvh;
     @include mediaMaxWidth(991) {
         background-color: var(--background-white);
         padding: 0px;
@@ -50,11 +50,11 @@
             display: none;
         }
         .logo {
-            @include adaptiveProperty(width, 144, 75);
+            width: clamp(60px, calc(var(--size) * 4.8), 144px);
         }
         .user {
             margin-right: auto;
-            @include adaptiveProperty(margin-left, 60, 0);
+            margin-left: calc(var(--size) * 2);
             .name {
                 @include adaptiveFont(40, 30);
                 color: var(--font-black);
@@ -62,6 +62,7 @@
                 letter-spacing: -0.05em;
                 margin-bottom: 10px;
                 margin-left: 10px;
+                font-size: calc(var(--size) * 1.33);
             }
             .status {
                 @include adaptiveFont(26, 20);
@@ -70,6 +71,7 @@
                 border: 1px solid var(--font-grey-lite);
                 padding: 5px 10px;
                 letter-spacing: -0.05em;
+                font-size: calc(var(--size) * 0.86);
             }
         }
     }
@@ -527,23 +529,23 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        @include adaptiveProperty(gap, 28, 10);
+        gap: 2.6dvh;
         @include mediaMaxWidth(991) {
             display: none;
         }
         h2 {
             color: var(--font-black);
-            @include adaptiveFont(58, 30);
             line-height: 1em;   
             text-transform: uppercase;
+            font-size: calc(var(--size) * 2);
         }
         p {
             padding: 15px 30px;
-            @include adaptiveFont(28, 20);
             width: max-content;
             background-color: var(--background-beige);
             color: var(--font-green);
             font-weight: 500;
+            font-size: calc(var(--size) * 1);
         }
     }
 }

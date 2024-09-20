@@ -1,48 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CheckBox from '../../../frames/registration/components/CheckBox';
 import Button from '../../../components/button/Button';
+import useTransferUser from '../hooks/useTransferUser';
 
 const TransferForm = () => {
 
-    const [transferUser, setTransferUser] = useState({
-        group: '',
-        name: '',
-        tel: '',
-        city: '',
-        agency: '',
-        budget: '',
-    })
+    const transfer = useTransferUser()
 
     return (
-        <form action="">
+        <form action="" onSubmit={(e) => transfer.sendData(e)}>
                 <div className="check_box_wrapper">
-                    <CheckBox labe={'previous'} group={transferUser.group} callback={setTransferUser}>первичный</CheckBox>
-                    <CheckBox labe={'secondary'} group={transferUser.group} callback={setTransferUser}>вторичный</CheckBox>
+                    <CheckBox labe={'previous'} group={transfer.transferUser.group} callback={transfer.setTransferUser}>первичный</CheckBox>
+                    <CheckBox labe={'secondary'} group={transfer.transferUser.group} callback={transfer.setTransferUser}>вторичный</CheckBox>
                 </div>
 
                 <div className="input_wrapper">
                     <div className="input__item">
-                        <input type="text" placeholder='Андрей Пакетов'/>
+                        <input type="text" />
                         <label htmlFor="">ваше имя</label>
                     </div>
 
                     <div className="input__item">
-                        <input type="text" placeholder='+7 000 000 00 00'/>
+                        <input type="text" />
                         <label htmlFor="">ваш номер телефона</label>
                     </div>
 
                     <div className="input__item">
-                        <input type="text" placeholder='Санкт-Петербург'/>
+                        <input type="text" />
                         <label htmlFor="">город</label>
                     </div>
 
                     <div className="input__item">
-                        <input type="text" placeholder='Кукуев без партнеров'/>
+                        <input type="text" />
                         <label htmlFor="">агенство</label>
                     </div>
                     
                     <div className="input__item">
-                        <input type="text" placeholder='от 15 000 000'/>
+                        <input type="text" />
                         <label htmlFor="">планируемый бюджет</label>
                     </div>
                 </div>

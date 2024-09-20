@@ -3,6 +3,7 @@ import './css/process.css'
 import Button from '../../components/button/Button';
 import decoration from './../../components/header/images/decor2.svg'
 
+
 const Process = ({mode}) => {
     return (
         <div className={mode} id='process'>

@@ -29,7 +29,7 @@
             margin-top: 60px;
         }
         .instruction_item {
-            @include adaptiveProperty(height, 144, 50);
+            height: clamp(30px, calc(var(--size) * 4.8), 144px);
             display: flex;
             gap: 12px;
             @include mediaMaxWidth(991) {
@@ -107,7 +107,7 @@
                 }
             }
             .number {
-                @include adaptiveProperty(min-width, 144, 50);
+                min-width: clamp(30px, calc(var(--size) * 4.8), 144px);
                 max-width: 144px;
                 height: 100%;
                 border: 1px solid var(--font-grey);
@@ -115,7 +115,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                @include adaptiveFont(60, 28);
+                font-size: calc(var(--size) * 2);
                 @include mediaMaxWidth(991) {
                     border: 0;
                     font-size: 28px;
@@ -129,15 +129,15 @@
                 width: 100%;
                 border: 1px solid var(--font-grey);
                 padding: 10px;
-                @include adaptiveProperty(padding-left, 30, 10);
                 display: flex;
                 align-items: center;
                 text-transform: lowercase;
+                padding-left: clamp(7px, var(--size), 30px);
                 p {
-                    @include adaptiveFont(18, 8);
                     width: 100%;
                     max-width: 400px;
-                    @include adaptiveProperty(line-height, 22, 10);
+                    line-height: 1.2em;
+                    font-size: clamp(8px, calc(var(--size) * 0.6), 18px);
                 }
                 @include mediaMaxWidth(991) {
                     border: 0;
@@ -170,9 +170,12 @@
             align-items: center;
             gap: 12px;
             .quation {
-                @include adaptiveFont(60, 28);
                 line-height: 1em;
                 text-transform: uppercase;
+                font-size: calc(var(--size) * 2);
+                @include mediaMaxWidth(991) {
+                    @include adaptiveFont(60, 28);
+                }
             }
         }
 
@@ -186,21 +189,21 @@
                 gap: 0px;
                 align-items: flex-end;
                 .a {
-                    @include adaptiveFont(306, 158);
                     font-family: var(--sanchez);
                     line-height: 0.8em;
                     letter-spacing: -0.05em;
+                    font-size: calc(var(--size) * 10.2);
                 }
                 .b {
-                    @include adaptiveFont(90, 26);
                     align-self: flex-end;
                     letter-spacing: -0.05em;
+                    font-size: calc(var(--size) * 3);
                 }
             }
             .c {
                 width: 100%;  
                 color: var(--orange);
-                @include adaptiveFont(18, 16);
+                font-size: clamp(14px, calc(var(--size) * 0.6), 18px);
             }
         }
     }

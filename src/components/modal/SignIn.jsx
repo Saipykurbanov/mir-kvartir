@@ -13,6 +13,7 @@ const SignIn = () => {
 
     const closeModal = () => {
         document.body.style.overflow = 'visible';
+        Store.setListener('block_scroll', false)
         setIsOpen('close')
     }
 

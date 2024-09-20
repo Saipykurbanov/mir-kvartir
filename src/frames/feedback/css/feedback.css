@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: 3.7dvh;
 }
 @media screen and (max-width: 768px) {
   .page.feedback {
@@ -21,16 +21,7 @@
   max-width: 1326px;
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 768px) {
-  .page.feedback .container {
-    gap: calc(40px + 68 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .page.feedback .container {
-    gap: calc(40px + 40 * 0.0520833333vw);
-  }
+  gap: clamp(40px, var(--size) * 2.66, 80px);
 }
 .page.feedback .container::-webkit-scrollbar {
   width: 0;
@@ -52,20 +43,21 @@
   gap: 11px;
 }
 .page.feedback .bottom h2 {
+  font-size: calc(var(--size) * 2);
   text-transform: uppercase;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) and (max-width: 768px) {
   .page.feedback .bottom h2 {
     font-size: calc(26px + 57.8 * (100vw - 320px) / 1920);
   }
 }
-@media (min-width: 768px) {
+@media screen and (max-width: 991px) and (min-width: 768px) {
   .page.feedback .bottom h2 {
     font-size: calc(26px + 34 * 0.0520833333vw);
   }
 }
 .page.feedback .bottom .yandex_button {
-  margin-left: 20px;
+  margin-left: calc(var(--size) * 0.6);
 }
 @media screen and (max-width: 768px) {
   .page.feedback .bottom .yandex_button {
@@ -79,27 +71,9 @@
   width: 100%;
   display: flex;
   align-items: start;
+  gap: clamp(14px, var(--size) * 3, 90px);
   border-bottom: 1px solid var(--font-grey);
-}
-@media (max-width: 768px) {
-  .page.feedback .feedback_item {
-    gap: calc(14px + 129.2 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .page.feedback .feedback_item {
-    gap: calc(14px + 76 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .page.feedback .feedback_item {
-    padding-bottom: calc(30px + 62.9 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .page.feedback .feedback_item {
-    padding-bottom: calc(30px + 37 * 0.0520833333vw);
-  }
+  padding-bottom: clamp(30px, var(--size) * 2.23, 67px);
 }
 .page.feedback .feedback_item .user_icon {
   background: var(--orange);

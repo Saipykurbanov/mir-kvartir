@@ -186,21 +186,12 @@ header .navigation .nav_item span {
   left: 50%;
   color: var(--font-white);
   white-space: nowrap;
+  font-size: clamp(12px, var(--size) * 0.54, 16px);
   text-transform: uppercase;
   font-weight: 400;
   transform: translateX(-50%);
   transition: 0.3s;
   cursor: pointer;
-}
-@media (max-width: 768px) {
-  header .navigation .nav_item span {
-    font-size: calc(12px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  header .navigation .nav_item span {
-    font-size: calc(12px + 4 * 0.0520833333vw);
-  }
 }
 header .navigation .nav_item span.top {
   top: -30px;

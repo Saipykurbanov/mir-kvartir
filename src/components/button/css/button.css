@@ -5,7 +5,7 @@
   border-style: solid;
   font-weight: 600;
   line-height: 19px;
-  min-width: 222px;
+  min-width: calc(var(--size) * 7.4);
   text-align: center;
   transition: 0.5s ease-in-out;
   animation: appear 0.8s ease;
@@ -16,6 +16,7 @@
   .main_button {
     font-size: 15px;
     padding: 17px;
+    min-width: 222px;
   }
 }
 .main_button.full {

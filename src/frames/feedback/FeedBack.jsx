@@ -41,7 +41,7 @@ const FeedBack = ({mode, blocked, page}) => {
     // }, [])
 
     return (
-        <div className={`${mode} feedback`} id='feedback'>
+        <div className={`${mode}`} id='feedback'>
             <div 
                 className="container" 
                 ref={feedbackContainer} 
@@ -58,7 +58,7 @@ const FeedBack = ({mode, blocked, page}) => {
 
             <div className="bottom">
                 {/* <BottomHeader title={'Кейсы'}/> */}
-                <Button  mode={'big'} content={'Передать Клиента'}/>
+                <a href="/transfer" className="main_button big">Передать Клиента</a>
                 <h2>Кейсы</h2>
                 
                 <YandexButton />

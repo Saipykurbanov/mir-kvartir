@@ -68,7 +68,8 @@
 
         .percent_desc {
             width: 100%;
-            max-width: 900px;
+            // max-width: 900px;
+            max-width: calc(var(--size) * 30);
         }
 
         @include mediaMaxWidth(600) {

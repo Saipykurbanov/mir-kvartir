@@ -19,6 +19,7 @@ const Header = () => {
     const openModal = () => {
         document.body.style.overflow = 'hidden';
         Store.setListener('signIn', 'show');
+        Store.setListener('block_scroll', true);
         setIsOpen(false)
         setBtn('burg')
     }

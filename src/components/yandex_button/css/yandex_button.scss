@@ -2,11 +2,11 @@
 
 a.yandex_button {
     font-family: var(--button-font);
-    @include adaptiveProperty(padding, 13, 6.6);
-    @include adaptiveProperty(border-radius, 15, 5);
-    @include adaptiveProperty(gap, 13.5, 6.7);
+    padding: clamp(6.6px, calc(var(--size) * 0.43), 13px);
+    border-radius: clamp(5px, calc(var(--size) * 0.5), 15px);
+    gap: clamp(6.7px, calc(var(--size) * 0.45), 13.5px);
     background: #fff;
-    @include adaptiveFont(28, 12);
+    font-size: clamp(12px, calc(var(--size) * 0.93), 28px);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -14,8 +14,8 @@ a.yandex_button {
     color: var(--font-black) !important;
     
     & img {
-        @include adaptiveProperty(height, 33, 18);
-        @include adaptiveProperty(width, 33, 18);
+        width:  clamp(18px, calc(var(--size) * 1.1), 33px);
+        height:  clamp(18px, calc(var(--size) * 1.1), 33px);
     }
 
     @include mediaMinWidth(992) {

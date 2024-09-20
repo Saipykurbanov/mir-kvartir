@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../../../components/button/Button';
-import Check from './Check';
 import CheckBox from './CheckBox';
+import useNewUser from '../hooks/useNewUser';
 
 const PartnerForm = () => {
-    const [newUser, setNewUser] = useState({
-        group: '',
-        name: '',
-        tel: '',
-        city: '',
-        agency: '',
-        telegram: '',
-    })
+
+    const {newUser, setNewUser, sendData} = useNewUser()
 
     return (
-        <form action="">
+        <form action="" onSubmit={(e) => sendData(e)}>
             <div className="check_box_wrapper">
                 <CheckBox labe={'fiz'} group={newUser.group} callback={setNewUser}>физ. лицо</CheckBox>
                 <CheckBox labe={'self_employed'} group={newUser.group} callback={setNewUser}>самозанятый</CheckBox>
@@ -24,27 +18,27 @@ const PartnerForm = () => {
 
             <div className="input_wrapper">
                 <div className="input__item">
-                    <input type="text" placeholder='Андрей Пакетов'/>
+                    <input type="text" />
                     <label htmlFor="">ваше имя</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" placeholder='+7 000 000 00 00'/>
+                    <input type="text" />
                     <label htmlFor="">ваш номер телефона</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" placeholder='Санкт-Петербург'/>
+                    <input type="text" />
                     <label htmlFor="">город</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" placeholder='Кукуев без партнеров'/>
+                    <input type="text" />
                     <label htmlFor="">агенство</label>
                 </div>
                 
                 <div className="input__item">
-                    <input type="text" placeholder='@kukuev'/>
+                    <input type="text"/>
                     <label htmlFor="">ваш ник в Телеграм <span>(мы пригласим Вас в закрытый канал для партнеров)</span></label>
                 </div>
             </div>

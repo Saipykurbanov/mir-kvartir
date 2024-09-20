@@ -7,7 +7,7 @@ const NewCLients = () => {
     const newCLients = useNewClients()
 
     return (
-        <div className="new_clients">
+        <div className="new_clients" id={"new_client"}>
             <div className="title_profile">передать клиента:</div>
 
             <form action="" onSubmit={(e) => newCLients.sendData(e)}>

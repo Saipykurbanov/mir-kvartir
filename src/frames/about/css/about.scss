@@ -16,7 +16,10 @@
                 display: none;
             }
             .image {
-                @include adaptiveProperty(width, 300, 180);
+                width: clamp(180px, calc(var(--size) * 10), 300px);
+                @include mediaMaxWidth(991) {
+                    @include adaptiveProperty(width, 300, 180);
+                }
                 &.first {
                     padding-top: 3px;
                 }
@@ -25,8 +28,11 @@
                 }
                 p {
                     margin-top: 12px;
-                    @include adaptiveFont(24, 15);
                     line-height: 24px;
+                    font-size: clamp(15px, calc(var(--size) * 0.8), 24px);
+                    @include mediaMaxWidth(991) {
+                        @include adaptiveFont(24, 15);
+                    }
                     &.sec {
                         color: var(--orange);
                     }
@@ -67,23 +73,25 @@
                 }
                 h4 {
                     color: var(--orange);
-                    @include adaptiveFont(24, 20);
                     margin-bottom: 10px;
+                    font-size: clamp(18px, calc(var(--size) * 0.8), 24px);
                     @include mediaMaxWidth(991) {
                         margin-bottom: 23px;
+                        @include adaptiveFont(24, 20);
                     }
                 }
                 ul {
                     li {
                         position: relative;
                         padding-left: 27px;
-                        @include adaptiveFont(18, 15);
-                        line-height: 24px;
+                        line-height: 1.2em;
                         letter-spacing: 0.5px;
+                        font-size: clamp(14px, calc(var(--size) * 0.6), 18px);
                         @include mediaMaxWidth(991) {
                             padding-left: 15px;   
                             line-height: normal;
                             margin-bottom: 12px;
+                            @include adaptiveFont(18, 15);
                         }
                         &::before {
                             content: '';
@@ -135,9 +143,9 @@
 
     .ofer {
         margin-top: auto;
-        @include adaptiveFont(58, 20);
         line-height: 1.3em;
         text-transform: uppercase;
+        font-size: calc(var(--size) * 1.93);
         @include mediaMaxWidth(992) {
             display: none;
         }

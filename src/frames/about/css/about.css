@@ -29,12 +29,15 @@
     display: none;
   }
 }
-@media (max-width: 768px) {
+.about .market_block .images .image {
+  width: clamp(180px, var(--size) * 10, 300px);
+}
+@media screen and (max-width: 991px) and (max-width: 768px) {
   .about .market_block .images .image {
     width: calc(180px + 204 * (100vw - 320px) / 1920);
   }
 }
-@media (min-width: 768px) {
+@media screen and (max-width: 991px) and (min-width: 768px) {
   .about .market_block .images .image {
     width: calc(180px + 120 * 0.0520833333vw);
   }
@@ -48,13 +51,14 @@
 .about .market_block .images .image p {
   margin-top: 12px;
   line-height: 24px;
+  font-size: clamp(15px, var(--size) * 0.8, 24px);
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) and (max-width: 768px) {
   .about .market_block .images .image p {
     font-size: calc(15px + 15.3 * (100vw - 320px) / 1920);
   }
 }
-@media (min-width: 768px) {
+@media screen and (max-width: 991px) and (min-width: 768px) {
   .about .market_block .images .image p {
     font-size: calc(15px + 9 * 0.0520833333vw);
   }
@@ -105,43 +109,45 @@
 .about .market_block .description .market_list h4 {
   color: var(--orange);
   margin-bottom: 10px;
-}
-@media (max-width: 768px) {
-  .about .market_block .description .market_list h4 {
-    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .about .market_block .description .market_list h4 {
-    font-size: calc(20px + 4 * 0.0520833333vw);
-  }
+  font-size: clamp(18px, var(--size) * 0.8, 24px);
 }
 @media screen and (max-width: 991px) {
   .about .market_block .description .market_list h4 {
     margin-bottom: 23px;
   }
 }
+@media screen and (max-width: 991px) and (max-width: 768px) {
+  .about .market_block .description .market_list h4 {
+    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .about .market_block .description .market_list h4 {
+    font-size: calc(20px + 4 * 0.0520833333vw);
+  }
+}
 .about .market_block .description .market_list ul li {
   position: relative;
   padding-left: 27px;
-  line-height: 24px;
+  line-height: 1.2em;
   letter-spacing: 0.5px;
-}
-@media (max-width: 768px) {
-  .about .market_block .description .market_list ul li {
-    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .about .market_block .description .market_list ul li {
-    font-size: calc(15px + 3 * 0.0520833333vw);
-  }
+  font-size: clamp(14px, var(--size) * 0.6, 18px);
 }
 @media screen and (max-width: 991px) {
   .about .market_block .description .market_list ul li {
     padding-left: 15px;
     line-height: normal;
     margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 768px) {
+  .about .market_block .description .market_list ul li {
+    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .about .market_block .description .market_list ul li {
+    font-size: calc(15px + 3 * 0.0520833333vw);
   }
 }
 .about .market_block .description .market_list ul li::before {
@@ -193,16 +199,7 @@
   margin-top: auto;
   line-height: 1.3em;
   text-transform: uppercase;
-}
-@media (max-width: 768px) {
-  .about .ofer {
-    font-size: calc(20px + 64.6 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .about .ofer {
-    font-size: calc(20px + 38 * 0.0520833333vw);
-  }
+  font-size: calc(var(--size) * 1.93);
 }
 @media screen and (max-width: 992px) {
   .about .ofer {
