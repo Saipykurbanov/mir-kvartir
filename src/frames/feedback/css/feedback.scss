@@ -1,11 +1,19 @@
 @import './../../../style/common';
 
-.feedback.page {
+.page.feedback {
     background-color: var(--background-grey);
     display: flex;
     align-items: center;
     flex-direction: column;
     row-gap: 40px;
+
+    @include mediaMaxWidth(768) {
+        row-gap: 60px;      
+    }
+
+    @include mediaMaxWidth(991) {
+        margin-top: 50px;
+    }
     .container {
         max-width: 1326px;
         display: flex;
@@ -146,6 +154,7 @@
         padding-left: 0;
         padding-right: 0;
         flex-direction: column-reverse;
+        margin-top: 0;
 
         .container {
             gap: 0;

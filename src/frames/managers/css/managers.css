@@ -5,6 +5,12 @@
   flex-direction: column;
   --index: calc(1vw + 1.9vh);
 }
+@media screen and (max-width: 768px) {
+  .page.managers {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .page.managers .manager_content {
   position: relative;
   display: flex;
@@ -16,9 +22,9 @@
   gap: 0 40px;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .page.managers .manager_content {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 768px) {
@@ -31,7 +37,6 @@
   padding: 40px 30px;
   font-weight: 600;
   background: var(--background-black);
-  margin-left: -30px;
 }
 @media (max-width: 768px) {
   .page.managers .manager_content .manager_title {
@@ -63,7 +68,7 @@
   width: min-content;
 }
 @media screen and (max-width: 992px) {
-  .page.managers .manager_content .manager_item {
+  .page.managers .manager_content .manager_item.first {
     margin-bottom: 100px;
   }
 }
@@ -186,8 +191,8 @@
 }
 .page.managers .manager_content .manager_item .grid .manager_image_wrapper {
   position: relative;
-  min-width: 240px;
-  min-height: 240px;
+  min-width: 230px;
+  min-height: 230px;
   max-width: 378px;
   max-height: 378px;
 }

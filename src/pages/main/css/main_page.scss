@@ -18,7 +18,7 @@
         will-change: transform;
         
         @include mediaMaxWidth(991) {
-            transform: translateX(0);
+            transform: translateX(0) !important;
             position: static;
             display: block;
         }
@@ -69,6 +69,11 @@
                 padding-top: 100px;
                 padding-bottom: 15px
             }
+        }
+        &.feedback {
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }   
         }
     }
     @include mediaMaxWidth(991) {

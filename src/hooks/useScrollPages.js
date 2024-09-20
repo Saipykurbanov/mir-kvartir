@@ -9,7 +9,7 @@ export default function useScrollPages() {
     const [block, setBlock] = useState(false)
 
     const timer = useRef(null)
-    const count = 10
+    const count = 9
   
     Store.useListener('change_page_header', (data) => {
       setScroll(data[0])

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../../components/button/Button';
 import Check from './Check';
+import CheckBox from './CheckBox';
 
 const PartnerForm = () => {
     const [newUser, setNewUser] = useState({
@@ -15,25 +16,10 @@ const PartnerForm = () => {
     return (
         <form action="">
             <div className="check_box_wrapper">
-                <div className="check_box">
-                    <Check labe={'fiz'} group={newUser.group} setNewUser={setNewUser}/>
-                    <label htmlFor="" className="check__label">физ. лицо</label>
-                </div>
-
-                <div className="check_box">
-                    <Check labe={'self_employed'} group={newUser.group} setNewUser={setNewUser}/>
-                    <label htmlFor="" className="check__label">самозанятый</label>
-                </div>
-
-                <div className="check_box">
-                    <Check labe={'individual '} group={newUser.group} setNewUser={setNewUser}/>
-                    <label htmlFor="" className="check__label">ИП</label>
-                </div>
-
-                <div className="check_box">
-                    <Check labe={'legal'} group={newUser.group} setNewUser={setNewUser}/>
-                    <label htmlFor="" className="check__label">юр. лицо</label>
-                </div>
+                <CheckBox labe={'fiz'} group={newUser.group} callback={setNewUser}>физ. лицо</CheckBox>
+                <CheckBox labe={'self_employed'} group={newUser.group} callback={setNewUser}>самозанятый</CheckBox>
+                <CheckBox labe={'individual '} group={newUser.group} callback={setNewUser}>ИП</CheckBox>
+                <CheckBox labe={'legal'} group={newUser.group} callback={setNewUser}>юр. лицо</CheckBox>
             </div>
 
             <div className="input_wrapper">
@@ -63,7 +49,7 @@ const PartnerForm = () => {
                 </div>
             </div>
 
-            <Button mode={'orange small'} content={'Присоединиться'}/>
+            <Button mode={'orange small'} content={'Отправить данные'}/>
 
         </form>
     );

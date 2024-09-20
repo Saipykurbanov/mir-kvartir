@@ -19,7 +19,7 @@
 }
 @media screen and (max-width: 991px) {
   .main_page .main_wrapper {
-    transform: translateX(0);
+    transform: translateX(0) !important;
     position: static;
     display: block;
   }
@@ -95,6 +95,11 @@
   .main_page .page.process {
     padding-top: 100px;
     padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .main_page .page.feedback {
+    padding-top: 100px;
   }
 }
 @media screen and (max-width: 991px) {
