@@ -97,8 +97,44 @@
     padding-bottom: 15px;
   }
 }
+.main_page .page.managers {
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
+}
+@media screen and (max-width: 991px) {
+  .main_page .page.managers {
+    padding-top: 100px;
+    padding-bottom: 0px;
+  }
+}
+.main_page .page.registration {
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
+}
+.main_page .page.feedback {
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
+}
 @media screen and (max-width: 991px) {
   .main_page .page.feedback {
+    padding-top: 100px;
+  }
+}
+.main_page .page.commission {
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
+}
+@media screen and (max-width: 991px) {
+  .main_page .page.commission {
+    padding-top: 100px;
+  }
+}
+.main_page .page.contacts {
+  padding-top: clamp(200px, 28dvh, 400px);
+  padding-bottom: 5.85dvh;
+}
+@media screen and (max-width: 991px) {
+  .main_page .page.contacts {
     padding-top: 100px;
   }
 }

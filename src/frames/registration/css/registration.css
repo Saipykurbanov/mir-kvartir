@@ -55,8 +55,8 @@
 .page.registration form {
   max-width: 1254px;
   width: 100%;
-  margin-bottom: 12px;
-  margin-top: 30px;
+  margin-bottom: 1.11dvh;
+  margin-top: 2.77dvh;
 }
 .page.registration form .check_box_wrapper {
   width: 100%;
@@ -64,7 +64,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 4.62dvh;
 }
 .page.registration form .check_box_wrapper .check_box {
   display: flex;
@@ -115,7 +115,7 @@
   width: 100%;
   max-width: 768px;
   display: flex;
-  gap: 30px;
+  gap: 2.77dvh;
   flex-direction: column;
 }
 .page.registration form .input_wrapper .input__item {
@@ -161,7 +161,7 @@
   font-style: italic;
 }
 .page.registration form .main_button.small {
-  margin-top: 60px;
+  margin-top: 5.55dvh;
   width: 100%;
   max-width: 222px;
 }
@@ -213,20 +213,22 @@
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  gap: 40px 50px;
+  gap: clamp(10px, var(--size) * 1.3, 40px);
+  margin-top: 1.85dvh;
 }
 .page.registration .bottom h2 {
+  font-size: clamp(20px, var(--size) * 2, 60px);
   color: var(--font-black);
-  letter-spacing: -3px;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   white-space: nowrap;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) and (max-width: 768px) {
   .page.registration .bottom h2 {
     font-size: calc(26px + 57.8 * (100vw - 320px) / 1920);
   }
 }
-@media (min-width: 768px) {
+@media screen and (max-width: 991px) and (min-width: 768px) {
   .page.registration .bottom h2 {
     font-size: calc(26px + 34 * 0.0520833333vw);
   }
@@ -237,12 +239,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
+  gap: clamp(7px, var(--size) * 0.6, 20px);
+}
+@media screen and (max-width: 1700px) {
+  .page.registration .bottom .description {
+    display: none;
+  }
 }
 .page.registration .bottom .description .description__item {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: clamp(7px, var(--size) * 0.8, 24px);
   width: 100%;
   width: -moz-max-content;
   width: max-content;
@@ -251,21 +258,13 @@
   white-space: nowrap;
   font-weight: 700;
   color: var(--font-swamp);
-}
-@media (max-width: 768px) {
-  .page.registration .bottom .description .description__item h3 {
-    font-size: calc(20px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .page.registration .bottom .description .description__item h3 {
-    font-size: calc(20px + 4 * 0.0520833333vw);
-  }
+  font-size: calc(var(--size) * 0.8);
 }
 .page.registration .bottom .description .description__item p {
   max-width: 222px;
+  font-size: clamp(12px, var(--size) * 0.53, 16px);
   color: var(--font-swamp);
-  line-height: 1.5;
+  line-height: 1.5em;
 }
 @media (max-width: 768px) {
   .page.registration .bottom .description .description__item p {
@@ -279,7 +278,6 @@
 }
 @media screen and (max-width: 1700px) {
   .page.registration .bottom {
-    margin-top: 20px;
     flex-direction: column;
     align-items: flex-start;
     max-width: 1254px;

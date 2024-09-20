@@ -64,16 +64,18 @@ html,body{
 	scroll-behavior: smooth;
     color: var(--font-white);
     background: var(--background);
-    /*----------Новые -----------*/
     height: 100%;
-    @include mediaMaxWidth(991) {
-        //overflow-x: hidden;
-    }
 }
 
 /*----------Новые -----------*/
 #root {
     height: 100%;
+}
+
+body {
+    @include mediaMinWidth(992) {
+        overflow: hidden !important;
+    }
 }
 
 input,button,textarea{font-family:inherit;}

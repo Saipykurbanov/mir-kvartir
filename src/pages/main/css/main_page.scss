@@ -27,7 +27,6 @@
         transition: 1s;
         padding: 232px 30px 78px 30px;
         background-color: var(--background);
-        //@include adaptiveProperty(padding-top, 232, 135);
         padding-top: 20dvh;
         @include adaptiveProperty(padding-bottom, 78, 15);
         padding-left: 30px;
@@ -70,10 +69,38 @@
                 padding-bottom: 15px
             }
         }
+        &.managers {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+                padding-bottom: 0px
+            }
+        }
+        &.registration {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+        }
         &.feedback {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
             @include mediaMaxWidth(991) {
                 padding-top: 100px;
             }   
+        }
+        &.commission {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }  
+        }
+        &.contacts {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }  
         }
     }
     @include mediaMaxWidth(991) {

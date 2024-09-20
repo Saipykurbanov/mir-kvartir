@@ -27,33 +27,21 @@
   -webkit-hyphens: auto;
   hyphens: auto;
   word-break: break-word;
-}
-@media (max-width: 768px) {
-  .start_page.page .about_us_block .description_block .description {
-    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .start_page.page .about_us_block .description_block .description {
-    font-size: calc(15px + 3 * 0.0520833333vw);
-  }
+  font-size: clamp(14px, var(--size) * 0.6, 18px);
 }
 @media screen and (max-width: 991px) {
   .start_page.page .about_us_block .description_block .description {
     max-width: 500px;
+    font-size: 15px;
   }
 }
 .start_page.page .about_us_block .description_block .partners {
   color: var(--orange);
+  font-size: clamp(14px, var(--size) * 0.6, 18px);
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .start_page.page .about_us_block .description_block .partners {
-    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .start_page.page .about_us_block .description_block .partners {
-    font-size: calc(15px + 3 * 0.0520833333vw);
+    font-size: 15px;
   }
 }
 .start_page.page .about_us_block .offer {
@@ -93,7 +81,7 @@
 }
 @media screen and (max-width: 991px) {
   .start_page.page .clicks .comission {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 .start_page.page .clicks .second {

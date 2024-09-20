@@ -8,7 +8,7 @@ import descPercent from './images/30desc.svg'
 
 const Commission = ({mode}) => {
     return (
-        <div className={`${mode} commission`}>
+        <div className={`${mode}`}>
             <div className="percent_mob">
                 <img src={percent} alt="" />
             </div>

@@ -1,8 +1,5 @@
 @import './../../../style/common';
 
-$min-font-size: 20px;  
-$max-font-size: 58px;
-
 .start_page.page {
     display: flex;
     flex-wrap: wrap;
@@ -28,18 +25,21 @@ $max-font-size: 58px;
                 -webkit-hyphens: auto;
                 hyphens: auto;
                 word-break: break-word;
-                @include adaptiveFont(18, 15);
+                font-size: clamp(14px, calc(var(--size) * 0.6), 18px);
                 @include mediaMaxWidth(991) {
                     max-width: 500px;
+                    font-size: 15px;
                 }
             }
             .partners {
                 color: var(--orange);
-                @include adaptiveFont(18, 15);
+                font-size: clamp(14px, calc(var(--size) * 0.6), 18px);
+                @include mediaMaxWidth(991) {
+                    font-size: 15px;
+                }
             }
         }
         .offer {
-            //@include adaptiveFont(58, 20);
             font-size: calc(var(--size) * 1.93);
             line-height: 1.3em;
             text-transform: uppercase;
@@ -64,7 +64,7 @@ $max-font-size: 58px;
             letter-spacing: -1px;
             white-space: nowrap;
             @include mediaMaxWidth(991) {
-                font-size: 26px; 
+                font-size: 24px; 
             }
         }
 

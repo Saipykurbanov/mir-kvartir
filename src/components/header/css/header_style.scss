@@ -95,7 +95,8 @@ header {
                 left: 50%;
                 color: var(--font-white);
                 white-space: nowrap;
-                @include adaptiveFont(16, 12);
+                //@include adaptiveFont(16, 12);
+                font-size: clamp(12px, calc(var(--size) * 0.54), 16px);
                 text-transform: uppercase;
                 font-weight: 400;
                 transform: translateX(-50%);
