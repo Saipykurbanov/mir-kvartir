@@ -9,45 +9,13 @@
   text-align: center;
   transition: 0.5s ease-in-out;
   animation: appear 0.8s ease;
+  padding: calc(var(--size) * 0.7);
+  font-size: calc(var(--size) * 0.6);
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .main_button {
-    padding: calc(8px + 22.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .main_button {
-    padding: calc(8px + 13 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  .main_button {
-    font-size: calc(12px + 10.2 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  .main_button {
-    font-size: calc(12px + 6 * 0.0520833333vw);
-  }
-}
-@media screen and (max-width: 991px) and (max-width: 768px) {
-  .main_button {
-    font-size: calc(15px + 5.1 * (100vw - 320px) / 1920);
-  }
-}
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .main_button {
-    font-size: calc(15px + 3 * 0.0520833333vw);
-  }
-}
-@media screen and (max-width: 991px) and (max-width: 768px) {
-  .main_button {
-    padding: calc(17px + 6.8 * (100vw - 320px) / 1920);
-  }
-}
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .main_button {
-    padding: calc(17px + 4 * 0.0520833333vw);
+    font-size: 15px;
+    padding: 17px;
   }
 }
 .main_button.full {

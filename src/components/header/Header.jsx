@@ -66,6 +66,7 @@ const Header = () => {
   
     return (
         <header className={theme}>
+
             <img src={logo} alt="" className="logo" />
             
             <Navigation page={page}/>
