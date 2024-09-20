@@ -2,10 +2,8 @@
 
 header {
     position: fixed;
-    top: 78px;
     left: 0px;
     width: 100%;
-    @include adaptiveProperty(top, 78, 15);
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
@@ -13,11 +11,13 @@ header {
     justify-content: space-between;
     z-index: 100;
     gap: 30px;
+    top: 7dvh;
     .logo {
-        @include adaptiveProperty(width, 144, 75);
+        width: clamp(60px, calc(var(--size) * 4.8), 144px);
     }
     @include mediaMaxWidth(991) {
         align-items: flex-start;
+        top: 15px;
     }
 
     .account {

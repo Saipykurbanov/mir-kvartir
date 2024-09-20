@@ -2,7 +2,6 @@
 /*-------------Миксины----------------*/
 header {
   position: fixed;
-  top: 78px;
   left: 0px;
   width: 100%;
   padding-left: 30px;
@@ -12,30 +11,15 @@ header {
   justify-content: space-between;
   z-index: 100;
   gap: 30px;
+  top: 7dvh;
 }
-@media (max-width: 768px) {
-  header {
-    top: calc(15px + 107.1 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  header {
-    top: calc(15px + 63 * 0.0520833333vw);
-  }
-}
-@media (max-width: 768px) {
-  header .logo {
-    width: calc(75px + 117.3 * (100vw - 320px) / 1920);
-  }
-}
-@media (min-width: 768px) {
-  header .logo {
-    width: calc(75px + 69 * 0.0520833333vw);
-  }
+header .logo {
+  width: clamp(60px, var(--size) * 4.8, 144px);
 }
 @media screen and (max-width: 991px) {
   header {
     align-items: flex-start;
+    top: 15px;
   }
 }
 header .account {

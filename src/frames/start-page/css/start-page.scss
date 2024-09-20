@@ -1,5 +1,8 @@
 @import './../../../style/common';
 
+$min-font-size: 20px;  
+$max-font-size: 58px;
+
 .start_page.page {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +24,10 @@
                 width: 100%;
                 line-height: 22px;
                 margin-bottom: 20px;
+                display: -webkit-box;   
+                -webkit-hyphens: auto;
+                hyphens: auto;
+                word-break: break-word;
                 @include adaptiveFont(18, 15);
                 @include mediaMaxWidth(991) {
                     max-width: 500px;
@@ -32,7 +39,8 @@
             }
         }
         .offer {
-            @include adaptiveFont(58, 20);
+            //@include adaptiveFont(58, 20);
+            font-size: calc(var(--size) * 1.93);
             line-height: 1.3em;
             text-transform: uppercase;
             @include mediaMaxWidth(991) {
@@ -50,31 +58,23 @@
         gap: 12px;
         @include adaptiveProperty(gap, 12, 5);
         .comission {
-            @include adaptiveFont(58, 26);
+            font-size: calc(var(--size) * 1.93);
             text-transform: lowercase;
             text-align: end;
             letter-spacing: -1px;
             white-space: nowrap;
+            @include mediaMaxWidth(991) {
+                font-size: 26px; 
+            }
         }
 
         .second {
             position: relative;
-            svg {
-                @include adaptiveProperty(width, 320, 157);
-                path {
-                    fill: var(--font-white);
+            img {
+                width: calc(var(--size) * 10.665);
+                @include mediaMaxWidth(991) {
+                    width: 150px;   
                 }
-            }
-
-            p {
-                position: absolute;
-                left: 0;
-                bottom: 1em;
-                @include adaptiveFont(58, 26);
-                text-transform: lowercase;
-                padding-left: 75px;
-                @include adaptiveProperty(padding-left, 85, 50);
-                letter-spacing: -1px;
             }
         }
     }

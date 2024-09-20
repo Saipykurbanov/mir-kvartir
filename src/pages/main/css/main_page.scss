@@ -1,5 +1,6 @@
 @import './../../../style/common';
 
+
 .main_page {
     position: relative;
     /*----------Новые было min-height 100dvh вместо height-----------*/
@@ -26,27 +27,35 @@
         transition: 1s;
         padding: 232px 30px 78px 30px;
         background-color: var(--background);
+        //@include adaptiveProperty(padding-top, 232, 135);
+        padding-top: 20dvh;
         @include adaptiveProperty(padding-bottom, 78, 15);
-        @include adaptiveProperty(padding-top, 232, 135);
         padding-left: 30px;
         padding-right: 30px;
         &.about {
-            @include adaptiveProperty(padding-bottom, 63, 15);
-            @include adaptiveProperty(padding-top, 302, 135);
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
             @include mediaMaxWidth(991) {
-                padding-top: 0px;
+                padding-top: 0;
+                padding-bottom: 15px
             }
         }
         &.main {
             position: static;
             transform: translateX(0);
-            @include adaptiveProperty(padding-bottom, 63, 15);
-            @include adaptiveProperty(padding-top, 302, 135);
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 135px;
+                padding-bottom: 15px
+            }
         }
         &.objects {
-            @include adaptiveProperty(padding-top, 302, 135);
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
             @include mediaMaxWidth(991) {
                 padding-top: 100px;
+                padding-bottom: 15px;
                 flex-direction: column-reverse;
             }
             display: flex;
@@ -54,11 +63,12 @@
             @include adaptiveProperty(gap, 50, 30);
         }
         &.process {
-            @include adaptiveProperty(padding-bottom, 63, 15);
-            @include adaptiveProperty(padding-top, 302, 135);
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
             @include mediaMaxWidth(991) {
                 padding-top: 100px;
-            }   
+                padding-bottom: 15px
+            }
         }
         &.feedback {
             @include mediaMaxWidth(991) {
