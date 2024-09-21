@@ -16,6 +16,10 @@
         grid-auto-rows: 100dvh;
         transition: transform .6s cubic-bezier(.215,.61,.355,1);
         will-change: transform;
+        -ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
         
         @include mediaMaxWidth(991) {
             transform: translateX(0) !important;

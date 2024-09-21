@@ -16,6 +16,9 @@
   grid-auto-rows: 100dvh;
   transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   will-change: transform;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 @media screen and (max-width: 991px) {
   .main_page .main_wrapper {
