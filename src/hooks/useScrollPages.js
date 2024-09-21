@@ -19,74 +19,87 @@ export default function useScrollPages() {
     Store.useListener('block_scroll', setBlock)
     
     const wheelFunction = (e) => {
-      if (window.innerWidth > 992 && !isBlocked.current && !block) {
-        const wheel = e.deltaY;
+      // if (window.innerWidth > 992 && !isBlocked.current && !block) {
+        //   const wheel = e.deltaY;
+        //   console.log(wheel)
+        //   if(wheel > 0) {
+          //     setScroll(prev => {
+            //       let result = prev >= (100 * (count - 1)) ? prev : prev + 5
+      //       if(result >= (100 * page)) {
+        //         setPage(prev => prev + 1);
+        //         Store.setListener('change_page_from_scroll', (page + 1))
+        //       }
+        //       return result
+        //     });
+        //   } else {
+          //     setScroll(prev => {
+            //       let result = prev <= 1 ? prev : prev - 5
+            //       if(((100 * (page - 1)) - 80) > result) {
+              //         setPage(prev => prev - 1);
+              //         Store.setListener('change_page_from_scroll', (page - 1))
+              //       }
+              //       return result
+              //     })
+              //   }
+              //}
+              
+      //e.preventDefault()
+      if (window.innerWidth > 991 && !isBlocked.current && !block) {
+        let wheel = e.deltaY > 0 ? Math.min(e.deltaY, 50) : Math.max(e.deltaY, -50);
+        wheel *= 0.05
 
-        if(wheel > 0) {
-          setScroll(prev => {
-            let result = prev >= (100 * (count - 1)) ? prev : prev + 5
-            if(result >= (100 * page)) {
+          if(wheel > 0) {
+            if(((100 * page) - 20) < scroll) {
+              setScroll(100 * page);
               setPage(prev => prev + 1);
               Store.setListener('change_page_from_scroll', (page + 1))
+              isBlocked.current = true;
+              timer.current = setTimeout(() => { 
+                isBlocked.current = false;
+              }, 1000);
+            } else {
+              setScroll(prev => prev >= (100 * (count - 1)) ? prev : prev + wheel);
             }
-            return result
-          });
-        } else {
-          setScroll(prev => {
-            let result = prev <= 1 ? prev : prev - 5
-            if(((100 * (page - 1)) - 80) > result) {
+
+          } else {
+            if(((100 * (page - 1)) - 80) > scroll) {
+              setScroll(100 * (page - 2));
               setPage(prev => prev - 1);
               Store.setListener('change_page_from_scroll', (page - 1))
+              isBlocked.current = true;
+              timer.current = setTimeout(() => { 
+                isBlocked.current = false;
+              }, 1000)
+            } else {
+              setScroll(prev => prev <= 1 ? prev : prev + wheel)
             }
-            return result
-          })
+          }
         }
-        
-        // if(wheel > 0) {
-        //   if(((100 * page) - 40) < scroll) {
-        //     setScroll(100 * page);
-        //     setPage(prev => prev + 1);
-        //     Store.setListener('change_page_from_scroll', (page + 1))
-        //     isBlocked.current = true;
-        //     setTimeout(() => { 
-        //       isBlocked.current = false;
-        //     }, 700);
-        //   } else {
-        //     setScroll(prev => prev >= (100 * (count - 1)) ? prev : prev + 5);
-        //   }
-        // } else {
-        //   if(((100 * (page - 1)) - 60) > scroll) {
-        //     setScroll(100 * (page - 2));
-        //     setPage(prev => prev - 1);
-        //     Store.setListener('change_page_from_scroll', (page - 1))
-        //     isBlocked.current = true;
-        //     console.log(isBlocked)
-        //     setTimeout(() => { 
-        //       isBlocked.current = false;
-        //     }, 700)
-        //   } else {
-        //     setScroll(prev => prev <= 1 ? prev : prev - 5)
-        //   }
-        // }
-      }
     }; 
 
-
     useEffect(() => {
-        if (window.innerWidth > 991) {
-            window.addEventListener("wheel", wheelFunction);
-            window.addEventListener("scroll", (e) => e.preventDefault());
-        }
+      return () => {
+        if (timer.current) {
+            clearTimeout(timer.current);
+        } 
+      }
+    }, [])
 
 
-        return () => {
-            window.removeEventListener("wheel", wheelFunction);
-            window.removeEventListener("scroll", (e) => e.preventDefault());
-            if (timer.current) {
-                clearTimeout(timer.current);
-            }
-        };
-    }, [wheelFunction]);
+    // useEffect(() => {
 
-    return {isBlocked, scroll, page}
+    //     if (window.innerWidth > 991) {
+    //         window.addEventListener("wheel", wheelFunction, {passive: false});
+    //     }
+
+
+    //     return () => {
+    //         window.removeEventListener("wheel", wheelFunction);
+    //         if (timer.current) {
+    //             clearTimeout(timer.current);
+    //         }
+    //     };
+    // }, []);
+
+    return {isBlocked, scroll, page, wheelFunction}
 }
