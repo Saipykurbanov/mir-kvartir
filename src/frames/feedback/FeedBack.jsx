@@ -40,6 +40,16 @@ const FeedBack = ({mode, blocked, page}) => {
     //     return () => feedbackContainer?.current?.removeEventListener('scroll', (e) => onScrollEnd(e))
     // }, [])
 
+    // const scrollFeedBack = () => {
+
+    // }
+
+    // useEffect(() => {
+    //     if(page === 7) {
+    //         window.addEventListener('wheel', () => scrollFeedBack())
+    //     }
+    // }, [page])
+
     return (
         <div className={`${mode}`} id='feedback'>
             <div 

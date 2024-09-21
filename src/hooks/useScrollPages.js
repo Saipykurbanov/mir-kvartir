@@ -23,8 +23,15 @@ export default function useScrollPages() {
     const wheelFunction = (e) => {
 
       if (window.innerWidth > 992 && !isBlocked.current && !block) {
+          
+          let wheel
+          
+          if(e.deltaY === 0) {
+            wheel = e.deltaX > 0 ? Math.min(e.deltaX, 50) : Math.max(e.deltaX, -50); 
+          } else {
+            wheel = e.deltaY > 0 ? Math.min(e.deltaY, 50) : Math.max(e.deltaY, -50);
+          }
 
-          let wheel = e.deltaY > 0 ? Math.min(e.deltaY, 50) : Math.max(e.deltaY, -50);
           wheel *= 0.05
 
 
@@ -36,9 +43,11 @@ export default function useScrollPages() {
                 setPage(prev => prev + 1);
                 Store.setListener('change_page_from_scroll', (page + 1))
                 setBlock(true)
+                
                 timer.current = setTimeout(() => {
                   setBlock(false)
                 }, 1000)
+
                 return page * 100
               }
               return result
@@ -50,9 +59,11 @@ export default function useScrollPages() {
                 setPage(prev => prev - 1);
                 Store.setListener('change_page_from_scroll', (page - 1))
                 setBlock(true)
+                
                 timer.current = setTimeout(() => {
                   setBlock(false)
                 }, 1000)
+
                 return 100 * (page - 2)
               }
               return result
@@ -65,7 +76,7 @@ export default function useScrollPages() {
       return () => {
         if (timer.current) {
             clearTimeout(timer.current);
-        } 
+        }
       }
     }, [])
 
