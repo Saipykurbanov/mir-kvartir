@@ -34,12 +34,12 @@ const Contacts = ({mode}) => {
                 <h2>Контакты</h2>
 
                 <div className="social">
-                    <a href="">
+                    <a href="https://t.me/mirkv_spb">
                         <img src={telegram} alt="" className='desc' />
                         <img src={telegram_white} alt="" className="mob" />
                         telegram
                     </a>
-                    <a href="">
+                    <a href="https://vk.com/mirkv_spb">
                         <img src={vk} alt="" className='desc' />
                         <img src={vk_white} alt="" className="mob" />
                         VK
@@ -49,7 +49,7 @@ const Contacts = ({mode}) => {
                         <img src={whats_ap_white} alt="" className="mob" />
                         WhatsApp
                     </a>
-                    <a href="">
+                    <a href="https://www.youtube.com/@mirkv_spb">
                         <img src={you_tube} alt="" className='desc' />
                         <img src={you_tube_white} alt="" className="mob" />
                         YouTube
