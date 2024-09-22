@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Store from "../../../utils/Store"
 
 
 export default function useNewClients() {
+
+    const form = useRef(null)
 
     const [newUser, setNewUser] = useState({
         name: '',
@@ -25,5 +27,13 @@ export default function useNewClients() {
         Store.setListener('successWindowMode', 'lite')
     }
 
-    return { newUser, setNewUser, changeBox, sendData }
+    useEffect(() => {
+
+        if(location.hash && form.current) {
+            form.current.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+    }, [form])
+
+    return { newUser, setNewUser, changeBox, sendData, form }
 }

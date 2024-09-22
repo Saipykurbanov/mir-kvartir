@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../../../components/button/Button';
 import useNewClients from '../hooks/useNewClients';
 
@@ -7,7 +7,7 @@ const NewCLients = () => {
     const newCLients = useNewClients()
 
     return (
-        <div className="new_clients" id={"new_client"}>
+        <div className="new_clients" id={"new_client"} ref={newCLients.form}>
             <div className="title_profile">передать клиента:</div>
 
             <form action="" onSubmit={(e) => newCLients.sendData(e)}>
