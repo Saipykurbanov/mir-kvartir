@@ -44,10 +44,14 @@ export default function useScrollPages() {
                 Store.setListener('change_page_from_scroll', (page + 1))
                 setBlock(true)
                 
+                // if(page + 1 === 7) {
+                //   return page * 100
+                // } else {
+                // }
                 timer.current = setTimeout(() => {
                   setBlock(false)
                 }, 1000)
-
+                
                 return page * 100
               }
               return result
@@ -60,12 +64,18 @@ export default function useScrollPages() {
                 Store.setListener('change_page_from_scroll', (page - 1))
                 setBlock(true)
                 
+                // if(page - 1 === 7) {
+                //   return 100 * (page - 2)
+                // } else {
+                // }
+                
                 timer.current = setTimeout(() => {
                   setBlock(false)
                 }, 1000)
 
                 return 100 * (page - 2)
               }
+
               return result
             })
           }
