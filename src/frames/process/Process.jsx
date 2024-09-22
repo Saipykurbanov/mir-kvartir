@@ -1,7 +1,6 @@
 import React from 'react';
 import './css/process.css'
 import Button from '../../components/button/Button';
-import decoration from './../../components/header/images/decor2.svg'
 
 
 const Process = ({mode}) => {
@@ -19,7 +18,7 @@ const Process = ({mode}) => {
 
                             <div className="inner_circle"></div>
                             
-                            <img src={decoration} alt="" className="decor right" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor right" />
                         </div>
 
                         <span className="line top"></span>
@@ -35,11 +34,11 @@ const Process = ({mode}) => {
 
                     <div className={`nav_item`}>
                         <div className="pagination">
-                            <img src={decoration} alt="" className="decor left" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor left" />
 
                             <div className="inner_circle"></div>
                             
-                            <img src={decoration} alt="" className="decor right" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor right" />
 
                         </div>
                         <span className="line center"></span>
@@ -54,11 +53,11 @@ const Process = ({mode}) => {
                     <div className="number">3</div>
                     <div className={`nav_item`}>
                         <div className="pagination">
-                            <img src={decoration} alt="" className="decor left" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor left" />
 
                             <div className="inner_circle"></div>
                             
-                            <img src={decoration} alt="" className="decor right" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor right" />
                         </div>
                         <span className="line center"></span>
                     </div>
@@ -71,11 +70,11 @@ const Process = ({mode}) => {
                     <div className="number">4</div>
                     <div className={`nav_item`}>
                         <div className="pagination">
-                            <img src={decoration} alt="" className="decor left" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor left" />
 
                             <div className="inner_circle"></div>
                             
-                            <img src={decoration} alt="" className="decor right" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor right" />
                         </div>
                         <span className="line center"></span>
                     </div>
@@ -88,11 +87,11 @@ const Process = ({mode}) => {
                     <div className="number">5</div>
                     <div className={`nav_item`}>
                         <div className="pagination">
-                            <img src={decoration} alt="" className="decor left" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor left" />
 
                             <div className="inner_circle"></div>
                             
-                            <img src={decoration} alt="" className="decor right" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor right" />
                         </div>
                         <span className="line center"></span>
                     </div>
@@ -105,7 +104,7 @@ const Process = ({mode}) => {
                     <div className="number">6</div>
                     <div className={`nav_item`}>
                         <div className="pagination">
-                            <img src={decoration} alt="" className="decor left" />
+                            <img src={'/images/header/decor2.svg'} alt="" className="decor left" />
 
                             <div className="inner_circle"></div>
                         </div>

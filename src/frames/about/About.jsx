@@ -1,7 +1,6 @@
 import React from 'react';
 import './css/about.css';
-import sec from './images/sec.png'
-import fisrt from './images/first.svg'
+
 
 const About = ({ mode }) => {
 
@@ -12,12 +11,12 @@ const About = ({ mode }) => {
                 <div className="images">
 
                     <div className="image">
-                        <img src={sec} alt="" />
+                        <img src={'/images/about/sec.png'} alt="" />
                         <p className='sec'>Только центральные районы Петербурга</p>
                     </div>
 
                     <div className="image first">
-                        <img src={fisrt} alt="" />
+                        <img src={'/images/about/first.svg'} alt="" />
                         <p className='first'>Больше, чем <br/> «под ключ»</p>
                     </div>
 
@@ -37,7 +36,7 @@ const About = ({ mode }) => {
                         </div>
 
                         <div className="image_mob">
-                            <img src={fisrt} alt="" />
+                            <img src={'/images/about/first.svg'} alt="" />
                             <p className='first'>Больше, чем <br/> «под ключ»</p>
                         </div>
                     </div>
@@ -54,7 +53,7 @@ const About = ({ mode }) => {
                         </div>
 
                         <div className="image_mob sec">
-                            <img src={sec} alt="" />
+                            <img src={'/images/about/sec.png'} alt="" />
                             <p className='sec'>Только центральные районы Петербурга</p>
                         </div>
                     </div>
