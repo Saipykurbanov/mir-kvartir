@@ -10,18 +10,22 @@ export default function useScrollPages() {
     const [isDrag, setIsDrag] = useState(false)
 
     const timer = useRef(null)
+    const timer2 = useRef(null)
+    const timer3 = useRef(null)
     const mainPage = useRef(null)
     const count = 9
   
     Store.useListener('change_page_header', (data) => {
       setScroll(data[0])
       setPage(data[1])
+      if(data[1] === 7 && data[0] === 600) {
+        return setBlock(true)
+      }
     })
 
     Store.useListener('block_scroll', setBlock)
     
     const wheelFunction = (e) => {
-      
       if (window.innerWidth > 991 && !isBlocked.current && !block) {
           e.preventDefault()
           
@@ -37,44 +41,78 @@ export default function useScrollPages() {
 
 
           if(wheel > 0) {
-
-            setScroll(prev => {
+            // console.log('вправо')
+            
+            setScroll(prev => { //скролл вправо
               let result = prev >= (100 * (count - 1)) ? prev : prev + wheel
+
               if(result >= ((100 * page) - 20)) {
                 setPage(prev => prev + 1);
                 Store.setListener('change_page_from_scroll', (page + 1))
                 setBlock(true)
                 
-                // if(page + 1 === 7) {
-                //   return page * 100
-                // } else {
-                // }
-                timer.current = setTimeout(() => {
-                  setBlock(false)
-                }, 1000)
+                if(page + 1 === 7) {
+                  return page * 100
+                } else {
+                  timer.current = setTimeout(() => {
+                    setBlock(false)
+                  }, 1500)
+                }
                 
                 return page * 100
               }
+              
+              if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 20)) {
+                setBlock(true)
+                
+                if(page === 7) {
+                  return 100 * (page - 1)
+                } else {
+                  timer2.current = setTimeout(() => {
+                    console.log('yes', block)
+                    setBlock(false)
+                  }, 1500)
+                }
+
+                return 100 * (page - 1)
+              }
+
               return result
             });
-          } else {
-            setScroll(prev => {
+          } else if(wheel < 0) {
+            // console.log('влево')
+
+            setScroll(prev => { //скролл влево
               let result = prev <= 1 ? prev : prev + wheel
+
               if(((100 * (page - 1)) - 80) > result) {
                 setPage(prev => prev - 1);
                 Store.setListener('change_page_from_scroll', (page - 1))
                 setBlock(true)
                 
-                // if(page - 1 === 7) {
-                //   return 100 * (page - 2)
-                // } else {
-                // }
+                if(page - 1 === 7) {
+                  return 100 * (page - 2)
+                } else {
+                  timer.current = setTimeout(() => {
+                    setBlock(false)
+                  }, 1500)
+                }
                 
-                timer.current = setTimeout(() => {
-                  setBlock(false)
-                }, 1000)
-
                 return 100 * (page - 2)
+              }
+              
+              if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 20)) {
+                setBlock(true)
+
+                if(page === 7) {
+                  return 100 * (page - 1)
+                } else {
+                  timer3.current = setTimeout(() => {
+                    setBlock(false)
+                  }, 1500)
+                }
+
+                return 100 * (page - 1)
               }
 
               return result
@@ -100,7 +138,13 @@ export default function useScrollPages() {
           window.removeEventListener('mouseup', dragEnd)
         }
         if (timer.current) {
-            clearTimeout(timer.current);
+          clearTimeout(timer.current);
+        }
+        if(timer2.current) {
+          clearTimeout(timer2.current)
+        }
+        if(timer3.current) {
+          clearTimeout(timer3.current)
         }
       }
     }, [block, isDrag, page, count, timer])

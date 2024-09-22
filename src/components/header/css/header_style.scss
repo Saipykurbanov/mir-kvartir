@@ -12,6 +12,7 @@ header {
     z-index: 100;
     gap: 30px;
     top: 7dvh;
+    pointer-events: none;
     .logo {
         width: clamp(60px, calc(var(--size) * 4.8), 144px);
     }
@@ -21,6 +22,7 @@ header {
     }
 
     .account {
+        pointer-events: all;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -49,6 +51,8 @@ header {
 
         .nav_item {
             position: relative;
+            pointer-events: all;
+            
             .pagination {
                 position: relative;
                 @include adaptiveProperty(width, 24, 14);
@@ -88,6 +92,7 @@ header {
             }
     
             & span{
+                pointer-events: all;
                 display: block;
                 height: max-content;
                 position: absolute;
@@ -139,6 +144,7 @@ header {
     }
 
     .burger {
+        pointer-events: all;
         position: relative;
         cursor: pointer;
         width: 45px;
@@ -200,6 +206,7 @@ header {
     }
 
     .menu {
+        pointer-events: all;
         position: fixed;
         top: 0;
         right: 0;
