@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Store from "../utils/Store";
 
 export default function useScrollPages() {
@@ -21,15 +21,16 @@ export default function useScrollPages() {
     Store.useListener('block_scroll', setBlock)
     
     const wheelFunction = (e) => {
-
-      if (window.innerWidth > 992 && !isBlocked.current && !block) {
+      
+      if (window.innerWidth > 991 && !isBlocked.current && !block) {
+          e.preventDefault()
           
           let wheel
           
           if(e.deltaY === 0) {
-            wheel = e.deltaX > 0 ? Math.min(e.deltaX, 50) : Math.max(e.deltaX, -50); 
+            wheel = e.deltaX > 0 ? Math.min(e.deltaX, 100) : Math.max(e.deltaX, -100); 
           } else {
-            wheel = e.deltaY > 0 ? Math.min(e.deltaY, 50) : Math.max(e.deltaY, -50);
+            wheel = e.deltaY > 0 ? Math.min(e.deltaY, 100) : Math.max(e.deltaY, -100);
           }
 
           wheel *= 0.05
@@ -73,15 +74,29 @@ export default function useScrollPages() {
     }
 
     useEffect(() => {
+
+      if(window.innerWidth > 991) {
+        window.addEventListener('wheel', wheelFunction, {passive: false})
+        window.addEventListener('mousedown', dragDown)
+        window.addEventListener('mousemove', dragMove)
+        window.addEventListener('mouseup', dragEnd)
+      }
+
       return () => {
+        if(window.innerWidth > 991) {
+          window.removeEventListener('wheel', wheelFunction)
+          window.removeEventListener('mousedown', dragDown)
+          window.removeEventListener('mousemove', dragMove)
+          window.removeEventListener('mouseup', dragEnd)
+        }
         if (timer.current) {
             clearTimeout(timer.current);
         }
       }
-    }, [])
+    }, [block, isDrag, page, count, timer])
 
     const dragDown = (e) => {
-      if (window.innerWidth > 992 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current && !block) {
         e.preventDefault()
         if(mainPage.current) {
           mainPage.current.style.cursor = 'grabbing';
@@ -91,7 +106,7 @@ export default function useScrollPages() {
     }
 
     const dragMove = (e) => {
-      if (window.innerWidth > 992 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current && !block) {
         e.preventDefault()
         let move = e.movementX * 0.08
 
@@ -128,7 +143,7 @@ export default function useScrollPages() {
     }
 
     const dragEnd = (e) => {
-      if (window.innerWidth > 992 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current && !block) {
         e.preventDefault()
         if(mainPage.current) {
           mainPage.current.style.cursor = 'default';
@@ -137,5 +152,5 @@ export default function useScrollPages() {
       }
     }
 
-    return {isBlocked, scroll, page, wheelFunction, dragDown, dragEnd, dragMove, mainPage}
+    return {isBlocked, scroll, page, mainPage}
 }

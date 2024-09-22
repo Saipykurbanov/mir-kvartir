@@ -17,10 +17,10 @@ import PartnersBtn from '../../components/partnersBtn/PartnersBtn';
 
 const Main = () => {
 
-    const {isBlocked, scroll, page, wheelFunction, dragDown, dragEnd, dragMove, mainPage} = useScrollPages()
+    const {isBlocked, scroll, page, mainPage} = useScrollPages()
 
     return (
-        <div className='main_page'  onWheel={wheelFunction} onMouseDown={dragDown} onMouseMove={dragMove} onMouseUp={dragEnd}>
+        <div className='main_page'>
 
             <Header />
             <PartnersBtn auth={true}/>

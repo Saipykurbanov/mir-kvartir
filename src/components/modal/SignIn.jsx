@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './css/modal.css';
 import Store from '../../utils/Store';
 import Button from '../button/Button';
-import ckeck from './images/hidden.svg'
 
 
 const SignIn = () => {
@@ -28,6 +27,12 @@ const SignIn = () => {
         return setType('password')
     }
 
+    const register = () => {
+        closeModal()
+        Store.setListener('theme', 6)
+        Store.setListener('change_page_header', [(5 * 100), 6])
+    }
+
     return (
         <div className={`modal_wrapper ${isOpen}`} onMouseDown={closeModal}>
 
@@ -38,27 +43,29 @@ const SignIn = () => {
                     <div className="cross" onMouseDown={closeModal}></div>
                 </div>
 
-                <form action="" onSubmit={''}>
+                <div className="form_container">
+                    <form action="" onSubmit={''}>
 
-                    <div className="input_block">
-                        <div className='main_input'>
-                            <input type="text" />
-                            <div className="label">Логин</div>
-                        </div>
-
-                        <div className='main_input'>
-                            <input type={type} />
-                            <div className="password_check" onMouseDown={switchType}>
-                                <img src={ckeck} alt="" />
+                        <div className="input_block">
+                            <div className='main_input'>
+                                <input type="text" />
+                                <div className="label">Логин</div>
                             </div>
-                            <div className="label">Пароль</div>
-                        </div>
-                    </div>
-                    
-                    <Button mode={'small'} content={'Войти'}/>
 
-                    <a className='register_link' href="">Зарегистрироваться</a>
-                </form>
+                            <div className='main_input'>
+                                <input type={type} />
+                                <div className="password_check" onMouseDown={switchType}>
+                                    <img src='/images/modal/hidden.svg' alt="" />
+                                </div>
+                                <div className="label">Пароль</div>
+                            </div>
+                        </div>
+                        
+                        <Button mode={'small'} content={'Войти'}/>
+
+                    </form>
+                    <button className='register_link' onClick={register}>Зарегистрироваться</button>
+                </div>
 
             </div>
 

@@ -131,8 +131,7 @@
                 color: var(--font-black);
             }
         }
-        form {
-            width: 100%;
+        .form_container {
             max-width: 611px;
             margin: 0 auto;
             @include mediaMaxWidth(991) {
@@ -140,6 +139,9 @@
                 max-width: 1000px;
                 padding: 50px 30px 60px 30px;
             }
+        }
+        form {
+            width: 100%;
             .input_block {
                 width: 100%;
                 display: flex;
@@ -191,23 +193,23 @@
                     }
                 }
             }
-            .register_link {
-                margin-top: 20px;
-                display: block;
-                font-size: 14px;
-                color: var(--orange);
-                text-decoration: underline;
-                font-family: var(--button-font);
-                @include mediaMaxWidth(991) {
-                    display: none;
-                }
-            }
             button {
                 @include mediaMaxWidth(991) {
                     display: block;
                     width: max-content;
                     margin: 0 auto;
                 }
+            }
+        }
+        .register_link {
+            margin-top: 20px;
+            display: block;
+            font-size: 14px;
+            color: var(--orange);
+            text-decoration: underline;
+            font-family: var(--button-font);
+            @include mediaMaxWidth(991) {
+                display: none;
             }
         }
     }

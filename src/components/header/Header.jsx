@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../button/Button';
 import Navigation from './components/Navigation';
-import logo from './images/logo.svg';
 
 import './css/header_style.css';
 import Store from '../../utils/Store';
 import Burger from './components/Burger';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
@@ -15,6 +13,15 @@ const Header = () => {
     const [page, setPage] = useState(1)
     const [isOpen, setIsOpen] = useState(false)
     const [btn, setBtn] = useState('')
+
+    Store.useListener('theme', (data) => {
+        setPage(data)
+        if(data === 9 || data === 6) {
+            setTheme('white')
+        } else {
+            setTheme('')
+        }
+    })
 
     const openModal = () => {
         document.body.style.overflow = 'hidden';
@@ -68,7 +75,7 @@ const Header = () => {
     return (
         <header className={theme}>
 
-            <img src={logo} alt="" className="logo" />
+            <img src='/images/header/logo.svg' alt="" className="logo" />
             
             <Navigation page={page}/>
 

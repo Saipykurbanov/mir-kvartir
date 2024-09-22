@@ -220,17 +220,19 @@
   line-height: 1em;
   color: var(--font-black);
 }
-.modal_wrapper .sign_in form {
-  width: 100%;
+.modal_wrapper .sign_in .form_container {
   max-width: 611px;
   margin: 0 auto;
 }
 @media screen and (max-width: 991px) {
-  .modal_wrapper .sign_in form {
+  .modal_wrapper .sign_in .form_container {
     margin: 0;
     max-width: 1000px;
     padding: 50px 30px 60px 30px;
   }
+}
+.modal_wrapper .sign_in form {
+  width: 100%;
 }
 .modal_wrapper .sign_in form .input_block {
   width: 100%;
@@ -307,7 +309,15 @@
 .modal_wrapper .sign_in form .input_block .main_input .password_check img {
   width: 100%;
 }
-.modal_wrapper .sign_in form .register_link {
+@media screen and (max-width: 991px) {
+  .modal_wrapper .sign_in form button {
+    display: block;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto;
+  }
+}
+.modal_wrapper .sign_in .register_link {
   margin-top: 20px;
   display: block;
   font-size: 14px;
@@ -316,16 +326,8 @@
   font-family: var(--button-font);
 }
 @media screen and (max-width: 991px) {
-  .modal_wrapper .sign_in form .register_link {
+  .modal_wrapper .sign_in .register_link {
     display: none;
-  }
-}
-@media screen and (max-width: 991px) {
-  .modal_wrapper .sign_in form button {
-    display: block;
-    width: -moz-max-content;
-    width: max-content;
-    margin: 0 auto;
   }
 }
 .modal_wrapper .cross {
