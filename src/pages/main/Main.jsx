@@ -36,7 +36,7 @@ const Main = () => {
                 <Service mode={`page service`}/>
 
                 <Registration mode={'page desc'}/>
-                <FeedBack mode={`page feedback`} blocked={isBlocked} page={page}/>
+                <FeedBack mode={`page feedback`} mainScroll={scroll} blocked={isBlocked} page={page}/>
                 <Commission mode={`page commission`}/>  
                 <Contacts mode={`page contacts`}/>
 
