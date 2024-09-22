@@ -9,7 +9,6 @@ import MobileHeader from './components/MobileHeader';
 
 const Profile = () => {
 
-
     return (
         <div className='profile'>
 
