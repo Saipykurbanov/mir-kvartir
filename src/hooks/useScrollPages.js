@@ -55,7 +55,8 @@ export default function useScrollPages() {
                 if(page + 1 === 7) {
                   return page * 100
                 } else {
-                  timer.current = setTimeout(() => {
+                  setTimeout(() => {
+                    console.log('hi', block)
                     setBlock(false)
                   }, 1500)
                 }
