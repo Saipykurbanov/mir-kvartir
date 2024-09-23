@@ -10,9 +10,9 @@ export default function useScrollPages() {
     const [isDrag, setIsDrag] = useState(false)
 
     const timer = useRef(null)
-    const timer2 = useRef(null)
-    const timer3 = useRef(null)
-    const timer4 = useRef(null)
+    const timerTwo = useRef(null)
+    const timerThree = useRef(null)
+    const timerFour = useRef(null)
     const mainPage = useRef(null)
     const count = 9
   
@@ -55,8 +55,7 @@ export default function useScrollPages() {
                 if(page + 1 === 7) {
                   return page * 100
                 } else {
-                  setTimeout(() => {
-                    console.log('hi', block)
+                  timer.current = setTimeout(() => {
                     setBlock(false)
                   }, 1500)
                 }
@@ -70,7 +69,7 @@ export default function useScrollPages() {
                 if(page === 7) {
                   return 100 * (page - 1)
                 } else {
-                  timer2.current = setTimeout(() => {
+                  timerTwo.current = setTimeout(() => {
                     console.log('yes', block)
                     setBlock(false)
                   }, 1500)
@@ -95,7 +94,7 @@ export default function useScrollPages() {
                 if(page - 1 === 7) {
                   return 100 * (page - 2)
                 } else {
-                  timer3.current = setTimeout(() => {
+                  timerThree.current = setTimeout(() => {
                     setBlock(false)
                   }, 1500)
                 }
@@ -109,7 +108,7 @@ export default function useScrollPages() {
                 if(page === 7) {
                   return 100 * (page - 1)
                 } else {
-                  timer4.current = setTimeout(() => {
+                  timerFour.current = setTimeout(() => {
                     setBlock(false)
                   }, 1500)
                 }
@@ -142,14 +141,14 @@ export default function useScrollPages() {
         if (timer.current) {
           clearTimeout(timer.current);
         }
-        if(timer2.current) {
-          clearTimeout(timer2.current)
+        if(timerTwo.current) {
+          clearTimeout(timerTwo.current)
         }
-        if(timer3.current) {
-          clearTimeout(timer3.current)
+        if(timerThree.current) {
+          clearTimeout(timerThree.current)
         }
-        if(timer4.current) {
-          clearTimeout(timer3.current)
+        if(timerFour.current) {
+          clearTimeout(timerFour.current)
         }
       }
     }, [block, isDrag, page, count, timer])
