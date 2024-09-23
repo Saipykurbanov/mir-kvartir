@@ -7,6 +7,7 @@ import ClientDetail from './pages/client/ClientDetail';
 import SuccessWindow from './components/modal/SuccessWindow';
 import Registration from './frames/registration/Registration';
 import TransferPage from './pages/transfer/TransferPage';
+import ScrollToTop from './utils/ScrollToTop';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <main>
 
       <Router>
+        <ScrollToTop />
 
         <Routes>
 

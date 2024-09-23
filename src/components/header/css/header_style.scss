@@ -221,6 +221,12 @@ header {
         @include mediaMinWidth(992) {
             display: none;
         }
+        .sign_out {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
         .sign{
             color: var(--orange);
             text-transform: uppercase;
@@ -230,7 +236,8 @@ header {
             cursor: pointer;
         }
         a,
-        .sign {
+        .sign,
+        .sign_out {
             padding-top: 3px;
             border-top: 1px solid var(--font-clean-white);
             font-size: 17px;

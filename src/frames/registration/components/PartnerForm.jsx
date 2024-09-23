@@ -18,33 +18,32 @@ const PartnerForm = () => {
 
             <div className="input_wrapper">
                 <div className="input__item">
-                    <input type="text" />
+                    <input type="text"onMouseDown={(e) => e.stopPropagation()}/>
                     <label htmlFor="">ваше имя</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" />
+                    <input type="text" onMouseDown={(e) => e.stopPropagation()}/>
                     <label htmlFor="">ваш номер телефона</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" />
+                    <input type="text" onMouseDown={(e) => e.stopPropagation()}/>
                     <label htmlFor="">город</label>
                 </div>
 
                 <div className="input__item">
-                    <input type="text" />
+                    <input type="text"  onMouseDown={(e) => e.stopPropagation()}/>
                     <label htmlFor="">агенство</label>
                 </div>
                 
                 <div className="input__item">
-                    <input type="text"/>
+                    <input type="text" onMouseDown={(e) => e.stopPropagation()}/>
                     <label htmlFor="">ваш ник в Телеграм <span>(мы пригласим Вас в закрытый канал для партнеров)</span></label>
                 </div>
             </div>
 
             <Button mode={'orange small'} content={'Отправить данные'}/>
-
         </form>
     );
 };

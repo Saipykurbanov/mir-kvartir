@@ -8,20 +8,12 @@ export default function useScrollPages() {
     const isBlocked = useRef(false)
     const [block, setBlock] = useState(false)
     const [isDrag, setIsDrag] = useState(false)
-
-    const timer = useRef(null)
-    const timerTwo = useRef(null)
-    const timerThree = useRef(null)
-    const timerFour = useRef(null)
     const mainPage = useRef(null)
     const count = 9
   
     Store.useListener('change_page_header', (data) => {
       setScroll(data[0])
       setPage(data[1])
-      if(data[1] === 7 && data[0] === 600) {
-        return setBlock(true)
-      }
     })
 
     Store.useListener('block_scroll', setBlock)
@@ -35,81 +27,89 @@ export default function useScrollPages() {
 
 
           if(wheel > 0) {
-            // console.log('вправо')
-            
+
             setScroll(prev => { //скролл вправо
               let result = prev >= (100 * (count - 1)) ? prev : prev + wheel
 
               if(result >= ((100 * page) - 20)) {
-                setPage(prev => prev + 1);
+                setPage(prev => prev + 1)
                 Store.setListener('change_page_from_scroll', (page + 1))
-                setBlock(true)
-                
-                if(page + 1 === 7) {
-                  return page * 100
-                } else {
-                  timer.current = setTimeout(() => {
-                    setBlock(false)
-                  }, 1500)
-                }
-                
-                return page * 100
-              }
-              
-              if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 15)) {
-                setBlock(true)
-                
-                if(page === 7) {
-                  return 100 * (page - 1)
-                } else {
-                  timerTwo.current = setTimeout(() => {
-                    console.log('yes', block)
-                    setBlock(false)
-                  }, 1500)
-                }
-
-                return 100 * (page - 1)
               }
 
               return result
+              // if(result >= ((100 * page) - 20)) {
+              //   setPage(prev => prev + 1);
+              //   Store.setListener('change_page_from_scroll', (page + 1))
+              //   setBlock(true)
+                
+              //   // if(page + 1 === 7) {
+              //   //   return page * 100
+              //   // } else {
+              //   //   timer.current = setTimeout(() => {
+              //   //     setBlock(false)
+              //   //   }, 1500)
+              //   // }
+                
+              //   return page * 100
+              // }
+              
+              // if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 15)) {
+              //   // setBlock(true)
+                
+              //   // if(page === 7) {
+              //   //   return 100 * (page - 1)
+              //   // } else {
+              //   //   timerTwo.current = setTimeout(() => {
+              //   //     console.log('yes', block)
+              //   //     setBlock(false)
+              //   //   }, 1500)
+              //   // }
+
+              //   return 100 * (page - 1)
+              // }
+
             });
           } else if(wheel < 0) {
-            // console.log('влево')
 
             setScroll(prev => { //скролл влево
               let result = prev <= 1 ? prev : prev + wheel
 
               if(((100 * (page - 1)) - 80) > result) {
-                setPage(prev => prev - 1);
+                setPage(prev => prev - 1)
                 Store.setListener('change_page_from_scroll', (page - 1))
-                setBlock(true)
-                
-                if(page - 1 === 7) {
-                  return 100 * (page - 2)
-                } else {
-                  timerThree.current = setTimeout(() => {
-                    setBlock(false)
-                  }, 1500)
-                }
-                
-                return 100 * (page - 2)
-              }
-              
-              if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 15)) {
-                setBlock(true)
-
-                if(page === 7) {
-                  return 100 * (page - 1)
-                } else {
-                  timerFour.current = setTimeout(() => {
-                    setBlock(false)
-                  }, 1500)
-                }
-
-                return 100 * (page - 1)
               }
 
               return result
+              
+              // if(((100 * (page - 1)) - 80) > result) {
+              //   setPage(prev => prev - 1);
+              //   Store.setListener('change_page_from_scroll', (page - 1))
+              //   // setBlock(true)
+                
+              //   // if(page - 1 === 7) {
+              //   //   return 100 * (page - 2)
+              //   // } else {
+              //   //   timerThree.current = setTimeout(() => {
+              //   //     setBlock(false)
+              //   //   }, 1500)
+              //   // }
+                
+              //   return 100 * (page - 2)
+              // }
+
+              // if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 15)) {
+              //   // setBlock(true)
+
+              //   // if(page === 7) {
+              //   //   return 100 * (page - 1)
+              //   // } else {
+              //   //   timerFour.current = setTimeout(() => {
+              //   //     setBlock(false)
+              //   //   }, 1500)
+              //   // }
+
+              //   return 100 * (page - 1)
+              // }
             })
           }
       }
@@ -132,24 +132,7 @@ export default function useScrollPages() {
           window.removeEventListener('mouseup', dragEnd)
         }
       }
-    }, [block, isDrag, page, count, timer])
-
-    useEffect(() => {
-      return () => {
-        if (timer.current) {
-          clearTimeout(timer.current);
-        }
-        if(timerTwo.current) {
-          clearTimeout(timerTwo.current)
-        }
-        if(timerThree.current) {
-          clearTimeout(timerThree.current)
-        }
-        if(timerFour.current) {
-          clearTimeout(timerFour.current)
-        }
-      }
-    }, [])
+    }, [block, isDrag, page, count])
 
     const dragDown = (e) => {
       if (window.innerWidth > 991 && !isBlocked.current && !block) {
@@ -180,7 +163,7 @@ export default function useScrollPages() {
                 return result
               }
             });
-          } else {
+          } else if (move > 0) {
             setScroll(prev => {
               let result = prev - e.movementX * 0.08
               if(((100 * (page - 1)) - 80) > result) {
@@ -189,7 +172,7 @@ export default function useScrollPages() {
               }
               if (result <= 0) {
                 return 0
-              } else {
+              } else if (result > 0) {
                 return result
               }
             });

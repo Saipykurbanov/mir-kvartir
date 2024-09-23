@@ -305,6 +305,12 @@ header .menu.active {
     display: none;
   }
 }
+header .menu .sign_out {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
 header .menu .sign {
   color: var(--orange);
   text-transform: uppercase;
@@ -314,14 +320,16 @@ header .menu .sign {
   cursor: pointer;
 }
 header .menu a,
-header .menu .sign {
+header .menu .sign,
+header .menu .sign_out {
   padding-top: 3px;
   border-top: 1px solid var(--font-clean-white);
   font-size: 17px;
   font-weight: 500;
 }
 header .menu a:nth-child(2),
-header .menu .sign:nth-child(2) {
+header .menu .sign:nth-child(2),
+header .menu .sign_out:nth-child(2) {
   color: var(--orange);
 }
 
