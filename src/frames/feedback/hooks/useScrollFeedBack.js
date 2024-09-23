@@ -5,7 +5,6 @@ export default function useScrollFeedBack(page, mainScroll) {
     const feedbackContainer = useRef(null)
     const feedbackList = useRef(null)
     const [scroll, setScroll] = useState(0)
-    const timer = useRef(null)
     const blockTimer = useRef(null)
     const [isblocked, setisblocked] = useState(false)
     const [ignore, setIgnore] = useState(false)
@@ -17,7 +16,7 @@ export default function useScrollFeedBack(page, mainScroll) {
             if(!ignore) {
                 blockTimer.current = setTimeout(() => {
                     Store.setListener('block_scroll', false)
-                }, 500)
+                }, 400)
 
                 setIgnore(true)
             }
@@ -67,9 +66,6 @@ export default function useScrollFeedBack(page, mainScroll) {
         }
 
         return () => {
-            if(timer.current) {
-                clearTimeout(timer.current)
-            }
             if(blockTimer.current) {
                 clearTimeout(blockTimer.current)
             }

@@ -12,6 +12,7 @@ export default function useScrollPages() {
     const timer = useRef(null)
     const timer2 = useRef(null)
     const timer3 = useRef(null)
+    const timer4 = useRef(null)
     const mainPage = useRef(null)
     const count = 9
   
@@ -93,7 +94,7 @@ export default function useScrollPages() {
                 if(page - 1 === 7) {
                   return 100 * (page - 2)
                 } else {
-                  timer.current = setTimeout(() => {
+                  timer3.current = setTimeout(() => {
                     setBlock(false)
                   }, 1500)
                 }
@@ -107,7 +108,7 @@ export default function useScrollPages() {
                 if(page === 7) {
                   return 100 * (page - 1)
                 } else {
-                  timer3.current = setTimeout(() => {
+                  timer4.current = setTimeout(() => {
                     setBlock(false)
                   }, 1500)
                 }
@@ -144,6 +145,9 @@ export default function useScrollPages() {
           clearTimeout(timer2.current)
         }
         if(timer3.current) {
+          clearTimeout(timer3.current)
+        }
+        if(timer4.current) {
           clearTimeout(timer3.current)
         }
       }
