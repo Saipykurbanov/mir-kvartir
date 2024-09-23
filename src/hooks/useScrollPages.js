@@ -138,6 +138,11 @@ export default function useScrollPages() {
           window.removeEventListener('mousemove', dragMove)
           window.removeEventListener('mouseup', dragEnd)
         }
+      }
+    }, [block, isDrag, page, count, timer])
+
+    useEffect(() => {
+      return () => {
         if (timer.current) {
           clearTimeout(timer.current);
         }
@@ -151,7 +156,7 @@ export default function useScrollPages() {
           clearTimeout(timerFour.current)
         }
       }
-    }, [block, isDrag, page, count, timer])
+    }, [])
 
     const dragDown = (e) => {
       if (window.innerWidth > 991 && !isBlocked.current && !block) {
