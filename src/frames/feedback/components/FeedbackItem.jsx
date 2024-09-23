@@ -34,7 +34,6 @@ const FeedbackItem = ({last}) => {
             }
 
             const contentH = content.current.offsetHeight
-            console.log(contentH)
             spoiler.current.style.height = `${contentH}px`
             arrowRef.current.style.transform = 'rotate(180deg)'
         }

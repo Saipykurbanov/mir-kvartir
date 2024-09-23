@@ -30,15 +30,8 @@ export default function useScrollPages() {
       if (window.innerWidth > 991 && !isBlocked.current && !block) {
           e.preventDefault()
           
-          let wheel
-          
-          if(e.deltaY === 0) {
-            wheel = e.deltaX > 0 ? Math.min(e.deltaX, 100) : Math.max(e.deltaX, -100); 
-          } else {
-            wheel = e.deltaY > 0 ? Math.min(e.deltaY, 100) : Math.max(e.deltaY, -100);
-          }
-
-          wheel *= 0.05
+          let delta = Math.abs(e.deltaY) > 0 ? e.deltaY : e.deltaX;
+          let wheel = Math.max(Math.min(delta, 100), -100) * 0.05;
 
 
           if(wheel > 0) {

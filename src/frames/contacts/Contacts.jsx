@@ -6,11 +6,11 @@ import './css/contacts.css'
 import telegram from './images/telegram.svg'
 import you_tube from './images/you_tube.svg'
 import vk from './images/vk.svg'
-import whats_app from './images/WhatsApp.svg'
+import mir_kvartir from './images/mir_kvartir.svg'
 import telegram_white from './images/telegram_white.svg'
 import you_tube_white from './images/you_tube_white.svg'
 import vk_white from './images/vk_white.svg'
-import whats_ap_white from './images/whats_ap_white.svg'
+import mir_kvartir_black from './images/mir_kvartir_black.svg'
 
 const Contacts = ({mode}) => {
     return (
@@ -44,15 +44,15 @@ const Contacts = ({mode}) => {
                         <img src={vk_white} alt="" className="mob" />
                         VK
                     </a>
-                    <a href="">
-                        <img src={whats_app} alt="" className='desc' />
-                        <img src={whats_ap_white} alt="" className="mob" />
-                        WhatsApp
-                    </a>
                     <a href="https://www.youtube.com/@mirkv_spb">
                         <img src={you_tube} alt="" className='desc' />
                         <img src={you_tube_white} alt="" className="mob" />
                         YouTube
+                    </a>
+                    <a href="">
+                        <img src={mir_kvartir} alt="" className='desc agency' />
+                        <img src={mir_kvartir_black} alt="" className="mob agency" />
+                        Мир квартир
                     </a>
                 </div>
 

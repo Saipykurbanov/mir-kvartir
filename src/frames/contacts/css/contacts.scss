@@ -177,6 +177,7 @@
             & a {
                 font-family: var(--button-font);
                 display: flex;
+                text-align: center;
                 align-items: center;
                 flex-direction: column;
                 gap: 5px;
@@ -188,6 +189,12 @@
 
                     &.mob {
                         display: none;
+                    }
+
+                    &.agency {
+                        background: #000;
+                        border-radius: 4px;
+                        padding: 7px;
                     }
 
                     @include mediaMinWidth(992) {
@@ -262,6 +269,11 @@
 
                     & img.mob {
                         display: block;
+                    }
+
+                    & img.agency {
+                        background: var(--background-lite);
+                        padding: 5px;
                     }
                 }
             }

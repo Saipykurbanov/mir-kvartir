@@ -214,6 +214,7 @@
 .page.contacts footer .social a {
   font-family: var(--button-font);
   display: flex;
+  text-align: center;
   align-items: center;
   flex-direction: column;
   gap: 5px;
@@ -226,6 +227,11 @@
 }
 .page.contacts footer .social a img.mob {
   display: none;
+}
+.page.contacts footer .social a img.agency {
+  background: #000;
+  border-radius: 4px;
+  padding: 7px;
 }
 @media screen and (min-width: 992px) {
   .page.contacts footer .social a img:hover {
@@ -292,5 +298,9 @@
   }
   .page.contacts footer .social a img.mob {
     display: block;
+  }
+  .page.contacts footer .social a img.agency {
+    background: var(--background-lite);
+    padding: 5px;
   }
 }/*# sourceMappingURL=contacts.css.map */

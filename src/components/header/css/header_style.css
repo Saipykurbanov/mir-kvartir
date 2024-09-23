@@ -12,7 +12,6 @@ header {
   z-index: 100;
   gap: 30px;
   top: 7dvh;
-  pointer-events: none;
 }
 header .logo {
   width: clamp(60px, var(--size) * 4.8, 144px);
@@ -24,7 +23,6 @@ header .logo {
   }
 }
 header .account {
-  pointer-events: all;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -74,7 +72,6 @@ header .navigation .line {
 }
 header .navigation .nav_item {
   position: relative;
-  pointer-events: all;
 }
 header .navigation .nav_item .pagination {
   position: relative;
@@ -181,7 +178,6 @@ header .navigation .nav_item .pagination .decor.left {
   }
 }
 header .navigation .nav_item span {
-  pointer-events: all;
   display: block;
   height: -moz-max-content;
   height: max-content;
@@ -228,7 +224,6 @@ header .navigation .nav_item.active span::before {
   width: 100%;
 }
 header .burger {
-  pointer-events: all;
   position: relative;
   cursor: pointer;
   width: 45px;
@@ -287,7 +282,6 @@ header .burger span.bottom {
   transform: translateX(-50%);
 }
 header .menu {
-  pointer-events: all;
   position: fixed;
   top: 0;
   right: 0;

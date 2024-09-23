@@ -46,6 +46,11 @@
             @include mediaMaxWidth(991) {
                 padding: 0;
                 position: static;
+                transform: translateY(0) !important;
+            }
+
+            @include mediaMaxWidth(768) {
+                gap: 0;
             }
         }
     }
@@ -87,7 +92,8 @@
         width: 100%;
         display: flex;
         align-items: start;
-        gap: clamp(14px, calc(var(--size) * 3), 90px);
+        // gap: clamp(14px, calc(var(--size) * 3), 90px);
+        @include adaptiveProperty(gap, 90, 14);
         border-bottom: 1px solid var(--font-grey);
         padding-bottom: clamp(30px, calc(var(--size) * 2.23), 67px);
 
@@ -170,6 +176,8 @@
             &.last {
                 display: none;
             }
+            
+            & p {display: none;}
         }
     }
 
