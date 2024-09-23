@@ -7,6 +7,9 @@ import percent from './images/30.svg'
 import descPercent from './images/30desc.svg'
 
 const Commission = ({mode}) => {
+
+    const screenWidth = window.innerWidth;
+
     return (
         <div className={`${mode}`}>
             <div className="percent_mob">
@@ -14,6 +17,7 @@ const Commission = ({mode}) => {
             </div>
 
             <div className="comission_content">
+
                 <div className="about_commission">
                     <div className="about__item">
                         <h3>Ваше Вознаграждение</h3>
@@ -25,9 +29,8 @@ const Commission = ({mode}) => {
                         <p> <span>3-6%</span> от стоимости квартиры в Санкт-Петербурге</p>
                     </div>
                 </div>
-
                 
-                <BottomHeader title={'Комиссия'}/>  
+                <BottomHeader title={'Комиссия'} link={screenWidth > 992 ? '/transfer' : '/profile#new_client'}/>  
 
             </div>
 

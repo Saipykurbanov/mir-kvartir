@@ -12,6 +12,9 @@ import chat from './../../icons/chat_icon.svg'
 import ManagerTitle from './components/ManagerTitle';
 
 const Managers = ({mode}) => {
+
+    const screenWidth = window.innerWidth;
+
     return (
         <div className={`${mode} managers`}> 
 
@@ -90,7 +93,7 @@ const Managers = ({mode}) => {
                 </div>
             </div>
 
-            <BottomHeader title={'наши Управляющие'}/>
+            <BottomHeader title={'наши Управляющие'} link={screenWidth > 992 ? '/transfer' : '/profile#new_client'}/>
         </div>
     );
 };

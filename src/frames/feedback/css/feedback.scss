@@ -15,11 +15,13 @@
         margin-top: 50px;
     }
 
-
     .container {
         position: relative;
         width: 100%;
         max-width: 1326px;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(40px, calc(var(--size) * 2.66), 80px);
         
         &::-webkit-scrollbar{
             width: 0;
@@ -27,32 +29,32 @@
 
         @include mediaMinWidth(992) {
             height: 50dvh;
-            overflow: hidden;
-            //margin-top: auto;
+            overflow: auto;
+            margin-top: auto;
             margin-bottom: auto;        
         }
 
-        .feedback__list {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0.92vh 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(40px, calc(var(--size) * 2.66), 80px);
-            transition: transform 0.3s linear;
+        // .feedback__list {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     padding: 0.92vh 0;
+        //     width: 100%;
+        //     display: flex;
+        //     flex-direction: column;
+        //     gap: clamp(40px, calc(var(--size) * 2.66), 80px);
+        //     transition: transform 0.3s linear;
 
-            @include mediaMaxWidth(991) {
-                padding: 0;
-                position: static;
-                transform: translateY(0) !important;
-            }
+        //     @include mediaMaxWidth(991) {
+        //         padding: 0;
+        //         position: static;
+        //         transform: translateY(0) !important;
+        //     }
 
-            @include mediaMaxWidth(768) {
-                gap: 0;
-            }
-        }
+        //     @include mediaMaxWidth(768) {
+        //         gap: 0;
+        //     }
+        // }
     }
 
     
