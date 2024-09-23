@@ -62,7 +62,7 @@ export default function useScrollPages() {
                 return page * 100
               }
               
-              if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 20)) {
+              if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 15)) {
                 setBlock(true)
                 
                 if(page === 7) {
@@ -101,7 +101,7 @@ export default function useScrollPages() {
                 return 100 * (page - 2)
               }
               
-              if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 20)) {
+              if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 15)) {
                 setBlock(true)
 
                 if(page === 7) {
