@@ -49,7 +49,7 @@ const Contacts = ({mode}) => {
                         <img src={you_tube_white} alt="" className="mob" />
                         YouTube
                     </a>
-                    <a href="">
+                    <a href="https://mirkv.ru">
                         <img src={mir_kvartir} alt="" className='desc agency' />
                         <img src={mir_kvartir_black} alt="" className="mob agency" />
                         Мир квартир
