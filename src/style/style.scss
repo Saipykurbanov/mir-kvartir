@@ -63,7 +63,9 @@ html,body{
 	scroll-behavior: smooth;
     color: var(--font-white);
     background: var(--background);
-    height: 100%;
+    @include mediaMinWidth(992) {
+        height: 100%;
+    }
 }
 
 /*----------Новые -----------*/
