@@ -167,6 +167,7 @@
     width: 2px;
     height: 100%;
     background-color: var(--orange);
+    border-radius: 0;
   }
 }
 .about .market_block .description .market_list .image_mob {
