@@ -22,15 +22,21 @@ export default function useScrollPages() {
       if (window.innerWidth > 991 && !isBlocked.current && !block) {
           e.preventDefault()
           
-          let delta = Math.abs(e.deltaY) > 0 ? e.deltaY : e.deltaX;
-          let wheel = Math.max(Math.min(delta, 100), -100) * 0.05;
+          let wheel
+          
+          if(e.deltaY === 0) {
+            wheel = e.deltaX > 0 ? Math.min(e.deltaX, 100) : Math.max(e.deltaX, -100); 
+          } else {
+            wheel = e.deltaY > 0 ? Math.min(e.deltaY, 100) : Math.max(e.deltaY, -100);
+          }
 
+          wheel *= 0.05
 
           if(wheel > 0) {
 
             setScroll(prev => { //скролл вправо
-              let result = prev >= (100 * (count - 1)) ? prev : prev + wheel
-
+              let result = prev >= (100 * (count - 1)) ? ((count - 1) * 100) : prev + wheel
+              console.log(result)
               if(result >= ((100 * page) - 20)) {
                 setPage(prev => prev + 1)
                 Store.setListener('change_page_from_scroll', (page + 1))
@@ -72,7 +78,7 @@ export default function useScrollPages() {
           } else if(wheel < 0) {
 
             setScroll(prev => { //скролл влево
-              let result = prev <= 1 ? prev : prev + wheel
+              let result = prev <= 1 ? 0 : prev + wheel
 
               if(((100 * (page - 1)) - 80) > result) {
                 setPage(prev => prev - 1)
@@ -135,7 +141,7 @@ export default function useScrollPages() {
     }, [block, isDrag, page, count])
 
     const dragDown = (e) => {
-      if (window.innerWidth > 991 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current) {
         e.preventDefault()
         if(mainPage.current) {
           mainPage.current.style.cursor = 'grabbing';
@@ -145,7 +151,7 @@ export default function useScrollPages() {
     }
 
     const dragMove = (e) => {
-      if (window.innerWidth > 991 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current) {
         e.preventDefault()
         let move = e.movementX * 0.08
 
@@ -181,8 +187,15 @@ export default function useScrollPages() {
       }
     }
 
+    Store.useListener('offDrag', (data) => {
+      if(mainPage.current) {
+        mainPage.current.style.cursor = 'default';
+      }
+      setIsDrag(data)
+    })
+
     const dragEnd = (e) => {
-      if (window.innerWidth > 991 && !isBlocked.current && !block) {
+      if (window.innerWidth > 991 && !isBlocked.current) {
         e.preventDefault()
         if(mainPage.current) {
           mainPage.current.style.cursor = 'default';
