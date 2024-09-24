@@ -1,9 +1,16 @@
 import React from 'react';
 import './css/process.css'
 import Button from '../../components/button/Button';
+import Store from '../../utils/Store';
 
 
 const Process = ({mode}) => {
+
+    const changePage = () => {
+        Store.setListener('change_page_header', [((6 - 1) * 100), 6])
+        Store.setListener('change_page', 6)
+    }
+
     return (
         <div className={mode} id='process'>
 
@@ -119,7 +126,7 @@ const Process = ({mode}) => {
             <div className="description_block">
 
                 <div className="offer">
-                    <Button mode={'big'} content={'Стать Партнером'} />
+                    <Button mode={'big'} content={'Стать Партнером'} callback={changePage}/>
                     <div className="quation">Как это работает?</div>
                 </div>
                 

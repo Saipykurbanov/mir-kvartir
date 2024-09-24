@@ -15,7 +15,6 @@
   gap: 10px;
   width: 100%;
   min-width: 300px;
-  max-width: 1150px;
 }
 .start_page.page .about_us_block .description_block .description {
   color: var(--font-grey);
