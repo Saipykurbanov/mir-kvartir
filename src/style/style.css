@@ -72,7 +72,11 @@ html, body {
   scroll-behavior: smooth;
   color: var(--font-white);
   background: var(--background);
-  height: 100%;
+}
+@media screen and (min-width: 992px) {
+  html, body {
+    height: 100%;
+  }
 }
 
 /*----------Новые -----------*/
