@@ -1,5 +1,6 @@
 @import './../../../style/common';
 
+
 header {
     position: fixed;
     left: 0px;
@@ -49,7 +50,7 @@ header {
 
         .nav_item {
             position: relative;
-            
+            background: transparent;
             .pagination {
                 position: relative;
                 @include adaptiveProperty(width, 24, 14);
@@ -94,12 +95,11 @@ header {
                 position: absolute;
                 top: calc(100% + 15px);
                 left: 50%;
-                color: var(--font-white);
+                color: var(--font-grey);
                 white-space: nowrap;
-                //@include adaptiveFont(16, 12);
                 font-size: clamp(12px, calc(var(--size) * 0.54), 16px);
                 text-transform: uppercase;
-                font-weight: 400;
+                font-weight: 500;
                 transform: translateX(-50%);
                 transition: 0.3s;
                 cursor: pointer;
@@ -113,7 +113,7 @@ header {
                     left: 0px;
                     width: 0%;
                     height: 1px;
-                    background: var(--font-white);
+                    background: var(--font-grey);
                     transition: 0.3s;
                 }
                 &:hover::before{
@@ -129,7 +129,7 @@ header {
 
             &.active {
                 & .inner_circle {
-                    background: var(--font-white);
+                    background: var(--font-grey);
                 }
 
                 & span::before {

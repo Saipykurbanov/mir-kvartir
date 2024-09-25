@@ -72,6 +72,7 @@ header .navigation .line {
 }
 header .navigation .nav_item {
   position: relative;
+  background: transparent;
 }
 header .navigation .nav_item .pagination {
   position: relative;
@@ -184,11 +185,11 @@ header .navigation .nav_item span {
   position: absolute;
   top: calc(100% + 15px);
   left: 50%;
-  color: var(--font-white);
+  color: var(--font-grey);
   white-space: nowrap;
   font-size: clamp(12px, var(--size) * 0.54, 16px);
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
   transform: translateX(-50%);
   transition: 0.3s;
   cursor: pointer;
@@ -203,7 +204,7 @@ header .navigation .nav_item span:before {
   left: 0px;
   width: 0%;
   height: 1px;
-  background: var(--font-white);
+  background: var(--font-grey);
   transition: 0.3s;
 }
 header .navigation .nav_item span:hover::before {
@@ -218,7 +219,7 @@ header .navigation .nav_item span:hover::before {
   }
 }
 header .navigation .nav_item.active .inner_circle {
-  background: var(--font-white);
+  background: var(--font-grey);
 }
 header .navigation .nav_item.active span::before {
   width: 100%;

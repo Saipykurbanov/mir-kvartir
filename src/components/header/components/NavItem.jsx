@@ -9,7 +9,7 @@ const NavItem = ({page, setPage, title, decor, mode, num}) => {
     }
 
     return (
-        <div className={`nav_item ${page === num ? 'active' : ''}`}>
+        <div className={`nav_item ${page === num ? 'active' : ''}`} >
             <div className="pagination" onClick={() => changePage()}>
                 {decor.left && <img src='/images/header/decor2.svg' alt="" className="decor left" />}
 
