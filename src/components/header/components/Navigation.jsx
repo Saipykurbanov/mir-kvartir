@@ -5,6 +5,7 @@ import Store from '../../../utils/Store';
 
 const Navigation = ({page}) => {
 
+
     return (
         <div className='navigation'>
 

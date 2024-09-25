@@ -36,43 +36,12 @@ export default function useScrollPages() {
 
             setScroll(prev => { //скролл вправо
               let result = prev >= (100 * (count - 1)) ? ((count - 1) * 100) : prev + wheel
-              console.log(result)
               if(result >= ((100 * page) - 20)) {
                 setPage(prev => prev + 1)
                 Store.setListener('change_page_from_scroll', (page + 1))
               }
 
               return result
-              // if(result >= ((100 * page) - 20)) {
-              //   setPage(prev => prev + 1);
-              //   Store.setListener('change_page_from_scroll', (page + 1))
-              //   setBlock(true)
-                
-              //   // if(page + 1 === 7) {
-              //   //   return page * 100
-              //   // } else {
-              //   //   timer.current = setTimeout(() => {
-              //   //     setBlock(false)
-              //   //   }, 1500)
-              //   // }
-                
-              //   return page * 100
-              // }
-              
-              // if(result <= ((100 * (page - 1))) && result >= ((100 * (page - 1)) - 15)) {
-              //   // setBlock(true)
-                
-              //   // if(page === 7) {
-              //   //   return 100 * (page - 1)
-              //   // } else {
-              //   //   timerTwo.current = setTimeout(() => {
-              //   //     console.log('yes', block)
-              //   //     setBlock(false)
-              //   //   }, 1500)
-              //   // }
-
-              //   return 100 * (page - 1)
-              // }
 
             });
           } else if(wheel < 0) {
@@ -87,35 +56,6 @@ export default function useScrollPages() {
 
               return result
               
-              // if(((100 * (page - 1)) - 80) > result) {
-              //   setPage(prev => prev - 1);
-              //   Store.setListener('change_page_from_scroll', (page - 1))
-              //   // setBlock(true)
-                
-              //   // if(page - 1 === 7) {
-              //   //   return 100 * (page - 2)
-              //   // } else {
-              //   //   timerThree.current = setTimeout(() => {
-              //   //     setBlock(false)
-              //   //   }, 1500)
-              //   // }
-                
-              //   return 100 * (page - 2)
-              // }
-
-              // if(result >= ((page - 1) * 100) && result <= ((100 * (page - 1)) + 15)) {
-              //   // setBlock(true)
-
-              //   // if(page === 7) {
-              //   //   return 100 * (page - 1)
-              //   // } else {
-              //   //   timerFour.current = setTimeout(() => {
-              //   //     setBlock(false)
-              //   //   }, 1500)
-              //   // }
-
-              //   return 100 * (page - 1)
-              // }
             })
           }
       }

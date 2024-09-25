@@ -26,7 +26,7 @@ function App() {
             
             <Route path='/profile' element={<Profile />}/>
 
-            {screenWidth > 992 ? <Route path='/transfer' element={<TransferPage />}/> : <></>}
+            {screenWidth > 991 ? <Route path='/transfer' element={<TransferPage />}/> : <></>}
             {screenWidth < 992 ? <Route path='/client/:id' element={<ClientDetail />}/> : <></>}
             {screenWidth < 992 ? <Route path='/become_partner' element={<Registration mode={'page'} />}/> : <></>}
 
