@@ -6,10 +6,12 @@
     flex-wrap: wrap;
     column-gap: 30px;
     row-gap: 80px;
-    background: url('/images/start_page/startpage.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include mediaMinWidth(992) {
+        background: url('/images/start_page/startpage.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .about_us_block {
         flex: 5;
         display: flex;

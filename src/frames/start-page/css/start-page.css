@@ -7,10 +7,14 @@
   -moz-column-gap: 30px;
        column-gap: 30px;
   row-gap: 80px;
-  background: url("/images/start_page/startpage.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+@media screen and (min-width: 992px) {
+  .start_page.page {
+    background: url("/images/start_page/startpage.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 .start_page.page .about_us_block {
   flex: 5;
