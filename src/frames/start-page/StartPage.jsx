@@ -4,6 +4,7 @@ import sec from './images/second2.svg';
 
 
 const StartPage = ({mode}) => {
+    
     return (
         <div className={`start_page page main`}>
 

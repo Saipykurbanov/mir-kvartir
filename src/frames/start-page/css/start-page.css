@@ -26,7 +26,7 @@
   min-width: 300px;
 }
 .start_page.page .about_us_block .description_block .description {
-  color: var(--font-grey);
+  color: var(--font-white);
   max-width: 370px;
   width: 100%;
   line-height: 22px;
