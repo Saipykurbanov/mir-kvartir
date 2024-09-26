@@ -1,11 +1,16 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
 .start_page.page {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   -moz-column-gap: 30px;
        column-gap: 30px;
   row-gap: 80px;
+  background: url("/images/start_page/startpage.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .start_page.page .about_us_block {
   flex: 5;
