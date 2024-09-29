@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+a.yandex_button {
+  font-family: var(--button-font);
+  padding: clamp(6.6px, var(--size) * 0.43, 13px);
+  border-radius: clamp(5px, var(--size) * 0.5, 15px);
+  gap: clamp(6.7px, var(--size) * 0.45, 13.5px);
+  background: #fff;
+  font-size: clamp(12px, var(--size) * 0.93, 28px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  color: var(--font-black) !important;
+}
+a.yandex_button img {
+  width: clamp(18px, var(--size) * 1.1, 33px);
+  height: clamp(18px, var(--size) * 1.1, 33px);
+}
+@media screen and (min-width: 992px) {
+  a.yandex_button:hover {
+    box-shadow: 0px 0px 10px 0px #FFFFFF;
+  }
+}/*# sourceMappingURL=yandex_button.css.map */

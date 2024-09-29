@@ -4,28 +4,76 @@
     border-width: 3px;
     border-style: solid;
     font-weight: 600;
-    font-size: 18px;
     line-height: 19px;
-    padding: 20.5px;
-    min-width: 222px;
+    min-width: calc(var(--size) * 7.4);
     text-align: center;
-    transition: 0.3s;
+    transition: 0.5s ease-in-out;
+    animation: appear 0.8s ease;
+    padding: calc(var(--size) * 0.7);
+    font-size: calc(var(--size) * 0.6);
+    @include mediaMaxWidth(991) {
+        font-size: 15px;
+        padding: 17px;
+        min-width: 222px;
+    }
     &.full {
         width: 100%;
     }
     &.white {
         border-color: var(--font-white);
         color: var(--font-white);
-        &:hover {
-            background-color: var(--orange-rgb);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
+        }
+    }
+    &.black {
+        border-color: var(--font-black);
+        color: var(--font-black);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
+        }
+    }
+    &.grey {
+        border-color: var(--button-grey);
+        color: var(--button-grey);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
         }
     }
     &.orange {
         border-color: var(--orange);
         color: var(--orange);
-        &:hover {
-            background-color: var(--orange-rgb);
+        background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 0% 100%;
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-size: 100% 100%;
+            }
         }
+    }
+    &.mob {
+        background-color: var(--orange-rgb);
+        color: var(--font-white);
     }
     &.small {
         min-width: 144px;
@@ -36,9 +84,38 @@
         font-weight: 400;
         font-family: var(--button-font);
         padding: 8.5px;
-        &:hover {
-            box-shadow: 0px 0px 20px 0px var(--orange);
+        @include mediaMinWidth(992) {
+            &:hover {
+                box-shadow: 0px 0px 20px 0px var(--orange);
+            }
         }
+    }
+    &.big {
+        min-width: 300px;
+        background-color: var(--orange);
+        color: #fff;
+        box-shadow: 0px 0px 5px 0px var(--orange);
+        border: 0;
+        font-weight: 400;
+        font-family: var(--button-font);
+        @include mediaMinWidth(992) {
+            &:hover {
+                box-shadow: 0px 0px 20px 0px var(--orange);
+            }
+        }
+    }
+    &.min-content {
+        width: min-content;
+        line-height: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

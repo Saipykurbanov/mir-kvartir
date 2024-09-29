@@ -4,12 +4,20 @@
   border-width: 3px;
   border-style: solid;
   font-weight: 600;
-  font-size: 18px;
   line-height: 19px;
-  padding: 20.5px;
-  min-width: 222px;
+  min-width: calc(var(--size) * 7.4);
   text-align: center;
-  transition: 0.3s;
+  transition: 0.5s ease-in-out;
+  animation: appear 0.8s ease;
+  padding: calc(var(--size) * 0.7);
+  font-size: calc(var(--size) * 0.6);
+}
+@media screen and (max-width: 991px) {
+  .main_button {
+    font-size: 15px;
+    padding: 17px;
+    min-width: 222px;
+  }
 }
 .main_button.full {
   width: 100%;
@@ -17,16 +25,58 @@
 .main_button.white {
   border-color: var(--font-white);
   color: var(--font-white);
+  background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 100%;
 }
-.main_button.white:hover {
-  background-color: var(--orange-rgb);
+@media screen and (min-width: 992px) {
+  .main_button.white:hover {
+    background-size: 100% 100%;
+  }
+}
+.main_button.black {
+  border-color: var(--font-black);
+  color: var(--font-black);
+  background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 100%;
+}
+@media screen and (min-width: 992px) {
+  .main_button.black:hover {
+    background-size: 100% 100%;
+  }
+}
+.main_button.grey {
+  border-color: var(--button-grey);
+  color: var(--button-grey);
+  background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 100%;
+}
+@media screen and (min-width: 992px) {
+  .main_button.grey:hover {
+    background-size: 100% 100%;
+  }
 }
 .main_button.orange {
   border-color: var(--orange);
   color: var(--orange);
+  background-image: linear-gradient(var(--orange-rgb), var(--orange-rgb));
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 100%;
 }
-.main_button.orange:hover {
+@media screen and (min-width: 992px) {
+  .main_button.orange:hover {
+    background-size: 100% 100%;
+  }
+}
+.main_button.mob {
   background-color: var(--orange-rgb);
+  color: var(--font-white);
 }
 .main_button.small {
   min-width: 144px;
@@ -38,6 +88,36 @@
   font-family: var(--button-font);
   padding: 8.5px;
 }
-.main_button.small:hover {
-  box-shadow: 0px 0px 20px 0px var(--orange);
+@media screen and (min-width: 992px) {
+  .main_button.small:hover {
+    box-shadow: 0px 0px 20px 0px var(--orange);
+  }
+}
+.main_button.big {
+  min-width: 300px;
+  background-color: var(--orange);
+  color: #fff;
+  box-shadow: 0px 0px 5px 0px var(--orange);
+  border: 0;
+  font-weight: 400;
+  font-family: var(--button-font);
+}
+@media screen and (min-width: 992px) {
+  .main_button.big:hover {
+    box-shadow: 0px 0px 20px 0px var(--orange);
+  }
+}
+.main_button.min-content {
+  width: -moz-min-content;
+  width: min-content;
+  line-height: 1;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=button.css.map */

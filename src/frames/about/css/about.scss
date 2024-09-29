@@ -1,0 +1,154 @@
+@import './../../../style/common';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    .market_block {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        width: 100%;
+        max-width: 1680px;
+        .images {
+            display: flex;
+            @include adaptiveProperty(gap, 12, 8);
+            @include mediaMaxWidth(991) {
+                display: none;
+            }
+            .image {
+                width: clamp(180px, calc(var(--size) * 10), 300px);
+                @include mediaMaxWidth(991) {
+                    @include adaptiveProperty(width, 300, 180);
+                }
+                &.first {
+                    padding-top: 3px;
+                }
+                img {
+                    width: 100%;
+                }
+                p {
+                    margin-top: 12px;
+                    line-height: 24px;
+                    font-size: clamp(15px, calc(var(--size) * 0.8), 24px);
+                    @include mediaMaxWidth(991) {
+                        @include adaptiveFont(24, 15);
+                    }
+                    &.sec {
+                        color: var(--orange);
+                    }
+                    &.first {
+                        color: var(--font-grey);
+                    }
+                }
+            }
+        }
+        
+        .description {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+            max-width: 620px;
+            @include mediaMaxWidth(991) {
+                max-width: 1000px;
+                gap: 0;
+            }
+            .market_list {
+                flex: 1;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                column-gap: 0px;
+                @include mediaMaxWidth(991) {
+                    margin-top: 83px;
+                }
+                .market_wrapper {
+                    flex: 1;
+                    min-width: 300px;
+                    @include mediaMaxWidth(991) {
+                        margin-bottom: 47px;
+                    }
+                }
+                h4 {
+                    color: var(--orange);
+                    margin-bottom: 10px;
+                    font-size: clamp(18px, calc(var(--size) * 0.8), 24px);
+                    @include mediaMaxWidth(991) {
+                        margin-bottom: 23px;
+                        @include adaptiveFont(24, 20);
+                    }
+                }
+                ul {
+                    li {
+                        position: relative;
+                        padding-left: 27px;
+                        line-height: 1.2em;
+                        letter-spacing: 0.5px;
+                        font-size: clamp(14px, calc(var(--size) * 0.6), 18px);
+                        @include mediaMaxWidth(991) {
+                            padding-left: 15px;   
+                            line-height: normal;
+                            margin-bottom: 12px;
+                            @include adaptiveFont(18, 15);
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0.6em;
+                            left: 12px;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 50%;
+                            background-color: var(--font-white);    
+                            @include mediaMaxWidth(991) {
+                                top: 0;
+                                left: 0;
+                                width: 2px;
+                                height: 100%;
+                                background-color: var(--orange);
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+
+                .image_mob {
+                    flex: 1;
+                    margin-left: auto;
+                    min-width: 300px;
+                    width: 100%;
+                    max-width: 400px;
+                    padding-left: 100px;
+                    img {
+                        width: 100%;
+                    }
+                    @include mediaMinWidth(992) {
+                        display: none;
+                    }
+                    p {
+                        margin-top: 12px;
+                        font-size: 15px;
+                        &.first {
+                            color: var(--font-grey);
+                        }
+                        &.sec {
+                            color: var(--orange);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ofer {
+        margin-top: auto;
+        line-height: 1.3em;
+        text-transform: uppercase;
+        font-size: calc(var(--size) * 1.93);
+        @include mediaMaxWidth(992) {
+            display: none;
+        }
+    }
+}

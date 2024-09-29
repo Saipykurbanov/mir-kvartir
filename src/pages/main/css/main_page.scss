@@ -1,0 +1,117 @@
+@import './../../../style/common';
+
+
+.main_page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .main_wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(10, 100dvw);
+        grid-auto-rows: 100dvh;
+        transition: transform .6s cubic-bezier(.215,.61,.355,1);
+        will-change: transform;
+        -ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+        
+        @include mediaMaxWidth(991) {
+            transform: translateX(0) !important;
+            position: static;
+            display: block;
+            cursor: default !important;
+        }
+    }
+    .page {
+        transition: 1s;
+        padding: 232px 30px 78px 30px;
+        background-color: var(--background);
+        padding-top: 20dvh;
+        @include adaptiveProperty(padding-bottom, 78, 15);
+        padding-left: 30px;
+        padding-right: 30px;
+        &.about {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 0;
+                padding-bottom: 15px
+            }
+        }
+        &.main {
+            position: static;
+            transform: translateX(0);
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 135px;
+                padding-bottom: 15px
+            }
+        }
+        &.objects {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+                padding-bottom: 15px;
+                flex-direction: column-reverse;
+            }
+            display: flex;
+            flex-direction: column;
+            @include adaptiveProperty(gap, 50, 30);
+        }
+        &.process {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+                padding-bottom: 15px
+            }
+        }
+        &.managers {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+                padding-bottom: 0px
+            }
+        }
+        &.registration {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+        }
+        &.feedback {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }   
+        }
+        &.commission {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }  
+        }
+        &.contacts {
+            padding-top: clamp(200px, 28dvh, 400px);
+            padding-bottom: 5.85dvh;
+            @include mediaMaxWidth(991) {
+                padding-top: 100px;
+            }  
+        }
+    }
+    @include mediaMaxWidth(991) {
+        overflow: visible;
+        .page {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
